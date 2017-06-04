@@ -20,11 +20,11 @@ class DefectReportViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            print("Why are you shaking me?")
-        }
-    }
+//    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+//        if motion == .motionShake {
+//            print("Why are you shaking me?")
+//        }
+//    }
 
 
 }
