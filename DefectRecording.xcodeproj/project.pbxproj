@@ -97,6 +97,7 @@
 					170DA49A1EE45AE000E4F857 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = M6F53MQES3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
