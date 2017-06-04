@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					170DA49A1EE45AE000E4F857 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = M6F53MQES3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,6 +261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M6F53MQES3;
 				INFOPLIST_FILE = DefectRecording/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Namthip.DefectRecording;
@@ -272,6 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M6F53MQES3;
 				INFOPLIST_FILE = DefectRecording/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Namthip.DefectRecording;
@@ -299,6 +302,7 @@
 				170DA4AF1EE45AE000E4F857 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
