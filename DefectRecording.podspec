@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DefectRecording'
-  s.version          = '0.1.3'
+  s.version          = '0.1.5'
   s.summary          = 'Defect reporting in app'
  
   s.description      = <<-DESC
@@ -10,7 +10,7 @@ Defect Reporting in App by screen capture or screen recording!
   s.homepage         = 'https://github.com/namthipip/DefectReporting'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'namthip silsuwan' => 'namthipip@gmail.com' }
-  s.source           = { :git => 'https://github.com/namthipip/DefectReporting.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/namthipip/DefectReporting.git', :branch => 'master', :tag => s.version.to_s }
  
   s.ios.deployment_target = '9.0'
   s.source_files = 'DefectRecording/*.swift'
