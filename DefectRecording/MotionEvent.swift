@@ -22,14 +22,17 @@ extension UIWindow{
     override open func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             print("device shake")
-            
-            let sb = UIStoryboard(name: "DefectRecord", bundle: Bundle.main)
-            let reportView = sb.instantiateViewController(withIdentifier: "DefectReportViewController") as! DefectReportViewController
+//            let sb = UIStoryboard(name: "DefectRecord", bundle: nil)
+//            let reportView = sb.instantiateViewController(withIdentifier: "DefectReportViewController") as! DefectReportViewController
             let currentView:UIViewController = UIApplication.topViewController()!
-            currentView.present(reportView, animated: true, completion: {
+//            currentView.present(reportView, animated: true, completion: {
+//                
+//            })
+            
+            let reportTypeView = RecordTypeViewController(string: "thip")
+            currentView.present(reportTypeView, animated: true, completion: {
                 
             })
-            print(currentView)
         }
     }
     
