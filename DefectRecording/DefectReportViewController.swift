@@ -17,6 +17,7 @@ class DefectReportViewController: UIViewController {
         super.viewDidLoad()
         //NotificationCenter.default.addObserver(DefectRecordShareInstance(), selector: #selector(DefectRecordShareInstance.showPopup(sender:)), name: notificationName, object: nil)
         DefectRecordShareInstance().registerWithEvent(event: .shake)
+        DefectRecordShareInstance().showReportView()
         
     }
     

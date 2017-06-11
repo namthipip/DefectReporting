@@ -45,6 +45,14 @@ class DefectRecordShareInstance : NSObject{
         }
     }
     
+    func showReportView() {
+        let reportView = UIStoryboard(name: "DefectRecord", bundle: nil).instantiateViewController(withIdentifier: "DefectReportViewController") as! DefectReportViewController
+        let currentView:UIViewController = UIApplication.topViewController()!
+        currentView.present(reportView, animated: true, completion: {
+            
+        })
+    }
+    
     func haldlerDeviceShake(sender:AnyObject) {
         print("Device Shake")
     }
