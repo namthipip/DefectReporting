@@ -15,7 +15,7 @@ enum EventType {
     case floatingButton
 }
 
-class DefectRecordShareInstance : NSObject{
+public class DefectRecordShareInstance : NSObject{
     
     let notificationName = NSNotification.Name(rawValue: "DeviceShaken")
     
