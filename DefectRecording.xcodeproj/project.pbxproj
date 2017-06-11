@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		170DA49F1EE45AE000E4F857 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170DA49E1EE45AE000E4F857 /* AppDelegate.swift */; };
 		170DA4A11EE45AE000E4F857 /* DefectReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170DA4A01EE45AE000E4F857 /* DefectReportViewController.swift */; };
-		170DA4A41EE45AE000E4F857 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A21EE45AE000E4F857 /* Main.storyboard */; };
+		170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A21EE45AE000E4F857 /* DefectRecord.storyboard */; };
 		170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A51EE45AE000E4F857 /* Assets.xcassets */; };
 		170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A71EE45AE000E4F857 /* LaunchScreen.storyboard */; };
 		171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B58DD1EEAD8CE00294A00 /* DefectRecordShareInstance.swift */; };
@@ -20,7 +20,7 @@
 		170DA49B1EE45AE000E4F857 /* DefectRecording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DefectRecording.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		170DA49E1EE45AE000E4F857 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		170DA4A01EE45AE000E4F857 /* DefectReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectReportViewController.swift; sourceTree = "<group>"; };
-		170DA4A31EE45AE000E4F857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		170DA4A31EE45AE000E4F857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DefectRecord.storyboard; sourceTree = "<group>"; };
 		170DA4A51EE45AE000E4F857 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		170DA4A81EE45AE000E4F857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		170DA4AA1EE45AE000E4F857 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				170DA49E1EE45AE000E4F857 /* AppDelegate.swift */,
 				170DA4A01EE45AE000E4F857 /* DefectReportViewController.swift */,
-				170DA4A21EE45AE000E4F857 /* Main.storyboard */,
+				170DA4A21EE45AE000E4F857 /* DefectRecord.storyboard */,
 				170DA4A51EE45AE000E4F857 /* Assets.xcassets */,
 				170DA4A71EE45AE000E4F857 /* LaunchScreen.storyboard */,
 				170DA4AA1EE45AE000E4F857 /* Info.plist */,
@@ -133,7 +133,7 @@
 			files = (
 				170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */,
 				170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */,
-				170DA4A41EE45AE000E4F857 /* Main.storyboard in Resources */,
+				170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,12 +154,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		170DA4A21EE45AE000E4F857 /* Main.storyboard */ = {
+		170DA4A21EE45AE000E4F857 /* DefectRecord.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				170DA4A31EE45AE000E4F857 /* Base */,
 			);
-			name = Main.storyboard;
+			name = DefectRecord.storyboard;
 			sourceTree = "<group>";
 		};
 		170DA4A71EE45AE000E4F857 /* LaunchScreen.storyboard */ = {
