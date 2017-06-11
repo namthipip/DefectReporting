@@ -46,7 +46,14 @@ public class DefectRecordShareInstance : NSObject{
     }
     
     public func showReportView() {
-        let reportView = UIStoryboard(name: "DefectRecord", bundle: nil).instantiateViewController(withIdentifier: "DefectReportViewController") as! DefectReportViewController
+        //let bundle = Bundle.main.url(forResource: "DefectRecording", withExtension: "bundle")
+        
+//        NSBundle *bundle = [NSBundle bundleWithURL:[[NSBundle bundleForClass:[self class]] URLForResource:@"storyboards-sample" withExtension:@"bundle"]];
+//        
+//        let bundle = Bundle.init(url: )
+        let sb = UIStoryboard(name: "DefectRecord", bundle: Bundle.main)
+        let reportView = sb.instantiateViewController(withIdentifier: "DefectReportViewController") as! DefectReportViewController
+        //let reportView = UIStoryboard(name: "DefectRecord", bundle: nil).instantiateViewController(withIdentifier: "DefectReportViewController") as! DefectReportViewController
         let currentView:UIViewController = UIApplication.topViewController()!
         currentView.present(reportView, animated: true, completion: {
             
