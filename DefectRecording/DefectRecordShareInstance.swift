@@ -28,7 +28,7 @@ public class DefectRecordShareInstance : NSObject{
         if event == .doubleTap{
             let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handlerTapGesture(gesture:)))
             doubleTapGesture.numberOfTapsRequired = 2
-            //UIApplication.shared.windows[0].rootViewController?.view.addGestureRecognizer(doubleTapGesture)
+            UIApplication.shared.delegate?.window
 //            let rootView = UIApplication.shared.keyWindow
 //            rootView.windowLevel = CGFloat.greatestFiniteMagnitude
 //            rootView.isUserInteractionEnabled = true

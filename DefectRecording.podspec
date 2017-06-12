@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DefectRecording'
-  s.version          = '0.2.4'
+  s.version          = '0.2.5'
   s.summary          = 'Defect reporting in app'
  
   s.description      = <<-DESC
