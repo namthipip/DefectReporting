@@ -52,7 +52,8 @@ class DrawingViewController: UIViewController {
     }
     
     func nextView(){
-        let drawingImg = tempImgView
+        let defectDetailView = DefectAddDetailViewController(image: tempImgView.image!)
+        self.navigationController?.pushViewController(defectDetailView, animated: true)
     }
     
     
