@@ -15,12 +15,14 @@ class DrawingViewController: UIViewController {
     @IBOutlet weak var tempImgView: UIImageView!
     
     var lastPoint = CGPoint.zero
-    var red: CGFloat = 255.0
-    var green: CGFloat = 0.0
-    var blue: CGFloat = 0.0
+//    var red: CGFloat = 255.0
+//    var green: CGFloat = 0.0
+//    var blue: CGFloat = 0.0
+    var stokeColor = UIColor.red
     var brushWidth: CGFloat = 5.0
     var opacity: CGFloat = 1.0
     var swiped = false
+    var eraseMode = false
     
     var screenShotImg:UIImage!
     
@@ -50,22 +52,25 @@ class DrawingViewController: UIViewController {
     }
     
     func nextView(){
-        
+        let drawingImg = tempImgView
     }
     
     
     @IBAction func resetDrawing(_ sender: Any) {
-        tempImgView.image = nil
+        tempImgView.image = screenShotImg
     }
     
     
     @IBAction func startDraw(_ sender: Any) {
-        red = 255.0
+        eraseMode = false
+        brushWidth = 5
     }
     
     @IBAction func eraseDraw(_ sender: Any) {
-        red = 0
+        eraseMode = true
+        brushWidth = 10
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         swiped = false
         if let touch = touches.first {
@@ -86,9 +91,17 @@ class DrawingViewController: UIViewController {
             
             // 3
             context.setLineCap(.round)
+        
+            if eraseMode {
+                context.setBlendMode(.copy)
+                context.setStrokeColor(red: 0, green: 0, blue: 0, alpha: 0)
+            }
+            else{
+                context.setBlendMode(.normal)
+                context.setStrokeColor(stokeColor.cgColor)
+            }
+            
             context.setLineWidth(brushWidth)
-            context.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
-            context.setBlendMode(.normal)
             
             // 4
             context.strokePath()
@@ -122,13 +135,12 @@ class DrawingViewController: UIViewController {
         }
         
         // Merge tempImageView into mainImageView
-        UIGraphicsBeginImageContext(mainImgView.frame.size)
-        mainImgView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: .normal, alpha: 1.0)
-        tempImgView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: .normal, alpha: opacity)
-        mainImgView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsBeginImageContext(tempImgView.frame.size)
+        mainImgView.image?.draw(in: CGRect(x: 0, y: 0, width: mainImgView.frame.size.width, height: mainImgView.frame.size.height), blendMode: .normal, alpha: 1.0)
+        tempImgView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImgView.frame.size.width, height: tempImgView.frame.size.height), blendMode: .normal, alpha: opacity)
+        tempImgView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        tempImgView.image = nil
     }
     
     override func didReceiveMemoryWarning() {
