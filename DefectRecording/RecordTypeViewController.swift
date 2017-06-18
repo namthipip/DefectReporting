@@ -8,18 +8,13 @@
 
 import UIKit
 
-public class DefectRecordGlobals {
-    public static let shared = DefectRecordGlobals()
-    public var bundle = Bundle(for: RecordTypeViewController.self)
-}
-
 class RecordTypeViewController: UIViewController {
 
     
     @IBOutlet weak var viewAnnotaionType: UIView!
     
     public init(string:String){
-        super.init(nibName: "RecordTypeViewController", bundle: DefectRecordGlobals.shared.bundle)
+        super.init(nibName: "RecordTypeViewController", bundle: Bundle(for: RecordTypeViewController.self))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,6 +33,13 @@ class RecordTypeViewController: UIViewController {
     }
     
     @IBAction func screenRecordTap(_ sender: Any) {
+        self.dismiss(animated: true) { 
+            let window: UIWindow! = UIApplication.shared.keyWindow
+            let drawingView = DrawingViewController(image: window.capture())
+            let currentView:UIViewController = UIApplication.topViewController()!
+            let navigation = UINavigationController(rootViewController: drawingView)
+            currentView.present(navigation, animated: true, completion: nil)
+        }
         
     }
     

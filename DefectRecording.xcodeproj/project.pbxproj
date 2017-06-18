@@ -17,6 +17,8 @@
 		1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763900A1EED503700A86097 /* RecordTypeViewController.swift */; };
 		1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1763900B1EED503700A86097 /* RecordTypeViewController.xib */; };
 		1763900F1EF65BE200A86097 /* MagCover59.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1763900E1EF65BE200A86097 /* MagCover59.jpg */; };
+		176390121EF664F600A86097 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176390101EF664F600A86097 /* DrawingViewController.swift */; };
+		176390131EF664F600A86097 /* DrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 176390111EF664F600A86097 /* DrawingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		1763900A1EED503700A86097 /* RecordTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTypeViewController.swift; sourceTree = "<group>"; };
 		1763900B1EED503700A86097 /* RecordTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordTypeViewController.xib; sourceTree = "<group>"; };
 		1763900E1EF65BE200A86097 /* MagCover59.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MagCover59.jpg; sourceTree = "<group>"; };
+		176390101EF664F600A86097 /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		176390111EF664F600A86097 /* DrawingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				171B58E31EEB01DF00294A00 /* MotionEvent.swift */,
 				1763900A1EED503700A86097 /* RecordTypeViewController.swift */,
 				1763900B1EED503700A86097 /* RecordTypeViewController.xib */,
+				176390101EF664F600A86097 /* DrawingViewController.swift */,
+				176390111EF664F600A86097 /* DrawingViewController.xib */,
 			);
 			path = DefectRecording;
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */,
+				176390131EF664F600A86097 /* DrawingViewController.xib in Resources */,
 				1763900F1EF65BE200A86097 /* MagCover59.jpg in Resources */,
 				1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */,
 				170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */,
@@ -156,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				171B58E41EEB01DF00294A00 /* MotionEvent.swift in Sources */,
+				176390121EF664F600A86097 /* DrawingViewController.swift in Sources */,
 				1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */,
 				171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */,
 				170DA4A11EE45AE000E4F857 /* DefectReportViewController.swift in Sources */,

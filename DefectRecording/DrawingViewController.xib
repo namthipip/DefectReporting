@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawingViewController" customModule="DefectRecording" customModuleProvider="target">
+            <connections>
+                <outlet property="mainImgView" destination="4kA-Oc-aj3" id="cJC-Nb-DYu"/>
+                <outlet property="tempImgView" destination="7Lc-aP-cBi" id="TDX-vV-WEh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4kA-Oc-aj3">
+                    <rect key="frame" x="0.0" y="44" width="375" height="579"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Lc-aP-cBi">
+                    <rect key="frame" x="0.0" y="44" width="375" height="579"/>
+                </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lS-Oa-mt6">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <items>
+                        <barButtonItem title="Reset" id="upq-VP-ZzG">
+                            <connections>
+                                <action selector="resetDrawing:" destination="-1" id="PsP-Ge-lk5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="X0w-X6-gXj"/>
+                        <barButtonItem title="Draw" id="x4y-VZ-B8t">
+                            <connections>
+                                <action selector="startDraw:" destination="-1" id="rT5-X8-b21"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="aD0-9M-8ng"/>
+                        <barButtonItem title="Eraser" id="bEb-Mr-VZe">
+                            <connections>
+                                <action selector="eraseDraw:" destination="-1" id="lnq-4K-Ww8"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4kA-Oc-aj3" secondAttribute="trailing" id="0FP-Rq-XyY"/>
+                <constraint firstAttribute="bottom" secondItem="7Lc-aP-cBi" secondAttribute="bottom" constant="44" id="4Sa-H2-ajT"/>
+                <constraint firstItem="7Lc-aP-cBi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AIt-jb-4U8"/>
+                <constraint firstAttribute="trailing" secondItem="7Lc-aP-cBi" secondAttribute="trailing" id="OK6-k2-534"/>
+                <constraint firstItem="4kA-Oc-aj3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="WT1-fy-AvV"/>
+                <constraint firstAttribute="bottom" secondItem="4kA-Oc-aj3" secondAttribute="bottom" constant="44" id="Wn2-4w-tw1"/>
+                <constraint firstAttribute="trailing" secondItem="5lS-Oa-mt6" secondAttribute="trailing" id="eMs-cA-Fdi"/>
+                <constraint firstItem="4kA-Oc-aj3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jWb-Db-nyo"/>
+                <constraint firstItem="7Lc-aP-cBi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="k3U-hp-rhC"/>
+                <constraint firstAttribute="bottom" secondItem="5lS-Oa-mt6" secondAttribute="bottom" id="pDM-Ze-idN"/>
+                <constraint firstItem="5lS-Oa-mt6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uIw-ii-wfh"/>
+            </constraints>
+            <point key="canvasLocation" x="-49" y="126"/>
+        </view>
+    </objects>
+</document>
