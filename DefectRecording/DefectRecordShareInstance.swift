@@ -17,22 +17,17 @@ enum EventType {
 
 public class DefectRecordShareInstance : NSObject{
     
-    let notificationName = NSNotification.Name(rawValue: "DeviceShaken")
+    static let sharedInstance : DefectRecordShareInstance = {
+        let instance = DefectRecordShareInstance()
+        return instance
+    }()
     
     func registerWithEvent(event:EventType){
-        NotificationCenter.default.addObserver(self, selector: #selector(self.haldlerDeviceShake(sender:)), name: notificationName, object: nil)
         
         if event == .shake {
-            NotificationCenter.default.post(name: notificationName, object: self)
+            
         }
         if event == .doubleTap{
-            let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handlerTapGesture(gesture:)))
-            doubleTapGesture.numberOfTapsRequired = 2
-            UIApplication.shared.delegate?.window
-//            let rootView = UIApplication.shared.keyWindow
-//            rootView.windowLevel = CGFloat.greatestFiniteMagnitude
-//            rootView.isUserInteractionEnabled = true
-//            rootView.addGestureRecognizer(doubleTapGesture)
            
         }
         if event == .floatingButton {
@@ -41,23 +36,21 @@ public class DefectRecordShareInstance : NSObject{
             let window = UIApplication.shared.delegate?.window
             window??.addSubview(button)
             button.isUserInteractionEnabled = true
-            button.addTarget(self, action: #selector(self.haldlerDeviceShake(sender:)), for: .touchUpInside)
+            
         }
     }
     
-    public func showReportView() {
-        let reportView = UIStoryboard(name: "DefectRecord", bundle: nil).instantiateViewController(withIdentifier: "DefectReportViewController") as! DefectReportViewController
+    public func showAnnotationView() {
         let currentView:UIViewController = UIApplication.topViewController()!
-        currentView.present(reportView, animated: true, completion: {
+        if currentView is RecordTypeViewController {
+            return
+        }
+        
+        let reportTypeView = RecordTypeViewController(string: "thip")
+        reportTypeView.modalPresentationStyle = .overCurrentContext
+        currentView.present(reportTypeView, animated: true, completion: {
             
         })
     }
     
-    func haldlerDeviceShake(sender:AnyObject) {
-        print("Device Shake")
-    }
-    
-    func handlerTapGesture(gesture:UITapGestureRecognizer){
-        print("double tap")
-    }
 }

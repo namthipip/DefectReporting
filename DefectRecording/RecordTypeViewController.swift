@@ -8,31 +8,50 @@
 
 import UIKit
 
-public class CameraGlobals {
-    public static let shared = CameraGlobals()
+public class DefectRecordGlobals {
+    public static let shared = DefectRecordGlobals()
     public var bundle = Bundle(for: RecordTypeViewController.self)
 }
 
 class RecordTypeViewController: UIViewController {
 
-    @IBOutlet weak var screenShotLb: UILabel!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
+    @IBOutlet weak var viewAnnotaionType: UIView!
     
     public init(string:String){
-        super.init(nibName: "RecordTypeViewController", bundle: CameraGlobals.shared.bundle)
+        super.init(nibName: "RecordTypeViewController", bundle: DefectRecordGlobals.shared.bundle)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewAnnotaionType.layer.cornerRadius = 10
+        viewAnnotaionType.layer.masksToBounds = true
+    }
+    
+    
+    @IBAction func commentTap(_ sender: Any) {
+        
+    }
+    
+    @IBAction func screenRecordTap(_ sender: Any) {
+        
+    }
+    
+    @IBAction func videoRecoedTap(_ sender: Any) {
+        
+    }
+    
+    @IBAction func cancelTap(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
 

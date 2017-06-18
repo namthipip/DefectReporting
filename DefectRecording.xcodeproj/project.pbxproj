@@ -16,6 +16,7 @@
 		171B58E41EEB01DF00294A00 /* MotionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B58E31EEB01DF00294A00 /* MotionEvent.swift */; };
 		1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763900A1EED503700A86097 /* RecordTypeViewController.swift */; };
 		1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1763900B1EED503700A86097 /* RecordTypeViewController.xib */; };
+		1763900F1EF65BE200A86097 /* MagCover59.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1763900E1EF65BE200A86097 /* MagCover59.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		171B58E31EEB01DF00294A00 /* MotionEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionEvent.swift; sourceTree = "<group>"; };
 		1763900A1EED503700A86097 /* RecordTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTypeViewController.swift; sourceTree = "<group>"; };
 		1763900B1EED503700A86097 /* RecordTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordTypeViewController.xib; sourceTree = "<group>"; };
+		1763900E1EF65BE200A86097 /* MagCover59.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MagCover59.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		170DA49D1EE45AE000E4F857 /* DefectRecording */ = {
 			isa = PBXGroup;
 			children = (
+				1763900E1EF65BE200A86097 /* MagCover59.jpg */,
 				170DA49E1EE45AE000E4F857 /* AppDelegate.swift */,
 				170DA4A01EE45AE000E4F857 /* DefectReportViewController.swift */,
 				170DA4A21EE45AE000E4F857 /* DefectRecord.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */,
+				1763900F1EF65BE200A86097 /* MagCover59.jpg in Resources */,
 				1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */,
 				170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */,
 				170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */,
