@@ -19,6 +19,11 @@
 		1763900F1EF65BE200A86097 /* MagCover59.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1763900E1EF65BE200A86097 /* MagCover59.jpg */; };
 		176390121EF664F600A86097 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176390101EF664F600A86097 /* DrawingViewController.swift */; };
 		176390131EF664F600A86097 /* DrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 176390111EF664F600A86097 /* DrawingViewController.xib */; };
+		1765BB671EF81D3B000B4F42 /* ScreenRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1765BB651EF81D3B000B4F42 /* ScreenRecordViewController.swift */; };
+		1765BB681EF81D3B000B4F42 /* ScreenRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1765BB661EF81D3B000B4F42 /* ScreenRecordViewController.xib */; };
+		1765BB6A1EF823D9000B4F42 /* HiddenStatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */; };
+		178670441EF835A0004E7685 /* player_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 178670421EF835A0004E7685 /* player_record.png */; };
+		178670451EF835A0004E7685 /* rodentia-icons_media-record.png in Resources */ = {isa = PBXBuildFile; fileRef = 178670431EF835A0004E7685 /* rodentia-icons_media-record.png */; };
 		17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */; };
 		17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */; };
 /* End PBXBuildFile section */
@@ -38,6 +43,11 @@
 		1763900E1EF65BE200A86097 /* MagCover59.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MagCover59.jpg; sourceTree = "<group>"; };
 		176390101EF664F600A86097 /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		176390111EF664F600A86097 /* DrawingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingViewController.xib; sourceTree = "<group>"; };
+		1765BB651EF81D3B000B4F42 /* ScreenRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRecordViewController.swift; sourceTree = "<group>"; };
+		1765BB661EF81D3B000B4F42 /* ScreenRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScreenRecordViewController.xib; sourceTree = "<group>"; };
+		1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenStatusBarViewController.swift; sourceTree = "<group>"; };
+		178670421EF835A0004E7685 /* player_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player_record.png; sourceTree = "<group>"; };
+		178670431EF835A0004E7685 /* rodentia-icons_media-record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rodentia-icons_media-record.png"; sourceTree = "<group>"; };
 		17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectAddDetailViewController.swift; sourceTree = "<group>"; };
 		17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefectAddDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +82,8 @@
 		170DA49D1EE45AE000E4F857 /* DefectRecording */ = {
 			isa = PBXGroup;
 			children = (
+				178670421EF835A0004E7685 /* player_record.png */,
+				178670431EF835A0004E7685 /* rodentia-icons_media-record.png */,
 				1763900E1EF65BE200A86097 /* MagCover59.jpg */,
 				170DA49E1EE45AE000E4F857 /* AppDelegate.swift */,
 				170DA4A01EE45AE000E4F857 /* DefectReportViewController.swift */,
@@ -87,6 +99,9 @@
 				176390111EF664F600A86097 /* DrawingViewController.xib */,
 				17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */,
 				17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */,
+				1765BB651EF81D3B000B4F42 /* ScreenRecordViewController.swift */,
+				1765BB661EF81D3B000B4F42 /* ScreenRecordViewController.xib */,
+				1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */,
 			);
 			path = DefectRecording;
 			sourceTree = "<group>";
@@ -152,11 +167,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178670441EF835A0004E7685 /* player_record.png in Resources */,
 				170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */,
+				178670451EF835A0004E7685 /* rodentia-icons_media-record.png in Resources */,
 				176390131EF664F600A86097 /* DrawingViewController.xib in Resources */,
 				1763900F1EF65BE200A86097 /* MagCover59.jpg in Resources */,
 				1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */,
 				17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */,
+				1765BB681EF81D3B000B4F42 /* ScreenRecordViewController.xib in Resources */,
 				170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */,
 				170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */,
 			);
@@ -171,10 +189,12 @@
 			files = (
 				17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */,
 				171B58E41EEB01DF00294A00 /* MotionEvent.swift in Sources */,
+				1765BB671EF81D3B000B4F42 /* ScreenRecordViewController.swift in Sources */,
 				176390121EF664F600A86097 /* DrawingViewController.swift in Sources */,
 				1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */,
 				171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */,
 				170DA4A11EE45AE000E4F857 /* DefectReportViewController.swift in Sources */,
+				1765BB6A1EF823D9000B4F42 /* HiddenStatusBarViewController.swift in Sources */,
 				170DA49F1EE45AE000E4F857 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
