@@ -46,9 +46,10 @@ class RecordTypeViewController: UIViewController {
     @IBAction func videoRecoedTap(_ sender: Any) {
         self.dismiss(animated: true) {
 
-            let recordScreenView = ScreenRecordViewController()
-            let currentView:UIViewController = UIApplication.topViewController()!
-            currentView.present(recordScreenView, animated: true, completion: nil)
+//            let recordScreenView = ScreenRecordViewController()
+//            let currentView:UIViewController = UIApplication.topViewController()!
+//            currentView.present(recordScreenView, animated: true, completion: nil)
+            DefectRecordShareInstance.sharedInstance.addButtons()
         }
         
     }
