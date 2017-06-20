@@ -18,12 +18,15 @@ enum EventType {
 
 public class DefectRecordShareInstance : NSObject{
     
+    var floatingButtonController:FloatingButtonController?
+    
     static let sharedInstance : DefectRecordShareInstance = {
         let instance = DefectRecordShareInstance()
+        instance.floatingButtonController?.showFloatingBtn(needShow: false)
         return instance
     }()
     
-    var buttonWindow: UIWindow!
+    
     
     let screenSize =  UIScreen.main.bounds
     
@@ -45,16 +48,10 @@ public class DefectRecordShareInstance : NSObject{
         }
     }
     
-    func addButtons() {
-        let recordingButton = UIButton(frame: CGRect(x: screenSize.width/2 - 35, y: screenSize.height - 100, width: 70, height: 70))
-        recordingButton.setImage(#imageLiteral(resourceName: "rodentia-icons_media-record.png"), for: .normal)
-        recordingButton.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
-        
-        self.buttonWindow = UIWindow(frame: screenSize)
-        self.buttonWindow.rootViewController = HiddenStatusBarViewController()
-        self.buttonWindow.rootViewController?.view.addSubview(recordingButton)
-        self.buttonWindow.makeKeyAndVisible()
-        
+    func addRecordHandler(){
+        floatingButtonController = FloatingButtonController()
+        floatingButtonController?.button.addTarget(self, action: #selector(DefectRecordShareInstance.startRecording(sender:)), for: .touchUpInside)
+
     }
     
     public func showAnnotationView() {
@@ -68,6 +65,10 @@ public class DefectRecordShareInstance : NSObject{
         currentView.present(reportTypeView, animated: true, completion: {
             
         })
+    }
+    
+    func didTapButton() {
+        print("Tap Button")
     }
     
     func startRecording(sender: UIButton){
@@ -96,6 +97,9 @@ public class DefectRecordShareInstance : NSObject{
         print("Stop screen record")
         RPScreenRecorder.shared().stopRecording { (previewController, error) in
             if previewController != nil {
+                
+                self.floatingButtonController?.showFloatingBtn(needShow: false)
+                
                 let alertCtrl = UIAlertController(title: "Recording", message: "message", preferredStyle: .alert)
                 let discardAction = UIAlertAction(title: "Discard", style: .default, handler: { (alert) in
                     RPScreenRecorder.shared().discardRecording(handler: {
@@ -111,11 +115,9 @@ public class DefectRecordShareInstance : NSObject{
                 alertCtrl.addAction(discardAction)
                 alertCtrl.addAction(viewAction)
                 
-                //self.present(alertCtrl, animated: true, completion: nil)
-                
-                print(self.buttonWindow.rootViewController)
-                self.buttonWindow.rootViewController?.present(alertCtrl, animated: true, completion: nil)
-                
+                let currentView:UIViewController = UIApplication.topViewController()!
+                currentView.present(alertCtrl, animated: true, completion: nil)
+ 
                 sender.removeTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
                 sender.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
                 //sender.setTitle("Start Recording", for: .normal)

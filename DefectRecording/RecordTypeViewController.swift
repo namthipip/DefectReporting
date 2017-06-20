@@ -45,13 +45,15 @@ class RecordTypeViewController: UIViewController {
     
     @IBAction func videoRecoedTap(_ sender: Any) {
         self.dismiss(animated: true) {
-
-//            let recordScreenView = ScreenRecordViewController()
-//            let currentView:UIViewController = UIApplication.topViewController()!
-//            currentView.present(recordScreenView, animated: true, completion: nil)
-            DefectRecordShareInstance.sharedInstance.addButtons()
+//            DefectRecordShareInstance.sharedInstance.floatingButtonController?.button.addTarget(self, action: #selector(self.didTapButton), for: .touchUpInside)
+            DefectRecordShareInstance.sharedInstance.addRecordHandler()
+            DefectRecordShareInstance.sharedInstance.floatingButtonController?.showFloatingBtn(needShow: true)
         }
         
+    }
+    
+    func didTapButton() {
+        print("Tap Button")
     }
     
     @IBAction func cancelTap(_ sender: Any) {

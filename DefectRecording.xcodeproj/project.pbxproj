@@ -24,6 +24,8 @@
 		1765BB6A1EF823D9000B4F42 /* HiddenStatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */; };
 		178670441EF835A0004E7685 /* player_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 178670421EF835A0004E7685 /* player_record.png */; };
 		178670451EF835A0004E7685 /* rodentia-icons_media-record.png in Resources */ = {isa = PBXBuildFile; fileRef = 178670431EF835A0004E7685 /* rodentia-icons_media-record.png */; };
+		178670481EF8E549004E7685 /* FloatingButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670461EF8E549004E7685 /* FloatingButtonController.swift */; };
+		178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670471EF8E549004E7685 /* FloatingButtonWindow.swift */; };
 		17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */; };
 		17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenStatusBarViewController.swift; sourceTree = "<group>"; };
 		178670421EF835A0004E7685 /* player_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player_record.png; sourceTree = "<group>"; };
 		178670431EF835A0004E7685 /* rodentia-icons_media-record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rodentia-icons_media-record.png"; sourceTree = "<group>"; };
+		178670461EF8E549004E7685 /* FloatingButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButtonController.swift; sourceTree = "<group>"; };
+		178670471EF8E549004E7685 /* FloatingButtonWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButtonWindow.swift; sourceTree = "<group>"; };
 		17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectAddDetailViewController.swift; sourceTree = "<group>"; };
 		17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefectAddDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +106,8 @@
 				1765BB651EF81D3B000B4F42 /* ScreenRecordViewController.swift */,
 				1765BB661EF81D3B000B4F42 /* ScreenRecordViewController.xib */,
 				1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */,
+				178670461EF8E549004E7685 /* FloatingButtonController.swift */,
+				178670471EF8E549004E7685 /* FloatingButtonWindow.swift */,
 			);
 			path = DefectRecording;
 			sourceTree = "<group>";
@@ -189,7 +195,9 @@
 			files = (
 				17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */,
 				171B58E41EEB01DF00294A00 /* MotionEvent.swift in Sources */,
+				178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */,
 				1765BB671EF81D3B000B4F42 /* ScreenRecordViewController.swift in Sources */,
+				178670481EF8E549004E7685 /* FloatingButtonController.swift in Sources */,
 				176390121EF664F600A86097 /* DrawingViewController.swift in Sources */,
 				1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */,
 				171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */,
