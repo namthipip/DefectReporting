@@ -97,7 +97,7 @@ public class DefectRecordShareInstance : NSObject{
         print("Stop screen record")
         RPScreenRecorder.shared().stopRecording { (previewController, error) in
             if previewController != nil {
-                
+                previewController?.previewControllerDelegate = self
                 self.floatingButtonController?.showFloatingBtn(needShow: false)
                 
                 let alertCtrl = UIAlertController(title: "Recording", message: "message", preferredStyle: .alert)
@@ -131,6 +131,16 @@ public class DefectRecordShareInstance : NSObject{
             
             
         }
+    }
+    
+}
+
+extension DefectRecordShareInstance : RPPreviewViewControllerDelegate{
+    
+    public func previewController(_ previewController: RPPreviewViewController, didFinishWithActivityTypes activityTypes: Set<String>) {
+        print(activityTypes)
+        previewController.dismiss(animated: true, completion: nil)
+        
     }
     
 }
