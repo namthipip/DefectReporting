@@ -73,24 +73,27 @@ public class DefectRecordShareInstance : NSObject{
     
     func startRecording(sender: UIButton){
         print("Start screen record")
-        if RPScreenRecorder.shared().isAvailable {
-            RPScreenRecorder.shared().startRecording(handler: { (error) in
-                if error == nil{
-                    sender.removeTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
-                    sender.addTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
-                    //sender.setTitle("Stop Recording", for: .normal)
-                    //sender.setTitleColor(UIColor.red, for: .normal)
-                    
-                    sender.setImage(#imageLiteral(resourceName: "player_record.png"), for: .normal)
-                }
-                else{
-                    // Handle error
-                }
-            })
+        if #available(iOS 10, *) {
+            if RPScreenRecorder.shared().isAvailable {
+                RPScreenRecorder.shared().startRecording(handler: { (error) in
+                    if error == nil{
+                        sender.removeTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
+                        sender.addTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
+                        //sender.setTitle("Stop Recording", for: .normal)
+                        //sender.setTitleColor(UIColor.red, for: .normal)
+                        
+                        sender.setImage(#imageLiteral(resourceName: "player_record.png"), for: .normal)
+                    }
+                    else{
+                        // Handle error
+                    }
+                })
+            }
+            else{
+                // Display UI for recording being unavailable
+            }
         }
-        else{
-            // Display UI for recording being unavailable
-        }
+        
     }
     
     func stopRecording(sender: UIButton) {
