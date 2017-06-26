@@ -12,6 +12,7 @@
 		170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A21EE45AE000E4F857 /* DefectRecord.storyboard */; };
 		170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A51EE45AE000E4F857 /* Assets.xcassets */; };
 		170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A71EE45AE000E4F857 /* LaunchScreen.storyboard */; };
+		17148AF21F014D77002B5C52 /* NTScreenRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17148AF11F014D77002B5C52 /* NTScreenRecorder.swift */; };
 		171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B58DD1EEAD8CE00294A00 /* DefectRecordShareInstance.swift */; };
 		171B58E41EEB01DF00294A00 /* MotionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B58E31EEB01DF00294A00 /* MotionEvent.swift */; };
 		1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763900A1EED503700A86097 /* RecordTypeViewController.swift */; };
@@ -38,6 +39,7 @@
 		170DA4A51EE45AE000E4F857 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		170DA4A81EE45AE000E4F857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		170DA4AA1EE45AE000E4F857 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17148AF11F014D77002B5C52 /* NTScreenRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTScreenRecorder.swift; sourceTree = "<group>"; };
 		171B58DD1EEAD8CE00294A00 /* DefectRecordShareInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectRecordShareInstance.swift; sourceTree = "<group>"; };
 		171B58E31EEB01DF00294A00 /* MotionEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionEvent.swift; sourceTree = "<group>"; };
 		1763900A1EED503700A86097 /* RecordTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTypeViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */,
 				178670461EF8E549004E7685 /* FloatingButtonController.swift */,
 				178670471EF8E549004E7685 /* FloatingButtonWindow.swift */,
+				17148AF11F014D77002B5C52 /* NTScreenRecorder.swift */,
 			);
 			path = DefectRecording;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */,
 				1765BB671EF81D3B000B4F42 /* ScreenRecordViewController.swift in Sources */,
 				178670481EF8E549004E7685 /* FloatingButtonController.swift in Sources */,
+				17148AF21F014D77002B5C52 /* NTScreenRecorder.swift in Sources */,
 				176390121EF664F600A86097 /* DrawingViewController.swift in Sources */,
 				1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */,
 				171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */,
