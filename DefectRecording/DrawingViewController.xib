@@ -22,49 +22,57 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4kA-Oc-aj3">
-                    <rect key="frame" x="0.0" y="44" width="375" height="579"/>
+                    <rect key="frame" x="10" y="74" width="355" height="539"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Lc-aP-cBi">
-                    <rect key="frame" x="0.0" y="44" width="375" height="579"/>
+                    <rect key="frame" x="10" y="74" width="355" height="539"/>
                 </imageView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lS-Oa-mt6">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lS-Oa-mt6">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <items>
-                        <barButtonItem title="Reset" id="upq-VP-ZzG">
+                        <barButtonItem image="refresh" id="upq-VP-ZzG">
                             <connections>
                                 <action selector="resetDrawing:" destination="-1" id="PsP-Ge-lk5"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="X0w-X6-gXj"/>
-                        <barButtonItem title="Draw" id="x4y-VZ-B8t">
+                        <barButtonItem image="edit" id="x4y-VZ-B8t">
                             <connections>
                                 <action selector="startDraw:" destination="-1" id="rT5-X8-b21"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="aD0-9M-8ng"/>
-                        <barButtonItem title="Eraser" id="bEb-Mr-VZe">
+                        <barButtonItem image="eraser" id="bEb-Mr-VZe">
                             <connections>
                                 <action selector="eraseDraw:" destination="-1" id="lnq-4K-Ww8"/>
                             </connections>
                         </barButtonItem>
                     </items>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </toolbar>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="4kA-Oc-aj3" secondAttribute="trailing" id="0FP-Rq-XyY"/>
-                <constraint firstAttribute="bottom" secondItem="7Lc-aP-cBi" secondAttribute="bottom" constant="44" id="4Sa-H2-ajT"/>
-                <constraint firstItem="7Lc-aP-cBi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AIt-jb-4U8"/>
-                <constraint firstAttribute="trailing" secondItem="7Lc-aP-cBi" secondAttribute="trailing" id="OK6-k2-534"/>
-                <constraint firstItem="4kA-Oc-aj3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="WT1-fy-AvV"/>
-                <constraint firstAttribute="bottom" secondItem="4kA-Oc-aj3" secondAttribute="bottom" constant="44" id="Wn2-4w-tw1"/>
+                <constraint firstAttribute="trailing" secondItem="4kA-Oc-aj3" secondAttribute="trailing" constant="10" id="0FP-Rq-XyY"/>
+                <constraint firstAttribute="bottom" secondItem="7Lc-aP-cBi" secondAttribute="bottom" constant="54" id="4Sa-H2-ajT"/>
+                <constraint firstItem="7Lc-aP-cBi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="AIt-jb-4U8"/>
+                <constraint firstAttribute="trailing" secondItem="7Lc-aP-cBi" secondAttribute="trailing" constant="10" id="OK6-k2-534"/>
+                <constraint firstItem="4kA-Oc-aj3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="WT1-fy-AvV"/>
+                <constraint firstAttribute="bottom" secondItem="4kA-Oc-aj3" secondAttribute="bottom" constant="54" id="Wn2-4w-tw1"/>
                 <constraint firstAttribute="trailing" secondItem="5lS-Oa-mt6" secondAttribute="trailing" id="eMs-cA-Fdi"/>
-                <constraint firstItem="4kA-Oc-aj3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jWb-Db-nyo"/>
-                <constraint firstItem="7Lc-aP-cBi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="k3U-hp-rhC"/>
+                <constraint firstItem="4kA-Oc-aj3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="jWb-Db-nyo"/>
+                <constraint firstItem="7Lc-aP-cBi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="k3U-hp-rhC"/>
                 <constraint firstAttribute="bottom" secondItem="5lS-Oa-mt6" secondAttribute="bottom" id="pDM-Ze-idN"/>
                 <constraint firstItem="5lS-Oa-mt6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uIw-ii-wfh"/>
             </constraints>
             <point key="canvasLocation" x="-49" y="126"/>
         </view>
     </objects>
+    <resources>
+        <image name="edit" width="24" height="24"/>
+        <image name="eraser" width="24" height="24"/>
+        <image name="refresh" width="24" height="24"/>
+    </resources>
 </document>

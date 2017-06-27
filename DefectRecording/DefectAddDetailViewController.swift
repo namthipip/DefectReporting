@@ -29,6 +29,12 @@ class DefectAddDetailViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
+    }
+    
     
 
     override func didReceiveMemoryWarning() {

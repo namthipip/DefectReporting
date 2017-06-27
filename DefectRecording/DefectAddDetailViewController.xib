@@ -25,14 +25,14 @@
                     <rect key="frame" x="0.0" y="44" width="375" height="333.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="weJ-hs-SKD">
-                            <rect key="frame" x="0.0" y="10" width="375" height="313.5"/>
+                            <rect key="frame" x="0.0" y="20" width="375" height="303.5"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="weJ-hs-SKD" firstAttribute="leading" secondItem="wqK-XI-5J2" secondAttribute="leading" id="Ahv-4K-OiY"/>
                         <constraint firstAttribute="bottom" secondItem="weJ-hs-SKD" secondAttribute="bottom" constant="10" id="eqb-gH-z10"/>
-                        <constraint firstItem="weJ-hs-SKD" firstAttribute="top" secondItem="wqK-XI-5J2" secondAttribute="top" constant="10" id="rUx-gm-yCR"/>
+                        <constraint firstItem="weJ-hs-SKD" firstAttribute="top" secondItem="wqK-XI-5J2" secondAttribute="top" constant="20" id="rUx-gm-yCR"/>
                         <constraint firstAttribute="trailing" secondItem="weJ-hs-SKD" secondAttribute="trailing" id="vbi-ES-qLD"/>
                     </constraints>
                 </view>
