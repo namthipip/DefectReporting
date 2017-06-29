@@ -14,6 +14,8 @@ protocol NTScreenRecorderDelegate:class {
     
 }
 
+typealias videoCompletionBlock = () -> Void
+
 class NTScreenRecorder: NSObject {
     
     var isRecording:Bool!
@@ -34,6 +36,8 @@ class NTScreenRecorder: NSObject {
     var append_pixelBuffer_queue:DispatchQueue?
     var frameRenderingSemaphore:DispatchSemaphore?
     var pixelAppendSemaphore:DispatchSemaphore?
+    
+    
     
     private static var shareInstance:NTScreenRecorder = {
         let share = NTScreenRecorder.init()
@@ -74,11 +78,34 @@ class NTScreenRecorder: NSObject {
         }
     }
     
+    func setupWriter(){
+        
+    }
+    
+    func videoTransformForDeviceOrientation() -> CGAffineTransform{
+        
+    }
+    
+    func tempFileURL() -> URL{
+        let outputPath = NSHomeDirectory().appending("tmp/screenCapture.mp4")
+        removeTempFilePath(path: outputPath)
+        return URL(fileURLWithPath: outputPath)
+    }
+    
+    func removeTempFilePath(path:String){
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: path) {
+//            if fileManager.removeItem(atPath: path) {
+//                
+//            }
+        }
+    }
+    
     func completeRecordSession(completionHandler:@escaping () -> ()){
         render_queue?.async {
             self.append_pixelBuffer_queue?.sync {
                 self.videoWriterInput?.markAsFinished()
-                self.videoWriter?.finishWriting(completionHandler: { 
+                self.videoWriter?.finishWriting(completionHandler: {
                     DispatchQueue.main.async {
                         completionHandler()
                     }
@@ -101,10 +128,10 @@ class NTScreenRecorder: NSObject {
             }
         }
         
-    
+        
     }
     
-    func setupWriter(){
+    func writerVideoFrame(){
         if frameRenderingSemaphore?.signal() != 0 {
             return
         }
@@ -120,11 +147,31 @@ class NTScreenRecorder: NSObject {
             
             let pixelBuffer:CVPixelBuffer?
             let bitmapContext:CGContext = self.createPixelBufferAndBitmapContext(pixelBuffer: pixelBuffer!)
+            DispatchQueue.main.sync {
+                UIGraphicsPushContext(bitmapContext)
+                for window in UIApplication.shared.windows{
+                    window.drawHierarchy(in: CGRect(x: 0, y: 0, width: (self.viewSize?.width)!, height: (self.viewSize?.height)!), afterScreenUpdates: false)
+                }
+                UIGraphicsPopContext()
+            }
+            
+            if self.pixelAppendSemaphore?.signal() == 0 {
+                self.append_pixelBuffer_queue?.async {
+                    let success = self.avAdaptor?.append(pixelBuffer!, withPresentationTime: time)
+                    if (!success!) {
+                        print("Warning: Unable to write buffer to video")
+                    }
+                    CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+                    __dispatch_semaphore_signal(self.pixelAppendSemaphore!)
+                }
+            }
+            else{
+                CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+                
+            }
+            
+            __dispatch_semaphore_signal(self.frameRenderingSemaphore!)
         }
-    }
-    
-    func writerVideoFrame(){
-        
     }
     
     func cleanup(){
@@ -136,7 +183,15 @@ class NTScreenRecorder: NSObject {
         
     }
     
-    func createPixelBufferAndBitmapContext(pixelBuffer:CVPixelBuffer) -> CGContext{
+    func createPixelBufferAndBitmapContext(pixelBuffer:UnsafeMutablePointer<CVPixelBuffer?>!) -> CGContext{
+        
+        CVPixelBufferPoolCreatePixelBuffer(nil, outputBufferPool, pixelBuffer)
+        CVPixelBufferLockBaseAddress(pixelBuffer as! CVPixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
+        
+        var bitmapContext:UnsafeMutablePointer<CGContext?>!
+        
+        
+        
         
     }
 
