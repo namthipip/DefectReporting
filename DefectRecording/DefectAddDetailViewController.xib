@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DefectAddDetailViewController" customModule="DefectRecording" customModuleProvider="target">
             <connections>
                 <outlet property="defectImg" destination="weJ-hs-SKD" id="eRO-Lr-jVB"/>
+                <outlet property="prioritySlider" destination="4by-c7-gmO" id="k79-AJ-qIR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -46,7 +47,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8u2-W5-Jtc">
-                            <rect key="frame" x="20" y="375" width="335" height="50"/>
+                            <rect key="frame" x="20" y="375" width="334" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nes-LC-Bxk">
                                     <rect key="frame" x="0.0" y="15" width="31" height="21"/>
@@ -121,23 +122,31 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9Q-7q-5jq">
-                            <rect key="frame" x="20" y="454" width="335" height="100"/>
+                            <rect key="frame" x="20" y="454" width="334" height="100"/>
+                            <subviews>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4by-c7-gmO">
+                                    <rect key="frame" x="-2" y="15" width="338" height="31"/>
+                                </slider>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="4by-c7-gmO" firstAttribute="leading" secondItem="L9Q-7q-5jq" secondAttribute="leading" constant="10" id="l75-9C-dTb"/>
+                                <constraint firstItem="4by-c7-gmO" firstAttribute="top" secondItem="L9Q-7q-5jq" secondAttribute="top" constant="15" id="mS5-f4-acL"/>
+                                <constraint firstAttribute="trailing" secondItem="4by-c7-gmO" secondAttribute="trailing" constant="10" id="mSN-dm-YIQ"/>
                                 <constraint firstAttribute="height" constant="100" id="sXa-fj-L3F"/>
                             </constraints>
                         </view>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="krG-o7-t9y">
-                            <rect key="frame" x="20" y="595" width="285" height="30"/>
+                            <rect key="frame" x="20" y="595" width="284" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT7-67-kPY">
                             <rect key="frame" x="0.0" y="645" width="374" height="46.5"/>
-                            <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.27058823529411763" green="0.71372549019607845" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="Save">
-                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                     </subviews>
@@ -151,7 +160,7 @@
                         <constraint firstItem="wqK-XI-5J2" firstAttribute="trailing" secondItem="qT7-67-kPY" secondAttribute="trailing" id="Ebo-oh-QpC"/>
                         <constraint firstAttribute="bottom" secondItem="qT7-67-kPY" secondAttribute="bottom" id="Hbs-Yr-fZV"/>
                         <constraint firstItem="Otk-tm-2VX" firstAttribute="leading" secondItem="al7-34-orJ" secondAttribute="leading" constant="20" id="NdV-h3-o4P"/>
-                        <constraint firstAttribute="trailing" secondItem="wqK-XI-5J2" secondAttribute="trailing" constant="1" id="Oym-zh-nAT"/>
+                        <constraint firstAttribute="trailing" secondItem="wqK-XI-5J2" secondAttribute="trailing" id="Oym-zh-nAT"/>
                         <constraint firstItem="L9Q-7q-5jq" firstAttribute="leading" secondItem="8u2-W5-Jtc" secondAttribute="leading" id="Qoo-5q-KV4"/>
                         <constraint firstItem="qT7-67-kPY" firstAttribute="top" secondItem="krG-o7-t9y" secondAttribute="bottom" constant="20" id="RVo-A4-HMw"/>
                         <constraint firstItem="9i1-Hu-A2r" firstAttribute="leading" secondItem="nPo-dg-Lvg" secondAttribute="leading" id="SeV-ag-KQ1"/>
@@ -170,12 +179,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="al7-34-orJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="DPQ-Q2-t2I"/>
                 <constraint firstAttribute="bottom" secondItem="al7-34-orJ" secondAttribute="bottom" id="OJi-lV-nK5"/>
-                <constraint firstItem="al7-34-orJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bzb-ke-M3z"/>
                 <constraint firstItem="qT7-67-kPY" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.07" id="gk3-de-hln"/>
                 <constraint firstItem="al7-34-orJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jGF-im-f0b"/>
+                <constraint firstItem="al7-34-orJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wjw-kq-Rhp"/>
                 <constraint firstItem="wqK-XI-5J2" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="zCH-nu-nEf"/>
-                <constraint firstAttribute="trailing" secondItem="al7-34-orJ" secondAttribute="trailing" id="zod-BW-JRU"/>
             </constraints>
             <point key="canvasLocation" x="47.5" y="111.5"/>
         </view>

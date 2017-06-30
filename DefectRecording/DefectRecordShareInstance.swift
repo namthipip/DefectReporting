@@ -26,7 +26,7 @@ public class DefectRecordShareInstance : NSObject{
         return instance
     }()
     
-    let themeColor = UIColor(colorLiteralRed: 0/255.0, green: 255/255.0, blue: 128/255.0, alpha: 1.0)
+    let themeColor = UIColor(red: 69/255.0, green: 182/255.0, blue: 74/255.0, alpha: 1)
 
     
     let screenSize =  UIScreen.main.bounds

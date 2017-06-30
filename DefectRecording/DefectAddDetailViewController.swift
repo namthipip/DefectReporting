@@ -12,7 +12,11 @@ class DefectAddDetailViewController: UIViewController {
 
     @IBOutlet weak var defectImg: UIImageView!
     
+    @IBOutlet weak var prioritySlider: UISlider!
+    
     var drawImg:UIImage!
+    
+    let number:[Int] = [0,5,10]
     
     public init(image:UIImage){
         super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
@@ -27,6 +31,12 @@ class DefectAddDetailViewController: UIViewController {
         super.viewDidLoad()
         defectImg.image = drawImg
         
+        let numOfSteps = Float(number.count - 1)
+        prioritySlider.minimumValue = 0
+        prioritySlider.maximumValue = numOfSteps
+        prioritySlider.isContinuous = true
+        prioritySlider.value = 0
+        prioritySlider.addTarget(self, action: #selector(self.priorityChange(slider:)), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +46,14 @@ class DefectAddDetailViewController: UIViewController {
     }
     
     
+    func priorityChange(slider:UISlider) {
+        let index = Int(slider.value + 0.5)
+        slider.setValue(Float(index), animated: false)
+        let numberSlider = number[index]
+        print("sliderIndex:\(Int(index))")
+        print("number: \(numberSlider)")
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

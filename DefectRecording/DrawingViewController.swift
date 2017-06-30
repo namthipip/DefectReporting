@@ -59,7 +59,9 @@ class DrawingViewController: UIViewController {
     
     func nextView(){
         let defectDetailView = DefectAddDetailViewController(image: tempImgView.image!)
+        defectDetailView.navigationItem.hidesBackButton = true
         self.navigationController?.pushViewController(defectDetailView, animated: true)
+        //self.navigationController?.present(defectDetailView, animated: true, completion: nil)
     }
     
     
