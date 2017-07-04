@@ -16,7 +16,7 @@ class DefectAddDetailViewController: UIViewController {
     
     var drawImg:UIImage!
     
-    let number:[Int] = [0,5,10]
+    let priorityValue:[Int] = [0,5,10]
     
     public init(image:UIImage){
         super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
@@ -30,20 +30,25 @@ class DefectAddDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         defectImg.image = drawImg
-        
-        let numOfSteps = Float(number.count - 1)
+        self.title = "Defect Detail"
+        let numOfSteps = Float(priorityValue.count - 1)
         prioritySlider.minimumValue = 0
         prioritySlider.maximumValue = numOfSteps
         prioritySlider.isContinuous = true
         prioritySlider.value = 0
         prioritySlider.addTarget(self, action: #selector(self.priorityChange(slider:)), for: .valueChanged)
-        setSlider(slider: prioritySlider)
-        //setGradientToSlider(slider: prioritySlider)
-        
+    
     }
     
-    func setSlider(slider:UISlider) {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setGradientSlider(slider: prioritySlider)
+        tickMarkViewForSlider(slider: prioritySlider)
+    }
+    
+    func setGradientSlider(slider:UISlider) {
         
+        print("slider width = \(slider.frame.width)")
         let tgl = CAGradientLayer()
         let frame = CGRect(x: 0, y: 0, width: slider.frame.width, height: 5)
         tgl.frame = frame
@@ -56,44 +61,35 @@ class DefectAddDetailViewController: UIViewController {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        //image?.resizableImage(withCapInsets: UIEdgeInsets.zero)
-        
-//        slider.setMinimumTrackImage(image, for: .normal)
-//        slider.setMaximumTrackImage(image, for: .normal)
-        
-        let trackImg = image?.resizableImage(withCapInsets: .zero, resizingMode: .tile)
+        let trackImg = image?.resizableImage(withCapInsets: UIEdgeInsets.zero)
         slider.setMinimumTrackImage(trackImg, for: .normal)
         slider.setMaximumTrackImage(trackImg, for: .normal)
         
     }
     
-    func setGradientToSlider(slider:UISlider){
+    func tickMarkViewForSlider(slider:UISlider){
+        let tickDevider = (slider.maximumValue > 10 ) ? 10 : 1
+        let tick = priorityValue.count//Int(slider.maximumValue) / tickDevider
+        var offsetOffset = (tick < 10) ? 1.7 : 1.1
+        offsetOffset = (tick > 10) ? 0 : offsetOffset
+        let offset = slider.frame.width / 3/// CGFloat(tick) - CGFloat(offsetOffset)
+        var xPos:CGFloat = 0.0
         
-        let view = slider.subviews[0]
-        let max_trackImageView = view.subviews[0]
-        
-        //setting gradient to max track image view.
-        
-        let max_trackGradient = CAGradientLayer()
-        max_trackGradient.frame = max_trackImageView.frame
-        max_trackGradient.colors = [UIColor.green.cgColor, UIColor.yellow.cgColor,UIColor.red.cgColor]
-        max_trackGradient.startPoint = CGPoint(x: 0.0, y:  0.5)
-        max_trackGradient.endPoint = CGPoint(x: 1.0, y:  0.5)
-        
-        view.layer.cornerRadius = 5.0
-        max_trackImageView.layer.insertSublayer(max_trackGradient, at: 0)
-        
-         //Setting gradient to min track ImageView.
-        let min_trackGradient = CAGradientLayer()
-        let min_trackImageView = slider.subviews[1]
-        min_trackGradient.frame = min_trackImageView.frame
-        min_trackGradient.colors = [UIColor.green.cgColor, UIColor.yellow.cgColor,UIColor.red.cgColor]
-        min_trackGradient.startPoint = CGPoint(x: 0.0, y:  0.5)
-        min_trackGradient.endPoint = CGPoint(x: 1.0, y:  0.5)
-        
-        min_trackImageView.layer.cornerRadius = 5.0
-        min_trackImageView.layer.insertSublayer(min_trackGradient, at: 0)
-        
+        for i in stride(from: 0, to: tick, by: 1){
+//            if i == 0 {
+//                xPos += offset + 5.25
+//            }
+//            else{
+                let tick = UIView(frame: CGRect(x: xPos, y: 15, width: 2, height: 5))
+                tick.backgroundColor = UIColor.lightGray
+//                tick.layer.shadowColor = UIColor.white.cgColor
+//                tick.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+//                tick.layer.shadowOpacity = 1.0
+//                tick.layer.shadowRadius = 0.0
+                slider.addSubview(tick)
+                xPos += offset
+            //}
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,9 +102,9 @@ class DefectAddDetailViewController: UIViewController {
     func priorityChange(slider:UISlider) {
         let index = Int(slider.value + 0.5)
         slider.setValue(Float(index), animated: false)
-        let numberSlider = number[index]
-        print("sliderIndex:\(Int(index))")
-        print("number: \(numberSlider)")
+        let numberSlider = priorityValue[index]
+//        print("sliderIndex:\(Int(index))")
+//        print("number: \(numberSlider)")
         
     }
 
