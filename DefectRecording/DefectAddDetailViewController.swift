@@ -43,7 +43,7 @@ class DefectAddDetailViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setGradientSlider(slider: prioritySlider)
-        tickMarkViewForSlider(slider: prioritySlider)
+        //tickMarkViewForSlider(slider: prioritySlider)
     }
     
     func setGradientSlider(slider:UISlider) {
@@ -68,19 +68,14 @@ class DefectAddDetailViewController: UIViewController {
     }
     
     func tickMarkViewForSlider(slider:UISlider){
-        let tickDevider = (slider.maximumValue > 10 ) ? 10 : 1
-        let tick = priorityValue.count//Int(slider.maximumValue) / tickDevider
+        let tick = priorityValue.count
         var offsetOffset = (tick < 10) ? 1.7 : 1.1
         offsetOffset = (tick > 10) ? 0 : offsetOffset
-        let offset = slider.frame.width / 3/// CGFloat(tick) - CGFloat(offsetOffset)
+        let offset = slider.frame.width / CGFloat(priorityValue.count - 1)
         var xPos:CGFloat = 0.0
         
         for i in stride(from: 0, to: tick, by: 1){
-//            if i == 0 {
-//                xPos += offset + 5.25
-//            }
-//            else{
-                let tick = UIView(frame: CGRect(x: xPos, y: 15, width: 2, height: 5))
+                let tick = UIView(frame: CGRect(x: xPos, y: 15, width: 1, height: 5))
                 tick.backgroundColor = UIColor.lightGray
 //                tick.layer.shadowColor = UIColor.white.cgColor
 //                tick.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
@@ -88,7 +83,6 @@ class DefectAddDetailViewController: UIViewController {
 //                tick.layer.shadowRadius = 0.0
                 slider.addSubview(tick)
                 xPos += offset
-            //}
         }
     }
     
