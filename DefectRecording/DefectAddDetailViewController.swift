@@ -14,9 +14,15 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBOutlet weak var prioritySlider: UISlider!
     
-    var drawImg:UIImage!
+    @IBOutlet weak var dueDateTxt: UITextField!
     
+    @IBOutlet weak var descripTxt: UITextField!
+    
+    var drawImg:UIImage!
+
     let priorityValue:[Int] = [0,5,10]
+    
+    var datePicker:UIDatePicker!
     
     public init(image:UIImage){
         super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
@@ -37,8 +43,44 @@ class DefectAddDetailViewController: UIViewController {
         prioritySlider.isContinuous = true
         prioritySlider.value = 0
         prioritySlider.addTarget(self, action: #selector(self.priorityChange(slider:)), for: .valueChanged)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        let keyboardToolbar = UIToolbar()
+          let dueDateToolbar = UIToolbar()
+        
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                            target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                            target: self.view, action: #selector(UIView.endEditing(_:)))
+        
+        keyboardToolbar.items = [flexBarButton,doneBarButton]
+        descripTxt.inputAccessoryView = keyboardToolbar
+        
+        let doneDateBarButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                            target: self, action: #selector(self.didEnterDuedate))
+        
+        dueDateToolbar.items = [flexBarButton,doneDateBarButton]
+        
+        datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
     
+        dueDateTxt.inputView = datePicker
+        dueDateTxt.inputAccessoryView = dueDateToolbar
+        
+        setupToolbar(toolbars: [keyboardToolbar,dueDateToolbar])
     }
+    
+    func setupToolbar(toolbars:[UIToolbar]){
+        for toolbar in toolbars {
+            toolbar.sizeToFit()
+            toolbar.backgroundColor = UIColor.clear
+            toolbar.isTranslucent = false
+            toolbar.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
+        }
+    }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -101,7 +143,30 @@ class DefectAddDetailViewController: UIViewController {
 //        print("number: \(numberSlider)")
         
     }
-
+    
+    func didEnterDuedate(){
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "dd/MM/yyyy"
+        dueDateTxt.text = dateFormat.string(from: datePicker.date)
+        dueDateTxt.resignFirstResponder()
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
