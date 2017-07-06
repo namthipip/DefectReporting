@@ -20,9 +20,12 @@ public class DefectRecordShareInstance : NSObject{
     
     var floatingButtonController:FloatingButtonController?
     
+    var screenRecoder:ASScreenRecorder!
+    
     static let sharedInstance : DefectRecordShareInstance = {
         let instance = DefectRecordShareInstance()
         instance.floatingButtonController?.showFloatingBtn(needShow: false)
+        instance.screenRecoder = ASScreenRecorder.sharedInstance()
         return instance
     }()
     
@@ -74,6 +77,7 @@ public class DefectRecordShareInstance : NSObject{
     
     func startRecording(sender: UIButton){
         print("Start screen record")
+        /*
         if #available(iOS 10, *) {
             if RPScreenRecorder.shared().isAvailable {
                 RPScreenRecorder.shared().startRecording(handler: { (error) in
@@ -94,11 +98,21 @@ public class DefectRecordShareInstance : NSObject{
                 // Display UI for recording being unavailable
             }
         }
+         */
+        
+        screenRecoder.startRecording()
+        sender.removeTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
+        sender.addTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
+        //sender.setTitle("Stop Recording", for: .normal)
+        //sender.setTitleColor(UIColor.red, for: .normal)
+        
+        sender.setImage(#imageLiteral(resourceName: "player_record.png"), for: .normal)
         
     }
     
     func stopRecording(sender: UIButton) {
         print("Stop screen record")
+        /*
         RPScreenRecorder.shared().stopRecording { (previewController, error) in
             if previewController != nil {
                 previewController?.previewControllerDelegate = self
@@ -134,6 +148,15 @@ public class DefectRecordShareInstance : NSObject{
             }
             
             
+        }
+ */
+        screenRecoder.stopRecording { 
+            self.floatingButtonController?.showFloatingBtn(needShow: false)
+            sender.removeTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
+            sender.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
+            //sender.setTitle("Start Recording", for: .normal)
+            //sender.setTitleColor(UIColor.blue, for: .normal)
+            sender.setImage(#imageLiteral(resourceName: "rodentia-icons_media-record.png"), for: .normal)
         }
     }
     
