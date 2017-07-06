@@ -58,6 +58,13 @@ class DrawingViewController: UIViewController {
     }
     
     func nextView(){
+        
+        UIGraphicsBeginImageContextWithOptions(tempImgView.frame.size, false, 0.0)
+        mainImgView.image?.draw(in: CGRect(x: 0, y: 0, width: mainImgView.frame.size.width, height: mainImgView.frame.size.height), blendMode: .normal, alpha: 1.0)
+        tempImgView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImgView.frame.size.width, height: tempImgView.frame.size.height), blendMode: .normal, alpha: opacity)
+        tempImgView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
         let defectDetailView = DefectAddDetailViewController(image: tempImgView.image!)
         defectDetailView.navigationItem.hidesBackButton = true
         self.navigationController?.pushViewController(defectDetailView, animated: true)
@@ -90,7 +97,7 @@ class DrawingViewController: UIViewController {
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
         
         // 1
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
         if let context = UIGraphicsGetCurrentContext(){
             tempImgView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
             
@@ -142,14 +149,6 @@ class DrawingViewController: UIViewController {
             // draw a single point
             drawLineFrom(fromPoint: lastPoint, toPoint: lastPoint)
         }
-        
-        // Merge tempImageView into mainImageView
-        UIGraphicsBeginImageContext(tempImgView.frame.size)
-        mainImgView.image?.draw(in: CGRect(x: 0, y: 0, width: mainImgView.frame.size.width, height: mainImgView.frame.size.height), blendMode: .normal, alpha: 1.0)
-        tempImgView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImgView.frame.size.width, height: tempImgView.frame.size.height), blendMode: .normal, alpha: opacity)
-        tempImgView.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
     }
     
     override func didReceiveMemoryWarning() {

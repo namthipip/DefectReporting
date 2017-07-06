@@ -219,6 +219,7 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBAction func saveDefect(_ sender: Any) {
         self.view.endEditing(true)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
