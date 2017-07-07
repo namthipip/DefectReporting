@@ -17,6 +17,7 @@
                 <outlet property="dueDateTxt" destination="krG-o7-t9y" id="sfg-mO-dme"/>
                 <outlet property="prioritySlider" destination="4by-c7-gmO" id="k79-AJ-qIR"/>
                 <outlet property="scrollView" destination="al7-34-orJ" id="CGb-lg-UuX"/>
+                <outlet property="videoPreviewLayer" destination="wqK-XI-5J2" id="TOo-lF-dS6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

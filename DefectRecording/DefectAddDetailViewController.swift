@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class DefectAddDetailViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var defectImg: UIImageView!
     
     @IBOutlet weak var prioritySlider: UISlider!
@@ -19,7 +22,9 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBOutlet weak var descripTxt: UITextField!
     
-    var drawImg:UIImage!
+    @IBOutlet weak var videoPreviewLayer: UIView!
+    
+    var drawImg:UIImage?
 
     let priorityValue:[Int] = [0,5,10]
     
@@ -27,10 +32,22 @@ class DefectAddDetailViewController: UIViewController {
     
     var activeField: UITextField?
     
+    var player: AVPlayer!
+    
+    var avpController = AVPlayerViewController()
+    
+    var videoURL:URL?
+    
     public init(image:UIImage){
         super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
         drawImg = image
     }
+    
+    public init(videoUrl:URL){
+        super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
+        videoURL = videoUrl
+    }
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -82,6 +99,15 @@ class DefectAddDetailViewController: UIViewController {
         
         dueDateTxt.delegate = self
         descripTxt.delegate = self
+        
+        if let url = videoURL{
+            self.player = AVPlayer(url: url)
+            self.avpController = AVPlayerViewController()
+            self.avpController.player = self.player
+            avpController.view.frame = videoPreviewLayer.frame
+            self.addChildViewController(avpController)
+            self.videoPreviewLayer.addSubview(avpController.view)
+        }
         
     }
     

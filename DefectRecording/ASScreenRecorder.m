@@ -117,6 +117,8 @@
     _videoWriter = [[AVAssetWriter alloc] initWithURL:self.videoURL ?: [self tempFileURL]
                                              fileType:AVFileTypeQuickTimeMovie
                                                 error:&error];
+    NSLog(@"tempFileURL = %@", [self tempFileURL]);
+    NSLog(@"video URL = %@", self.videoURL);
     NSParameterAssert(_videoWriter);
     
     NSInteger pixelNumber = _viewSize.width * _viewSize.height * _scale;

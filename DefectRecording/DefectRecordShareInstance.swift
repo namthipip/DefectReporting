@@ -99,7 +99,7 @@ public class DefectRecordShareInstance : NSObject{
             }
         }
          */
-        
+        screenRecoder.videoURL = URL(fileURLWithPath: NSHomeDirectory().appending("/tmp/screenCapture.mp4"))
         screenRecoder.startRecording()
         sender.removeTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
         sender.addTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
@@ -157,7 +157,21 @@ public class DefectRecordShareInstance : NSObject{
             //sender.setTitle("Start Recording", for: .normal)
             //sender.setTitleColor(UIColor.blue, for: .normal)
             sender.setImage(#imageLiteral(resourceName: "rodentia-icons_media-record.png"), for: .normal)
-        }
+            do{
+                let videoData = try Data(contentsOf: self.screenRecoder.videoURL)
+                print(videoData)
+                let currentView:UIViewController = UIApplication.topViewController()!
+                let defectDetailView = DefectAddDetailViewController(videoUrl: self.screenRecoder.videoURL)
+                self.screenRecoder.videoURL = nil
+                defectDetailView.navigationItem.hidesBackButton = true
+                let navigation = UINavigationController(rootViewController: defectDetailView)
+                currentView.present(navigation, animated: true, completion: nil)
+            }
+            catch{
+            
+            }
+            
+         }
     }
     
 }
