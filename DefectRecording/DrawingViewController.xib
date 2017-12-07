@@ -22,6 +22,7 @@
                 <outlet property="colorRedBtn" destination="mU3-u2-UP7" id="As2-0b-gCZ"/>
                 <outlet property="mainImgView" destination="4kA-Oc-aj3" id="cJC-Nb-DYu"/>
                 <outlet property="tempImgView" destination="7Lc-aP-cBi" id="TDX-vV-WEh"/>
+                <outlet property="topViewBrushColorConstrain" destination="e9z-y1-OVT" id="oLX-Le-Lrz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewBrushColor" destination="eqV-sB-Fsm" id="Nfp-P8-flz"/>
             </connections>
@@ -115,7 +116,7 @@
                                         <constraint firstAttribute="width" constant="30" id="gS7-5c-CPo"/>
                                     </constraints>
                                     <connections>
-                                        <action selector="changeBrushColor:" destination="-1" eventType="touchUpInside" id="eDr-EV-QLh"/>
+                                        <action selector="selectBrushColor:" destination="-1" eventType="touchUpInside" id="BK1-Kr-cqa"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4s-94-Pzh">
@@ -126,7 +127,7 @@
                                         <constraint firstAttribute="width" constant="30" id="vkY-LW-Ns8"/>
                                     </constraints>
                                     <connections>
-                                        <action selector="changeBrushColor:" destination="-1" eventType="touchUpInside" id="hX6-Bx-99v"/>
+                                        <action selector="selectBrushColor:" destination="-1" eventType="touchUpInside" id="zPG-Eu-EcH"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Id3-yG-Qbo">
@@ -137,7 +138,7 @@
                                         <constraint firstAttribute="width" constant="30" id="D2g-RG-4Gw"/>
                                     </constraints>
                                     <connections>
-                                        <action selector="changeBrushColor:" destination="-1" eventType="touchUpInside" id="EKF-4d-IBK"/>
+                                        <action selector="selectBrushColor:" destination="-1" eventType="touchUpInside" id="iTc-wg-Shd"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJ4-3p-20i">
@@ -148,7 +149,7 @@
                                         <constraint firstAttribute="width" constant="30" id="X7y-Gx-DGS"/>
                                     </constraints>
                                     <connections>
-                                        <action selector="changeBrushColor:" destination="-1" eventType="touchUpInside" id="Gr9-eX-f1a"/>
+                                        <action selector="selectBrushColor:" destination="-1" eventType="touchUpInside" id="zM3-bQ-nd2"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-eo-dGN">
@@ -159,7 +160,7 @@
                                         <constraint firstAttribute="width" secondItem="NEs-eo-dGN" secondAttribute="height" multiplier="1:1" id="YxS-5G-ifP"/>
                                     </constraints>
                                     <connections>
-                                        <action selector="changeBrushColor:" destination="-1" eventType="touchUpInside" id="Btp-lo-Zpb"/>
+                                        <action selector="selectBrushColor:" destination="-1" eventType="touchUpInside" id="O3K-1F-rr6"/>
                                     </connections>
                                 </button>
                             </subviews>

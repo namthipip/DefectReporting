@@ -22,7 +22,7 @@ class DrawingViewController: UIViewController {
     @IBOutlet weak var colorGreenBtn: UIButton!
     @IBOutlet weak var colorOrangeBtn: UIButton!
     @IBOutlet weak var colorPurpleBtn: UIButton!
-    
+    @IBOutlet weak var topViewBrushColorConstrain: NSLayoutConstraint!
     var lastPoint = CGPoint.zero
 //    var red: CGFloat = 255.0
 //    var green: CGFloat = 0.0
@@ -61,10 +61,16 @@ class DrawingViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
         
         brushColorBtn.backgroundColor = stokeColor
-        brushColorBtn.layer.cornerRadius = 15.0
-        brushColorBtn.layer.masksToBounds = true
         brushWidthSlider.value = 5.0;
+        setCornerRadius(buttonList: [brushColorBtn,colorRedBtn,colorBlueBtn,colorGreenBtn,colorOrangeBtn,colorPurpleBtn])
         
+    }
+    
+    func setCornerRadius(buttonList:[UIButton]){
+        for button in buttonList {
+            button.layer.cornerRadius = 15.0
+            button.layer.masksToBounds = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -171,7 +177,22 @@ class DrawingViewController: UIViewController {
     }
     
     @IBAction func changeBrushColor(_ sender: Any) {
-        
+        UIView.animate(withDuration: 0.3) {
+            self.viewBrushColor.isHidden = false
+            self.topViewBrushColorConstrain.constant = -40
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func selectBrushColor(_ sender: Any) {
+        let button = sender as! UIButton
+        UIView.animate(withDuration: 0.3) {
+            self.viewBrushColor.isHidden = true
+            self.topViewBrushColorConstrain.constant = 0
+            self.view.layoutIfNeeded()
+            self.brushColorBtn.backgroundColor = button.backgroundColor
+            self.stokeColor = self.brushColorBtn.backgroundColor!
+        }
     }
     
     @IBAction func changeBrushWidth(_ sender: Any) {
