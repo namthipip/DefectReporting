@@ -16,6 +16,12 @@ class DrawingViewController: UIViewController {
     
     @IBOutlet weak var brushColorBtn: UIButton!
     @IBOutlet weak var brushWidthSlider: UISlider!
+    @IBOutlet weak var viewBrushColor: UIView!
+    @IBOutlet weak var colorRedBtn: UIButton!
+    @IBOutlet weak var colorBlueBtn: UIButton!
+    @IBOutlet weak var colorGreenBtn: UIButton!
+    @IBOutlet weak var colorOrangeBtn: UIButton!
+    @IBOutlet weak var colorPurpleBtn: UIButton!
     
     var lastPoint = CGPoint.zero
 //    var red: CGFloat = 255.0
@@ -55,7 +61,10 @@ class DrawingViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
         
         brushColorBtn.backgroundColor = stokeColor
+        brushColorBtn.layer.cornerRadius = 15.0
+        brushColorBtn.layer.masksToBounds = true
         brushWidthSlider.value = 5.0;
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -162,9 +171,12 @@ class DrawingViewController: UIViewController {
     }
     
     @IBAction func changeBrushColor(_ sender: Any) {
+        
     }
     
     @IBAction func changeBrushWidth(_ sender: Any) {
+        let slider = sender as! UISlider
+        brushWidth = CGFloat(slider.value)
     }
     
     override func didReceiveMemoryWarning() {
