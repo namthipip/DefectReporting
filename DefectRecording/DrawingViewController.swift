@@ -14,6 +14,9 @@ class DrawingViewController: UIViewController {
     @IBOutlet weak var mainImgView: UIImageView!
     @IBOutlet weak var tempImgView: UIImageView!
     
+    @IBOutlet weak var brushColorBtn: UIButton!
+    @IBOutlet weak var brushWidthSlider: UISlider!
+    
     var lastPoint = CGPoint.zero
 //    var red: CGFloat = 255.0
 //    var green: CGFloat = 0.0
@@ -37,7 +40,11 @@ class DrawingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        initialUI()
+        
+    }
+    
+    func initialUI(){
         mainImgView.image = screenShotImg
         tempImgView.image = screenShotImg
         let cancelBarBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "clear-button"), style: .plain, target: self, action: #selector(self.cancelDrawing))
@@ -46,6 +53,9 @@ class DrawingViewController: UIViewController {
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = nextBarBtn
         self.navigationItem.rightBarButtonItem?.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
+        
+        brushColorBtn.backgroundColor = stokeColor
+        brushWidthSlider.value = 5.0;
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -149,6 +159,12 @@ class DrawingViewController: UIViewController {
             // draw a single point
             drawLineFrom(fromPoint: lastPoint, toPoint: lastPoint)
         }
+    }
+    
+    @IBAction func changeBrushColor(_ sender: Any) {
+    }
+    
+    @IBAction func changeBrushWidth(_ sender: Any) {
     }
     
     override func didReceiveMemoryWarning() {
