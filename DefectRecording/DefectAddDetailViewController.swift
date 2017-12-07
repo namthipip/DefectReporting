@@ -68,7 +68,7 @@ class DefectAddDetailViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         let keyboardToolbar = UIToolbar()
-          let dueDateToolbar = UIToolbar()
+        let dueDateToolbar = UIToolbar()
         
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
                                             target: nil, action: nil)
@@ -194,14 +194,15 @@ class DefectAddDetailViewController: UIViewController {
     {
         //Need to calculate keyboard exact size due to Apple suggestions
         self.scrollView.isScrollEnabled = true
-        let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        //let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        let keyboardSize = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0)
         
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         
         var aRect : CGRect = self.view.frame
-        aRect.size.height -= keyboardSize!.height
+        aRect.size.height -= keyboardSize.height
         if activeField != nil
         {
             if (!aRect.contains(activeField!.frame.origin))
