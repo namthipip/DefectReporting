@@ -15,6 +15,7 @@ protocol ButtonWindowDelegate {
 class FloatingButtonController: UIViewController {
 
     private(set) var button: UIButton!
+    private(set) var timeLabel: UILabel!
     private let window = FloatingButtonWindow()
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,11 +41,27 @@ class FloatingButtonController: UIViewController {
         button.layer.shadowOpacity = 0.8
         button.layer.shadowOffset = CGSize.zero
         button.sizeToFit()
-        button.frame = CGRect(origin: CGPoint(x: view.frame.width / 2 - button.bounds.size.width / 2, y: view.frame.size.height - 20), size: CGSize(width: 50, height: 50))
+        let screenSize = UIScreen.main.bounds.size
+        button.frame = CGRect(origin: CGPoint(x: screenSize.width / 2 - button.bounds.size.width / 2, y: screenSize.height - 65), size: CGSize(width: 50, height: 50))
         button.autoresizingMask = []
         view.addSubview(button)
+        
+        let timeLb = UILabel(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 50))
+        timeLb.backgroundColor = UIColor.black
+        timeLb.textColor = UIColor.white
+        timeLb.alpha = 0.7
+        timeLb.textAlignment = .center
+        timeLb.text = "00:00:00"
+        
+        let viewStatusBar = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 20));
+        viewStatusBar.backgroundColor = UIColor.black
+        //viewStatusBar.alpha = 0.7
+        //view.addSubview(viewStatusBar)
+        view.addSubview(timeLb)
+        
         self.view = view
         self.button = button
+        self.timeLabel = timeLb
         window.button = button
         let panner = UIPanGestureRecognizer(target: self, action: #selector(FloatingButtonController.panDidFire(panner:)))
         button.addGestureRecognizer(panner)
@@ -52,7 +69,7 @@ class FloatingButtonController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        snapButtonToSocket()
+        //snapButtonToSocket()
     }
     
     func panDidFire(panner: UIPanGestureRecognizer) {
@@ -64,7 +81,7 @@ class FloatingButtonController: UIViewController {
         button.center = center
         if panner.state == .ended || panner.state == .cancelled {
             UIView.animate(withDuration: 0.3) {
-                self.snapButtonToSocket()
+                //self.snapButtonToSocket()
             }
         }
     }
@@ -104,9 +121,15 @@ class FloatingButtonController: UIViewController {
     func showFloatingBtn(needShow:Bool){
         if needShow {
             button.isHidden = false
+            timeLabel.isHidden = false
         }
         else{
             button.isHidden = true
+            timeLabel.isHidden = true
         }
+    }
+    
+    func updateRecordTime(timeStr:String){
+        self.timeLabel.text = timeStr
     }
 }

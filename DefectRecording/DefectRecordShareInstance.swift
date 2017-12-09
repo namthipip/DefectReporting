@@ -22,6 +22,8 @@ public class DefectRecordShareInstance : NSObject{
     
     var screenRecoder:ASScreenRecorder!
     
+    var timer = Timer()
+    
     static let sharedInstance : DefectRecordShareInstance = {
         let instance = DefectRecordShareInstance()
         instance.floatingButtonController?.showFloatingBtn(needShow: false)
@@ -77,30 +79,17 @@ public class DefectRecordShareInstance : NSObject{
     
     func startRecording(sender: UIButton){
         print("Start screen record")
-        /*
-        if #available(iOS 10, *) {
-            if RPScreenRecorder.shared().isAvailable {
-                RPScreenRecorder.shared().startRecording(handler: { (error) in
-                    if error == nil{
-                        sender.removeTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
-                        sender.addTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
-                        //sender.setTitle("Stop Recording", for: .normal)
-                        //sender.setTitleColor(UIColor.red, for: .normal)
-                        
-                        sender.setImage(#imageLiteral(resourceName: "player_record.png"), for: .normal)
-                    }
-                    else{
-                        // Handle error
-                    }
-                })
-            }
-            else{
-                // Display UI for recording being unavailable
-            }
-        }
-         */
         screenRecoder.videoURL = URL(fileURLWithPath: NSHomeDirectory().appending("/tmp/screenCapture.mp4"))
         screenRecoder.startRecording()
+        var second = 0
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+            second = second + 1
+            let hours = second / 3600
+            let minutes = second / 60 % 60
+            let seconds = second % 60
+            let timeString = String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+            self.floatingButtonController?.updateRecordTime(timeStr: timeString)
+        }
         sender.removeTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
         sender.addTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
         //sender.setTitle("Stop Recording", for: .normal)
@@ -112,51 +101,14 @@ public class DefectRecordShareInstance : NSObject{
     
     func stopRecording(sender: UIButton) {
         print("Stop screen record")
-        /*
-        RPScreenRecorder.shared().stopRecording { (previewController, error) in
-            if previewController != nil {
-                previewController?.previewControllerDelegate = self
-                self.floatingButtonController?.showFloatingBtn(needShow: false)
-                
-                let alertCtrl = UIAlertController(title: "Recording", message: "message", preferredStyle: .alert)
-                let discardAction = UIAlertAction(title: "Discard", style: .default, handler: { (alert) in
-                    RPScreenRecorder.shared().discardRecording(handler: {
-                        
-                    })
-                })
-                
-                let viewAction = UIAlertAction(title: "View", style: .default, handler: { (alert) in
-                    let currentView:UIViewController = UIApplication.topViewController()!
-                    currentView.present(previewController!, animated: true, completion: nil)
-                })
-                
-                alertCtrl.addAction(discardAction)
-                alertCtrl.addAction(viewAction)
-                
-                let currentView:UIViewController = UIApplication.topViewController()!
-                currentView.present(alertCtrl, animated: true, completion: nil)
- 
-                sender.removeTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
-                sender.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
-                //sender.setTitle("Start Recording", for: .normal)
-                //sender.setTitleColor(UIColor.blue, for: .normal)
-                sender.setImage(#imageLiteral(resourceName: "rodentia-icons_media-record.png"), for: .normal)
-            }
-            else
-            {
-                // Handle error
-            }
-            
-            
-        }
- */
         screenRecoder.stopRecording { 
             self.floatingButtonController?.showFloatingBtn(needShow: false)
+            self.timer.invalidate()
             sender.removeTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
             sender.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
             //sender.setTitle("Start Recording", for: .normal)
             //sender.setTitleColor(UIColor.blue, for: .normal)
-            sender.setImage(#imageLiteral(resourceName: "record"), for: .normal)
+            sender.setImage(#imageLiteral(resourceName: "rec-button"), for: .normal)
             do{
                 let videoData = try Data(contentsOf: self.screenRecoder.videoURL)
                 print(videoData)
