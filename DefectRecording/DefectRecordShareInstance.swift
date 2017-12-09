@@ -137,3 +137,21 @@ extension DefectRecordShareInstance : RPPreviewViewControllerDelegate{
     }
     
 }
+
+extension UITextField {
+    func addRightView(){
+        self.rightViewMode = .always
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
+        imageView.image = #imageLiteral(resourceName: "shop-dropdown")
+        self.rightView = imageView
+    }
+}
+
+extension UIButton {
+    func setCornerCircle(){
+        self.layer.cornerRadius = self.frame.width / 2
+        self.layer.masksToBounds = true
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.lightGray.cgColor
+    }
+}

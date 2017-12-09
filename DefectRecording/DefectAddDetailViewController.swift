@@ -22,7 +22,15 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBOutlet weak var descripTxt: UITextField!
     
+    @IBOutlet weak var expectedTxt: UITextField!
+    
     @IBOutlet weak var videoPreviewLayer: UIView!
+    
+    @IBOutlet weak var severityTxt: UITextField!
+    
+    @IBOutlet weak var checkboxUI: UIButton!
+    
+    @IBOutlet weak var checkboxFunctional: UIButton!
     
     var drawImg:UIImage?
 
@@ -37,6 +45,10 @@ class DefectAddDetailViewController: UIViewController {
     var avpController = AVPlayerViewController()
     
     var videoURL:URL?
+    
+    var severityValue = ["Inconsequencial" , "Minor" , "Major" , "Critical" , "Blocking"]
+    
+    var severityPicker = UIPickerView()
     
     public init(image:UIImage){
         super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
@@ -67,38 +79,11 @@ class DefectAddDetailViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-        let keyboardToolbar = UIToolbar()
-        let dueDateToolbar = UIToolbar()
+        setupDueDatetextfield()
         
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
-                                            target: nil, action: nil)
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done,
-                                            target: self.view, action: #selector(UIView.endEditing(_:)))
+        checkboxUI.setCornerCircle()
+        checkboxFunctional.setCornerCircle()
         
-        keyboardToolbar.items = [flexBarButton,doneBarButton]
-        descripTxt.inputAccessoryView = keyboardToolbar
-        
-        let doneDateBarButton = UIBarButtonItem(barButtonSystemItem: .done,
-                                            target: self, action: #selector(self.didEnterDuedate))
-        
-        dueDateToolbar.items = [flexBarButton,doneDateBarButton]
-        
-        datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-    
-        dueDateTxt.inputView = datePicker
-        dueDateTxt.inputAccessoryView = dueDateToolbar
-        
-        setupToolbar(toolbars: [keyboardToolbar,dueDateToolbar])
-        
-        
-        dueDateTxt.rightViewMode = UITextFieldViewMode.always
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
-        imageView.image = #imageLiteral(resourceName: "shop-dropdown")
-        dueDateTxt.rightView = imageView
-        
-        dueDateTxt.delegate = self
-        descripTxt.delegate = self
         
         if let url = videoURL{
             self.player = AVPlayer(url: url)
@@ -120,6 +105,47 @@ class DefectAddDetailViewController: UIViewController {
         }
     }
     
+    func setupDueDatetextfield(){
+        let keyboardToolbar = UIToolbar()
+        let dueDateToolbar = UIToolbar()
+        let severityToolbar = UIToolbar()
+        
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                            target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                            target: self.view, action: #selector(UIView.endEditing(_:)))
+        
+        keyboardToolbar.items = [flexBarButton,doneBarButton]
+        descripTxt.inputAccessoryView = keyboardToolbar
+        expectedTxt.inputAccessoryView = keyboardToolbar
+        
+        let doneDateBarButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                                target: self, action: #selector(self.didEnterDuedate))
+        
+        dueDateToolbar.items = [flexBarButton,doneDateBarButton]
+        
+        datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        
+        dueDateTxt.inputView = datePicker
+        dueDateTxt.inputAccessoryView = dueDateToolbar
+        dueDateTxt.addRightView()
+        
+        let doneSeverityBarButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                                target: self, action: #selector(self.didEnterSeverity))
+        
+        severityToolbar.items = [flexBarButton,doneSeverityBarButton]
+        severityTxt.inputAccessoryView = severityToolbar
+        severityTxt.addRightView()
+        severityTxt.inputView = severityPicker
+        severityPicker.delegate = self
+        
+        setupToolbar(toolbars: [keyboardToolbar,dueDateToolbar,severityToolbar])
+        
+        dueDateTxt.delegate = self
+        descripTxt.delegate = self
+        severityTxt.delegate = self
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -128,8 +154,6 @@ class DefectAddDetailViewController: UIViewController {
     }
     
     func setGradientSlider(slider:UISlider) {
-        
-        print("slider width = \(slider.frame.width)")
         let tgl = CAGradientLayer()
         let frame = CGRect(x: 0, y: 0, width: slider.frame.width, height: 5)
         tgl.frame = frame
@@ -190,6 +214,10 @@ class DefectAddDetailViewController: UIViewController {
         dueDateTxt.resignFirstResponder()
     }
     
+    func didEnterSeverity(){
+        severityTxt.resignFirstResponder()
+    }
+    
     func keyboardWillShow(notification: NSNotification)
     {
         //Need to calculate keyboard exact size due to Apple suggestions
@@ -228,21 +256,14 @@ class DefectAddDetailViewController: UIViewController {
         
     }
     
-//    func keyboardWillShow(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if self.view.frame.origin.y == 0{
-//                self.view.frame.origin.y -= keyboardSize.height
-//            }
-//        }
-//    }
-//    
-//    func keyboardWillHide(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if self.view.frame.origin.y != 0{
-//                self.view.frame.origin.y += keyboardSize.height
-//            }
-//        }
-//    }
+    
+    @IBAction func selectDefectType(_ sender: Any) {
+        let checkBox = sender as! UIButton
+        checkboxFunctional.setBackgroundImage(nil, for: .normal)
+        checkboxUI.setBackgroundImage(nil, for: .normal)
+        checkBox.setBackgroundImage(UIImage(named: "radio-on-button"), for: .normal)
+        
+    }
     
     @IBAction func saveDefect(_ sender: Any) {
         self.view.endEditing(true)
@@ -264,5 +285,26 @@ extension DefectAddDetailViewController : UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
     }
+    
+}
+
+extension DefectAddDetailViewController : UIPickerViewDelegate , UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return severityValue.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return severityValue[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        severityTxt.text = severityValue[row]
+    }
+
     
 }
