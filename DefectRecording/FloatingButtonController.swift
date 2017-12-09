@@ -34,7 +34,7 @@ class FloatingButtonController: UIViewController {
         //button.setTitle("Floating", for: .normal)
         //button.setTitleColor(UIColor.green, for: .normal)
         //button.backgroundColor = UIColor.white
-        button.setImage(#imageLiteral(resourceName: "rodentia-icons_media-record.png"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "rec-button"), for: .normal)
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowRadius = 3
         button.layer.shadowOpacity = 0.8

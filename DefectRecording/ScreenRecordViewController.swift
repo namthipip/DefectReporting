@@ -104,7 +104,7 @@ class ScreenRecordViewController: UIViewController {
                 sender.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
                 //sender.setTitle("Start Recording", for: .normal)
                 //sender.setTitleColor(UIColor.blue, for: .normal)
-                sender.setImage(#imageLiteral(resourceName: "rodentia-icons_media-record.png"), for: .normal)
+                sender.setImage(#imageLiteral(resourceName: "rec-button"), for: .normal)
             }
             else
             {
