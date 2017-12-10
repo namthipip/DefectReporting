@@ -24,6 +24,8 @@ public class DefectRecordShareInstance : NSObject{
     
     var timer = Timer()
     
+    var second = 0
+    
     static let sharedInstance : DefectRecordShareInstance = {
         let instance = DefectRecordShareInstance()
         instance.floatingButtonController?.showFloatingBtn(needShow: false)
@@ -81,15 +83,9 @@ public class DefectRecordShareInstance : NSObject{
         print("Start screen record")
         screenRecoder.videoURL = URL(fileURLWithPath: NSHomeDirectory().appending("/tmp/screenCapture.mp4"))
         screenRecoder.startRecording()
-        var second = 0
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            second = second + 1
-            let hours = second / 3600
-            let minutes = second / 60 % 60
-            let seconds = second % 60
-            let timeString = String(format:"%02i:%02i:%02i", hours, minutes, seconds)
-            self.floatingButtonController?.updateRecordTime(timeStr: timeString)
-        }
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateRecordTime), userInfo: nil, repeats: true)
+        
         sender.removeTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
         sender.addTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
         //sender.setTitle("Stop Recording", for: .normal)
@@ -124,6 +120,15 @@ public class DefectRecordShareInstance : NSObject{
             }
             
          }
+    }
+    
+    func updateRecordTime(){
+        second = second + 1
+        let hours = second / 3600
+        let minutes = second / 60 % 60
+        let seconds = second % 60
+        let timeString = String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+        self.floatingButtonController?.updateRecordTime(timeStr: timeString)
     }
     
 }
