@@ -64,7 +64,7 @@
                                     </connections>
                                 </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="aD0-9M-8ng"/>
-                                <barButtonItem image="eraser" id="bEb-Mr-VZe">
+                                <barButtonItem image="erase.png" id="bEb-Mr-VZe">
                                     <connections>
                                         <action selector="eraseDraw:" destination="-1" id="lnq-4K-Ww8"/>
                                     </connections>
@@ -231,7 +231,7 @@
     </objects>
     <resources>
         <image name="edit" width="24" height="24"/>
-        <image name="eraser" width="24" height="24"/>
+        <image name="erase.png" width="24" height="24"/>
         <image name="refresh" width="24" height="24"/>
     </resources>
 </document>
