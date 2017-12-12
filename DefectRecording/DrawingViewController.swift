@@ -53,8 +53,8 @@ class DrawingViewController: UIViewController {
     func initialUI(){
         mainImgView.image = screenShotImg
         tempImgView.image = screenShotImg
-        let cancelBarBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "clear-button"), style: .plain, target: self, action: #selector(self.cancelDrawing))
-        let nextBarBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "checked"), style: .plain, target: self, action: #selector(self.nextView))
+        let cancelBarBtn = UIBarButtonItem(image:UIImage(named: "clear-button.png"), style: .plain, target: self, action: #selector(self.cancelDrawing))
+        let nextBarBtn = UIBarButtonItem(image: UIImage(named: "checked.png"), style: .plain, target: self, action: #selector(self.nextView))
         self.navigationItem.leftBarButtonItem = cancelBarBtn
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = nextBarBtn
