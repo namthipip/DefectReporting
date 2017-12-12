@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DefectRecording'
-  s.version          = '0.3.3'
+  s.version          = '0.3.4'
   s.summary          = 'Defect reporting in app'
  
   s.description      = <<-DESC
@@ -14,6 +14,6 @@ Defect Reporting in App by screen capture or screen recording!
 
   s.ios.deployment_target = '9.0'
   s.source_files = 'DefectRecording/*'
-  s.resource_bundles = {'DefectRecording' => ['DefectRecording/*.{lproj,storyboard,xcassets}']}
+  s.resource_bundles = {'DefectRecording' => ['DefectRecording/*.{lproj,storyboard,xcassets,png,jpeg,jpg}']}
  
 end
