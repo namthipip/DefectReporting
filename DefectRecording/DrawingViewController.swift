@@ -53,13 +53,6 @@ class DrawingViewController: UIViewController {
     func initialUI(){
         mainImgView.image = screenShotImg
         tempImgView.image = screenShotImg
-        let cancelBarBtn = UIBarButtonItem(image:UIImage(named: "clear-button@2x.png"), style: .plain, target: self, action: #selector(self.cancelDrawing))
-        let nextBarBtn = UIBarButtonItem(image: UIImage(named: "checked@2x.png"), style: .plain, target: self, action: #selector(self.nextView))
-        self.navigationItem.leftBarButtonItem = cancelBarBtn
-        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
-        self.navigationItem.rightBarButtonItem = nextBarBtn
-        self.navigationItem.rightBarButtonItem?.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
-        
         brushColorBtn.backgroundColor = stokeColor
         brushWidthSlider.value = 5.0;
         setCornerRadius(buttonList: [brushColorBtn,colorRedBtn,colorBlueBtn,colorGreenBtn,colorOrangeBtn,colorPurpleBtn])
@@ -78,25 +71,22 @@ class DrawingViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.darkGray
     }
     
-    func cancelDrawing(){
-        self.navigationController?.dismiss(animated: true, completion: nil)
+    @IBAction func backAction(_ sender: Any) {
+         self.dismiss(animated: true, completion: nil)
     }
     
-    func nextView(){
-        
+    @IBAction func gotoDefectDetailView(_ sender: Any) {
         UIGraphicsBeginImageContextWithOptions(tempImgView.frame.size, false, 0.0)
         mainImgView.image?.draw(in: CGRect(x: 0, y: 0, width: mainImgView.frame.size.width, height: mainImgView.frame.size.height), blendMode: .normal, alpha: 1.0)
         tempImgView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImgView.frame.size.width, height: tempImgView.frame.size.height), blendMode: .normal, alpha: opacity)
         tempImgView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-
+        
         let defectDetailView = DefectAddDetailViewController(image: tempImgView.image!)
         defectDetailView.navigationItem.hidesBackButton = true
-        self.navigationController?.pushViewController(defectDetailView, animated: true)
-        //self.navigationController?.present(defectDetailView, animated: true, completion: nil)
+        self.present(defectDetailView, animated: true, completion: nil)
     }
-    
-    
+   
     @IBAction func resetDrawing(_ sender: Any) {
         tempImgView.image = screenShotImg
     }

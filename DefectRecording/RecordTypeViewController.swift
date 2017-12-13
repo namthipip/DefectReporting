@@ -37,8 +37,7 @@ class RecordTypeViewController: UIViewController {
             let window: UIWindow! = UIApplication.shared.keyWindow
             let drawingView = DrawingViewController(image: window.capture())
             let currentView:UIViewController = UIApplication.topViewController()!
-            let navigation = UINavigationController(rootViewController: drawingView)
-            currentView.present(navigation, animated: true, completion: nil)
+            currentView.present(drawingView, animated: true, completion: nil)
         }
         
     }
