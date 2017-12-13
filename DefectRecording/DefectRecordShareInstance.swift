@@ -91,7 +91,7 @@ public class DefectRecordShareInstance : NSObject{
         //sender.setTitle("Stop Recording", for: .normal)
         //sender.setTitleColor(UIColor.red, for: .normal)
         
-        sender.setImage(#imageLiteral(resourceName: "record"), for: .normal)
+        sender.setImage(UIImage(named:"record.png"), for: .normal)
         
     }
     
@@ -104,7 +104,7 @@ public class DefectRecordShareInstance : NSObject{
             sender.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
             //sender.setTitle("Start Recording", for: .normal)
             //sender.setTitleColor(UIColor.blue, for: .normal)
-            sender.setImage(#imageLiteral(resourceName: "rec-button"), for: .normal)
+            sender.setImage(UIImage(named:"rec-button.png"), for: .normal)
             do{
                 let videoData = try Data(contentsOf: self.screenRecoder.videoURL)
                 print(videoData)
