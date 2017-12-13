@@ -147,7 +147,7 @@ extension UITextField {
     func addRightView(){
         self.rightViewMode = .always
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
-        imageView.image = #imageLiteral(resourceName: "shop-dropdown")
+        imageView.image = UIImage(named: "shop-dropdown@3x.png")
         self.rightView = imageView
     }
 }
