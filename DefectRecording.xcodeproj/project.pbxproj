@@ -12,24 +12,6 @@
 		170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A21EE45AE000E4F857 /* DefectRecord.storyboard */; };
 		170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A51EE45AE000E4F857 /* Assets.xcassets */; };
 		170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A71EE45AE000E4F857 /* LaunchScreen.storyboard */; };
-		17164A901FDD0B59006FB196 /* check-mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164A8F1FDD0B59006FB196 /* check-mark.png */; };
-		17164A931FDD0B62006FB196 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164A911FDD0B61006FB196 /* checked.png */; };
-		17164A941FDD0B62006FB196 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164A921FDD0B61006FB196 /* checked@2x.png */; };
-		17164A971FDD0B6A006FB196 /* clear-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164A951FDD0B6A006FB196 /* clear-button@2x.png */; };
-		17164A981FDD0B6A006FB196 /* clear-button-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164A961FDD0B6A006FB196 /* clear-button-2.png */; };
-		17164A9B1FDD0B74006FB196 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164A991FDD0B73006FB196 /* edit@2x.png */; };
-		17164A9C1FDD0B74006FB196 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164A9A1FDD0B74006FB196 /* edit.png */; };
-		17164A9F1FDD0B7D006FB196 /* erase@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164A9D1FDD0B7C006FB196 /* erase@2x.png */; };
-		17164AA01FDD0B7D006FB196 /* eraser-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164A9E1FDD0B7C006FB196 /* eraser-2.png */; };
-		17164AA21FDD0B85006FB196 /* radio-on-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164AA11FDD0B84006FB196 /* radio-on-button.png */; };
-		17164AA41FDD0B90006FB196 /* rec-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164AA31FDD0B8F006FB196 /* rec-button.png */; };
-		17164AA61FDD0B97006FB196 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164AA51FDD0B97006FB196 /* record.png */; };
-		17164AA91FDD0BA1006FB196 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164AA71FDD0BA0006FB196 /* refresh.png */; };
-		17164AAA1FDD0BA1006FB196 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164AA81FDD0BA1006FB196 /* refresh@2x.png */; };
-		17164AAE1FDD0BAC006FB196 /* shop-dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164AAB1FDD0BAB006FB196 /* shop-dropdown.png */; };
-		17164AAF1FDD0BAC006FB196 /* shop-dropdown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164AAC1FDD0BAB006FB196 /* shop-dropdown@2x.png */; };
-		17164AB01FDD0BAC006FB196 /* shop-dropdown@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164AAD1FDD0BAC006FB196 /* shop-dropdown@3x.png */; };
-		17164AB21FDD0BB5006FB196 /* small-calendar-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 17164AB11FDD0BB5006FB196 /* small-calendar-2.png */; };
 		171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B58DD1EEAD8CE00294A00 /* DefectRecordShareInstance.swift */; };
 		171B58E41EEB01DF00294A00 /* MotionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B58E31EEB01DF00294A00 /* MotionEvent.swift */; };
 		1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763900A1EED503700A86097 /* RecordTypeViewController.swift */; };
@@ -53,24 +35,6 @@
 		170DA4A51EE45AE000E4F857 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		170DA4A81EE45AE000E4F857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		170DA4AA1EE45AE000E4F857 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17164A8F1FDD0B59006FB196 /* check-mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-mark.png"; sourceTree = "<group>"; };
-		17164A911FDD0B61006FB196 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
-		17164A921FDD0B61006FB196 /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
-		17164A951FDD0B6A006FB196 /* clear-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-button@2x.png"; sourceTree = "<group>"; };
-		17164A961FDD0B6A006FB196 /* clear-button-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-button-2.png"; sourceTree = "<group>"; };
-		17164A991FDD0B73006FB196 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
-		17164A9A1FDD0B74006FB196 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
-		17164A9D1FDD0B7C006FB196 /* erase@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "erase@2x.png"; sourceTree = "<group>"; };
-		17164A9E1FDD0B7C006FB196 /* eraser-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eraser-2.png"; sourceTree = "<group>"; };
-		17164AA11FDD0B84006FB196 /* radio-on-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-on-button.png"; sourceTree = "<group>"; };
-		17164AA31FDD0B8F006FB196 /* rec-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rec-button.png"; sourceTree = "<group>"; };
-		17164AA51FDD0B97006FB196 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
-		17164AA71FDD0BA0006FB196 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
-		17164AA81FDD0BA1006FB196 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
-		17164AAB1FDD0BAB006FB196 /* shop-dropdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop-dropdown.png"; sourceTree = "<group>"; };
-		17164AAC1FDD0BAB006FB196 /* shop-dropdown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop-dropdown@2x.png"; sourceTree = "<group>"; };
-		17164AAD1FDD0BAC006FB196 /* shop-dropdown@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop-dropdown@3x.png"; sourceTree = "<group>"; };
-		17164AB11FDD0BB5006FB196 /* small-calendar-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-calendar-2.png"; sourceTree = "<group>"; };
 		171B58DD1EEAD8CE00294A00 /* DefectRecordShareInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectRecordShareInstance.swift; sourceTree = "<group>"; };
 		171B58E31EEB01DF00294A00 /* MotionEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionEvent.swift; sourceTree = "<group>"; };
 		1763900A1EED503700A86097 /* RecordTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTypeViewController.swift; sourceTree = "<group>"; };
@@ -118,24 +82,6 @@
 		170DA49D1EE45AE000E4F857 /* DefectRecording */ = {
 			isa = PBXGroup;
 			children = (
-				17164A8F1FDD0B59006FB196 /* check-mark.png */,
-				17164A911FDD0B61006FB196 /* checked.png */,
-				17164A921FDD0B61006FB196 /* checked@2x.png */,
-				17164A961FDD0B6A006FB196 /* clear-button-2.png */,
-				17164A951FDD0B6A006FB196 /* clear-button@2x.png */,
-				17164A9A1FDD0B74006FB196 /* edit.png */,
-				17164A991FDD0B73006FB196 /* edit@2x.png */,
-				17164A9D1FDD0B7C006FB196 /* erase@2x.png */,
-				17164A9E1FDD0B7C006FB196 /* eraser-2.png */,
-				17164AA11FDD0B84006FB196 /* radio-on-button.png */,
-				17164AA31FDD0B8F006FB196 /* rec-button.png */,
-				17164AA51FDD0B97006FB196 /* record.png */,
-				17164AA71FDD0BA0006FB196 /* refresh.png */,
-				17164AA81FDD0BA1006FB196 /* refresh@2x.png */,
-				17164AAB1FDD0BAB006FB196 /* shop-dropdown.png */,
-				17164AAC1FDD0BAB006FB196 /* shop-dropdown@2x.png */,
-				17164AAD1FDD0BAC006FB196 /* shop-dropdown@3x.png */,
-				17164AB11FDD0BB5006FB196 /* small-calendar-2.png */,
 				8FD2848D1F0E2AE3007EEBD6 /* ASScreenRecorder.h */,
 				8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */,
 				1763900E1EF65BE200A86097 /* MagCover59.jpg */,
@@ -222,31 +168,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17164AA01FDD0B7D006FB196 /* eraser-2.png in Resources */,
-				17164AAA1FDD0BA1006FB196 /* refresh@2x.png in Resources */,
-				17164AAF1FDD0BAC006FB196 /* shop-dropdown@2x.png in Resources */,
-				17164AB21FDD0BB5006FB196 /* small-calendar-2.png in Resources */,
 				170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */,
 				176390131EF664F600A86097 /* DrawingViewController.xib in Resources */,
-				17164A9F1FDD0B7D006FB196 /* erase@2x.png in Resources */,
-				17164AA41FDD0B90006FB196 /* rec-button.png in Resources */,
 				1763900F1EF65BE200A86097 /* MagCover59.jpg in Resources */,
 				1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */,
-				17164AA21FDD0B85006FB196 /* radio-on-button.png in Resources */,
-				17164A981FDD0B6A006FB196 /* clear-button-2.png in Resources */,
-				17164AA91FDD0BA1006FB196 /* refresh.png in Resources */,
 				17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */,
 				170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */,
-				17164A9C1FDD0B74006FB196 /* edit.png in Resources */,
-				17164AA61FDD0B97006FB196 /* record.png in Resources */,
-				17164A941FDD0B62006FB196 /* checked@2x.png in Resources */,
-				17164AAE1FDD0BAC006FB196 /* shop-dropdown.png in Resources */,
-				17164A931FDD0B62006FB196 /* checked.png in Resources */,
 				170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */,
-				17164A9B1FDD0B74006FB196 /* edit@2x.png in Resources */,
-				17164A971FDD0B6A006FB196 /* clear-button@2x.png in Resources */,
-				17164AB01FDD0BAC006FB196 /* shop-dropdown@3x.png in Resources */,
-				17164A901FDD0B59006FB196 /* check-mark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
