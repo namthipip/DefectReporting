@@ -156,8 +156,8 @@ class DefectAddDetailViewController: UIViewController {
         let tgl = CAGradientLayer()
         let frame = CGRect(x: 0, y: 0, width: slider.frame.width, height: 5)
         tgl.frame = frame
-
-        tgl.colors = [UIColor(displayP3Red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.2).cgColor , UIColor(displayP3Red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.6).cgColor ,UIColor(displayP3Red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0).cgColor]
+        
+        tgl.colors = [UIColor(red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.2).cgColor , UIColor(red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.6).cgColor ,UIColor(red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0).cgColor]
         tgl.startPoint = CGPoint(x: 0.0, y:  1.0)
         tgl.endPoint = CGPoint(x: 1.0, y:  1.0)
         
