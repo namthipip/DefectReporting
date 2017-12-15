@@ -23,18 +23,18 @@ class DrawingViewController: UIViewController {
     @IBOutlet weak var colorOrangeBtn: UIButton!
     @IBOutlet weak var colorPurpleBtn: UIButton!
     @IBOutlet weak var topViewBrushColorConstrain: NSLayoutConstraint!
+    @IBOutlet weak var pencilBtn: UIBarButtonItem!
+    @IBOutlet weak var eraserBtn: UIBarButtonItem!
+    
     var lastPoint = CGPoint.zero
-//    var red: CGFloat = 255.0
-//    var green: CGFloat = 0.0
-//    var blue: CGFloat = 0.0
     var stokeColor = UIColor.red
     var brushWidth: CGFloat = 5.0
     var opacity: CGFloat = 1.0
     var swiped = false
     var eraseMode = false
-    
     var screenShotImg:UIImage!
     
+   
     public init(image:UIImage){
         super.init(nibName: "DrawingViewController", bundle: Bundle(for: RecordTypeViewController.self))
         screenShotImg = image
@@ -66,6 +66,8 @@ class DrawingViewController: UIViewController {
         brushColorBtn.backgroundColor = stokeColor
         brushWidthSlider.value = 5.0;
         setCornerRadius(buttonList: [brushColorBtn,colorRedBtn,colorBlueBtn,colorGreenBtn,colorOrangeBtn,colorPurpleBtn])
+        
+        pencilBtn.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
         
     }
     
@@ -104,11 +106,15 @@ class DrawingViewController: UIViewController {
     
     
     @IBAction func startDraw(_ sender: Any) {
+        pencilBtn.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
+        eraserBtn.tintColor = UIColor.white
         eraseMode = false
         brushWidth = 5
     }
     
     @IBAction func eraseDraw(_ sender: Any) {
+        pencilBtn.tintColor = UIColor.white
+        eraserBtn.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
         eraseMode = true
         brushWidth = 10
     }
