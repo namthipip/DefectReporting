@@ -64,7 +64,9 @@ public class DefectRecordShareInstance : NSObject{
     
     public func showAnnotationView() {
         let currentView:UIViewController = UIApplication.topViewController()!
-        if currentView is RecordTypeViewController {
+        if currentView is RecordTypeViewController ||
+            currentView is DrawingViewController ||
+            currentView is DefectAddDetailViewController {
             return
         }
         
