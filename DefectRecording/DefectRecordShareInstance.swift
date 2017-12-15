@@ -90,8 +90,8 @@ public class DefectRecordShareInstance : NSObject{
         sender.addTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
         //sender.setTitle("Stop Recording", for: .normal)
         //sender.setTitleColor(UIColor.red, for: .normal)
-        
-        sender.setImage(UIImage(named:"record.png"), for: .normal)
+        let recordImage = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"record")
+        sender.setImage(recordImage, for: .normal)
         
     }
     
@@ -104,7 +104,8 @@ public class DefectRecordShareInstance : NSObject{
             sender.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
             //sender.setTitle("Start Recording", for: .normal)
             //sender.setTitleColor(UIColor.blue, for: .normal)
-            sender.setImage(UIImage(named:"rec-button.png"), for: .normal)
+            let recordImage = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"rec-button")
+            sender.setImage(recordImage, for: .normal)
             do{
                 let videoData = try Data(contentsOf: self.screenRecoder.videoURL)
                 print(videoData)
@@ -130,8 +131,14 @@ public class DefectRecordShareInstance : NSObject{
         let timeString = String(format:"%02i:%02i:%02i", hours, minutes, seconds)
         self.floatingButtonController?.updateRecordTime(timeStr: timeString)
     }
+
+    func getImageFromBundle(name: String) -> UIImage {
+        let podBundle = Bundle(for: DefectRecordShareInstance.self)
+        return UIImage(named: name, in: podBundle, compatibleWith: nil)!
+    }
     
 }
+    
 
 extension DefectRecordShareInstance : RPPreviewViewControllerDelegate{
     
@@ -147,7 +154,7 @@ extension UITextField {
     func addRightView(){
         self.rightViewMode = .always
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
-        imageView.image = UIImage(named: "shop-dropdown.png")
+        imageView.image = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"shop-dropdown")
         self.rightView = imageView
     }
 }
