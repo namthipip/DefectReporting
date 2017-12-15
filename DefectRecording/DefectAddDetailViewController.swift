@@ -150,14 +150,14 @@ class DefectAddDetailViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setGradientSlider(slider: prioritySlider)
-        //tickMarkViewForSlider(slider: prioritySlider)
     }
     
     func setGradientSlider(slider:UISlider) {
         let tgl = CAGradientLayer()
         let frame = CGRect(x: 0, y: 0, width: slider.frame.width, height: 5)
         tgl.frame = frame
-        tgl.colors = [UIColor.green.cgColor, UIColor.yellow.cgColor,UIColor.red.cgColor]
+
+        tgl.colors = [UIColor(displayP3Red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.2).cgColor , UIColor(displayP3Red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.6).cgColor ,UIColor(displayP3Red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0).cgColor]
         tgl.startPoint = CGPoint(x: 0.0, y:  1.0)
         tgl.endPoint = CGPoint(x: 1.0, y:  1.0)
         
@@ -172,25 +172,6 @@ class DefectAddDetailViewController: UIViewController {
         
     }
     
-    func tickMarkViewForSlider(slider:UISlider){
-        let tick = priorityValue.count
-        var offsetOffset = (tick < 10) ? 1.7 : 1.1
-        offsetOffset = (tick > 10) ? 0 : offsetOffset
-        let offset = slider.frame.width / CGFloat(priorityValue.count - 1)
-        var xPos:CGFloat = 0.0
-        
-        for i in stride(from: 0, to: tick, by: 1){
-                let tick = UIView(frame: CGRect(x: xPos, y: 15, width: 1, height: 5))
-                tick.backgroundColor = UIColor.lightGray
-//                tick.layer.shadowColor = UIColor.white.cgColor
-//                tick.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
-//                tick.layer.shadowOpacity = 1.0
-//                tick.layer.shadowRadius = 0.0
-                slider.addSubview(tick)
-                xPos += offset
-        }
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barTintColor = UIColor.white
@@ -200,11 +181,7 @@ class DefectAddDetailViewController: UIViewController {
     
     func priorityChange(slider:UISlider) {
         let index = Int(slider.value + 0.5)
-        slider.setValue(Float(index), animated: false)
-        let numberSlider = priorityValue[index]
-//        print("sliderIndex:\(Int(index))")
-//        print("number: \(numberSlider)")
-        
+        slider.setValue(Float(index), animated: false)        
     }
     
     func didEnterDuedate(){
@@ -261,7 +238,8 @@ class DefectAddDetailViewController: UIViewController {
         let checkBox = sender as! UIButton
         checkboxFunctional.setBackgroundImage(nil, for: .normal)
         checkboxUI.setBackgroundImage(nil, for: .normal)
-        checkBox.setBackgroundImage(UIImage(named: "radio-on-button"), for: .normal)
+        let radioOn = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"radio-on-button")
+        checkBox.setBackgroundImage(radioOn, for: .normal)
         
     }
     
