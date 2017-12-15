@@ -173,18 +173,19 @@
                                         <action selector="eraseDraw:" destination="-1" eventType="touchUpInside" id="RU3-gp-NdC"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSK-TV-hec">
-                                    <rect key="frame" x="180" y="17.5" width="30" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSK-TV-hec">
+                                    <rect key="frame" x="180" y="12.5" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="uSK-TV-hec" secondAttribute="height" multiplier="1:1" id="sfz-m4-Zue"/>
-                                        <constraint firstAttribute="width" constant="30" id="uBA-JI-rHV"/>
+                                        <constraint firstAttribute="width" constant="40" id="uBA-JI-rHV"/>
                                     </constraints>
+                                    <state key="normal" image="brush"/>
                                     <connections>
                                         <action selector="changeBrushColor:" destination="-1" eventType="touchUpInside" id="YuB-QO-eBW"/>
                                     </connections>
                                 </button>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="2" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ysm-Hl-ooA">
-                                    <rect key="frame" x="218" y="17.5" width="139" height="31"/>
+                                    <rect key="frame" x="228" y="17.5" width="129" height="31"/>
                                     <connections>
                                         <action selector="changeBrushWidth:" destination="-1" eventType="valueChanged" id="qM2-Vb-rmk"/>
                                     </connections>
@@ -244,6 +245,7 @@
         </view>
     </objects>
     <resources>
+        <image name="brush" width="24" height="24"/>
         <image name="draw_active" width="24" height="24"/>
         <image name="erase_active" width="24" height="24"/>
     </resources>

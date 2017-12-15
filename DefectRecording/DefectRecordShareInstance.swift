@@ -166,4 +166,8 @@ extension UIButton {
         self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor.lightGray.cgColor
     }
+    func setCornerCircleWithoutBorderLine(){
+        self.layer.cornerRadius = self.frame.width / 2
+        self.layer.masksToBounds = true
+    }
 }

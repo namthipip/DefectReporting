@@ -66,11 +66,7 @@ class DrawingViewController: UIViewController {
         tempImgView.image = screenShotImg
         brushColorBtn.backgroundColor = stokeColor
         brushWidthSlider.value = 5.0;
-        setCornerRadius(buttonList: [brushColorBtn,colorRedBtn,colorBlueBtn,colorGreenBtn,colorOrangeBtn,colorPurpleBtn])
-        
-        resetBtn.setCornerCircle()
-        drawBtn.setCornerCircle()
-        eraseBtn.setCornerCircle()
+        setCornerRadius(buttonList: [brushColorBtn,colorRedBtn,colorBlueBtn,colorGreenBtn,colorOrangeBtn,colorPurpleBtn,resetBtn,drawBtn,eraseBtn])
         
         let eraseInActive = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"erase_inactive")
         eraseBtn.setImage(eraseInActive, for: .normal)
@@ -79,8 +75,7 @@ class DrawingViewController: UIViewController {
     
     func setCornerRadius(buttonList:[UIButton]){
         for button in buttonList {
-            button.layer.cornerRadius = 15.0
-            button.layer.masksToBounds = true
+            button.setCornerCircleWithoutBorderLine()
         }
     }
     
