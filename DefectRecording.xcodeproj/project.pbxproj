@@ -23,10 +23,12 @@
 		178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670471EF8E549004E7685 /* FloatingButtonWindow.swift */; };
 		17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */; };
 		17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */; };
+		8F32C90A1FE56EBE0004867B /* SubmitSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */; };
+		8F32C90B1FE56EBE0004867B /* SubmitSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */; };
+		8F32C90D1FE5701F0004867B /* check-mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F32C90C1FE5701F0004867B /* check-mark.png */; };
 		8FD2848F1F0E2AE3007EEBD6 /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */; };
 		8FEB36501FE3F4AD008BA2B8 /* brush.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36351FE3F4AD008BA2B8 /* brush.png */; };
 		8FEB36511FE3F4AD008BA2B8 /* brush@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36361FE3F4AD008BA2B8 /* brush@2x.png */; };
-		8FEB36521FE3F4AD008BA2B8 /* check-mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36371FE3F4AD008BA2B8 /* check-mark.png */; };
 		8FEB36531FE3F4AD008BA2B8 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36381FE3F4AD008BA2B8 /* checked.png */; };
 		8FEB36541FE3F4AD008BA2B8 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36391FE3F4AD008BA2B8 /* checked@2x.png */; };
 		8FEB36551FE3F4AD008BA2B8 /* clear-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB363A1FE3F4AD008BA2B8 /* clear-button.png */; };
@@ -72,12 +74,14 @@
 		178670471EF8E549004E7685 /* FloatingButtonWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButtonWindow.swift; sourceTree = "<group>"; };
 		17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectAddDetailViewController.swift; sourceTree = "<group>"; };
 		17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefectAddDetailViewController.xib; sourceTree = "<group>"; };
+		8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitSuccessViewController.swift; sourceTree = "<group>"; };
+		8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitSuccessViewController.xib; sourceTree = "<group>"; };
+		8F32C90C1FE5701F0004867B /* check-mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "check-mark.png"; path = "../../../Downloads/check-mark.png"; sourceTree = "<group>"; };
 		8FD2848C1F0E2AE3007EEBD6 /* DefectRecording-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DefectRecording-Bridging-Header.h"; sourceTree = "<group>"; };
 		8FD2848D1F0E2AE3007EEBD6 /* ASScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScreenRecorder.h; sourceTree = "<group>"; };
 		8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScreenRecorder.m; sourceTree = "<group>"; };
 		8FEB36351FE3F4AD008BA2B8 /* brush.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush.png; sourceTree = "<group>"; };
 		8FEB36361FE3F4AD008BA2B8 /* brush@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush@2x.png"; sourceTree = "<group>"; };
-		8FEB36371FE3F4AD008BA2B8 /* check-mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-mark.png"; sourceTree = "<group>"; };
 		8FEB36381FE3F4AD008BA2B8 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		8FEB36391FE3F4AD008BA2B8 /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
 		8FEB363A1FE3F4AD008BA2B8 /* clear-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-button.png"; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				178670461EF8E549004E7685 /* FloatingButtonController.swift */,
 				178670471EF8E549004E7685 /* FloatingButtonWindow.swift */,
 				8FD2848C1F0E2AE3007EEBD6 /* DefectRecording-Bridging-Header.h */,
+				8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */,
+				8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */,
 			);
 			path = DefectRecording;
 			sourceTree = "<group>";
@@ -162,9 +168,9 @@
 		8FEB36341FE3F4AD008BA2B8 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				8F32C90C1FE5701F0004867B /* check-mark.png */,
 				8FEB36351FE3F4AD008BA2B8 /* brush.png */,
 				8FEB36361FE3F4AD008BA2B8 /* brush@2x.png */,
-				8FEB36371FE3F4AD008BA2B8 /* check-mark.png */,
 				8FEB36381FE3F4AD008BA2B8 /* checked.png */,
 				8FEB36391FE3F4AD008BA2B8 /* checked@2x.png */,
 				8FEB363A1FE3F4AD008BA2B8 /* clear-button.png */,
@@ -264,6 +270,7 @@
 				8FEB365E1FE3F4AD008BA2B8 /* erase_active.png in Resources */,
 				8FEB36621FE3F4AD008BA2B8 /* eraser.png in Resources */,
 				8FEB36591FE3F4AD008BA2B8 /* draw_inactive.png in Resources */,
+				8F32C90B1FE56EBE0004867B /* SubmitSuccessViewController.xib in Resources */,
 				8FEB36571FE3F4AD008BA2B8 /* draw_active.png in Resources */,
 				8FEB365F1FE3F4AD008BA2B8 /* erase_active@2x.png in Resources */,
 				1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */,
@@ -280,13 +287,13 @@
 				8FEB365B1FE3F4AD008BA2B8 /* edit.png in Resources */,
 				8FEB36531FE3F4AD008BA2B8 /* checked.png in Resources */,
 				8FEB36681FE3F4AD008BA2B8 /* shop-dropdown.png in Resources */,
-				8FEB36521FE3F4AD008BA2B8 /* check-mark.png in Resources */,
 				8FEB36511FE3F4AD008BA2B8 /* brush@2x.png in Resources */,
 				170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */,
 				8FEB365D1FE3F4AD008BA2B8 /* erase@2x.png in Resources */,
 				8FEB365A1FE3F4AD008BA2B8 /* draw_inactive@2x.png in Resources */,
 				8FEB36671FE3F4AD008BA2B8 /* refresh@2x.png in Resources */,
 				170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */,
+				8F32C90D1FE5701F0004867B /* check-mark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +312,7 @@
 				176390121EF664F600A86097 /* DrawingViewController.swift in Sources */,
 				1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */,
 				171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */,
+				8F32C90A1FE56EBE0004867B /* SubmitSuccessViewController.swift in Sources */,
 				170DA4A11EE45AE000E4F857 /* DefectReportViewController.swift in Sources */,
 				1765BB6A1EF823D9000B4F42 /* HiddenStatusBarViewController.swift in Sources */,
 				170DA49F1EE45AE000E4F857 /* AppDelegate.swift in Sources */,

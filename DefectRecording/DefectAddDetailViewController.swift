@@ -245,8 +245,14 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBAction func saveDefect(_ sender: Any) {
         self.view.endEditing(true)
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        let submitComplete = SubmitSuccessViewController()
+        submitComplete.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.present(submitComplete, animated: true, completion: {
+            
+        })
+        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
