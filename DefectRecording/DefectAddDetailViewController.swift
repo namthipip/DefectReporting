@@ -245,11 +245,14 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBAction func saveDefect(_ sender: Any) {
         self.view.endEditing(true)
-        let submitComplete = SubmitSuccessViewController()
-        submitComplete.modalPresentationStyle = .overCurrentContext
-        self.navigationController?.present(submitComplete, animated: true, completion: {
-            
-        })
+//        let submitComplete = SubmitSuccessViewController()
+//        submitComplete.modalPresentationStyle = .overCurrentContext
+//        self.navigationController?.present(submitComplete, animated: true, completion: {
+//
+//        })
+        let activityItem = URL(fileURLWithPath: DefectRecordShareInstance.sharedInstance.getFilePath())
+        let activityVc = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
+        self.present(activityVc, animated: true, completion: nil)
         
     }
     

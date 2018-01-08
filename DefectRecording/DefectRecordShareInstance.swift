@@ -140,8 +140,20 @@ public class DefectRecordShareInstance : NSObject{
     }
     
     func redirectLogToDocuments() {
-        freopen(getFilePath().cString(using: String.Encoding.ascii)!, "a+", stderr)
+//        let fileManager = FileManager.default
+//        if !fileManager.fileExists(atPath: getFilePath()) {
+//            fileManager.createFile(atPath: getFilePath(), contents: Data(), attributes: nil)
+//        }
+        //        let fileHandle = FileHandle.init(forWritingAtPath: getFilePath())
+        //        fileHandle?.truncateFile(atOffset:(fileHandle?.seekToEndOfFile())!)
+        //        let msg = String.init(format: "", __builtin_va_list)
+        //        fileHandle?.write(__darwin_va_list)
+        //        fileHandle?.closeFile()
+        if UIDevice.current.batteryState != .charging{
+            freopen(getFilePath().cString(using: String.Encoding.ascii)!, "a+", stderr)
+        }
     }
+        
     
     func getFilePath() -> String {
         let allPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
@@ -154,6 +166,8 @@ public class DefectRecordShareInstance : NSObject{
         try? fileManager.removeItem(at: URL(fileURLWithPath: getFilePath()))
         
     }
+    
+    
     
 }
     
