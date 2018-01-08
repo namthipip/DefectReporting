@@ -30,6 +30,7 @@ public class DefectRecordShareInstance : NSObject{
         let instance = DefectRecordShareInstance()
         instance.floatingButtonController?.showFloatingBtn(needShow: false)
         instance.screenRecoder = ASScreenRecorder.sharedInstance()
+        UIDevice.current.isBatteryMonitoringEnabled = true
         return instance
     }()
     
