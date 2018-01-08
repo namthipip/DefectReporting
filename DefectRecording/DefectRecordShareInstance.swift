@@ -139,6 +139,22 @@ public class DefectRecordShareInstance : NSObject{
         return UIImage(named: name, in: podBundle, compatibleWith: nil)!
     }
     
+    func redirectLogToDocuments() {
+        freopen(getFilePath().cString(using: String.Encoding.ascii)!, "a+", stderr)
+    }
+    
+    func getFilePath() -> String {
+        let allPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = allPaths.first!
+        return documentsDirectory + "/debug_log.txt"
+    }
+    
+    func deleteLogFile() {
+        let fileManager = FileManager.default
+        try? fileManager.removeItem(at: URL(fileURLWithPath: getFilePath()))
+        
+    }
+    
 }
     
 
