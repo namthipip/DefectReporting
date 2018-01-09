@@ -64,17 +64,22 @@ public class DefectRecordShareInstance : NSObject{
     }
     
     public func showAnnotationView() {
-        let currentView:UIViewController = UIApplication.topViewController()!
-        if currentView is RecordTypeViewController ||
-            currentView is DrawingViewController {
-            return
-        }
-        
-        let reportTypeView = RecordTypeViewController(string: "thip")
-        reportTypeView.modalPresentationStyle = .overCurrentContext
-        currentView.present(reportTypeView, animated: true, completion: {
+        #if DEBUG
+            let currentView:UIViewController = UIApplication.topViewController()!
+            if currentView is RecordTypeViewController ||
+                currentView is DrawingViewController {
+                return
+            }
             
-        })
+            let reportTypeView = RecordTypeViewController(string: "thip")
+            reportTypeView.modalPresentationStyle = .overCurrentContext
+            currentView.present(reportTypeView, animated: true, completion: {
+                
+            })
+        #else
+            
+        #endif
+        
     }
     
     func didTapButton() {

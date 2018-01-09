@@ -21,7 +21,6 @@
 		1765BB6A1EF823D9000B4F42 /* HiddenStatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */; };
 		178670481EF8E549004E7685 /* FloatingButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670461EF8E549004E7685 /* FloatingButtonController.swift */; };
 		178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670471EF8E549004E7685 /* FloatingButtonWindow.swift */; };
-		17BE84D11FF7BCE900E5556C /* check-mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 17BE84D01FF7BCE900E5556C /* check-mark.png */; };
 		8FD2848F1F0E2AE3007EEBD6 /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */; };
 		8FEB36501FE3F4AD008BA2B8 /* brush.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36351FE3F4AD008BA2B8 /* brush.png */; };
 		8FEB36511FE3F4AD008BA2B8 /* brush@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36361FE3F4AD008BA2B8 /* brush@2x.png */; };
@@ -41,14 +40,9 @@
 		8FEB36601FE3F4AD008BA2B8 /* erase_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36451FE3F4AD008BA2B8 /* erase_inactive.png */; };
 		8FEB36611FE3F4AD008BA2B8 /* erase_inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36461FE3F4AD008BA2B8 /* erase_inactive@2x.png */; };
 		8FEB36621FE3F4AD008BA2B8 /* eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36471FE3F4AD008BA2B8 /* eraser.png */; };
-		8FEB36631FE3F4AD008BA2B8 /* MagCover59.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36481FE3F4AD008BA2B8 /* MagCover59.jpg */; };
-		8FEB36641FE3F4AD008BA2B8 /* radio-on-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36491FE3F4AD008BA2B8 /* radio-on-button.png */; };
 		8FEB36651FE3F4AD008BA2B8 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364A1FE3F4AD008BA2B8 /* record.png */; };
 		8FEB36661FE3F4AD008BA2B8 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364B1FE3F4AD008BA2B8 /* refresh.png */; };
 		8FEB36671FE3F4AD008BA2B8 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364C1FE3F4AD008BA2B8 /* refresh@2x.png */; };
-		8FEB36681FE3F4AD008BA2B8 /* shop-dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364D1FE3F4AD008BA2B8 /* shop-dropdown.png */; };
-		8FEB36691FE3F4AD008BA2B8 /* shop-dropdown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364E1FE3F4AD008BA2B8 /* shop-dropdown@2x.png */; };
-		8FEB366A1FE3F4AD008BA2B8 /* small-calendar-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364F1FE3F4AD008BA2B8 /* small-calendar-2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +62,6 @@
 		1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenStatusBarViewController.swift; sourceTree = "<group>"; };
 		178670461EF8E549004E7685 /* FloatingButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButtonController.swift; sourceTree = "<group>"; };
 		178670471EF8E549004E7685 /* FloatingButtonWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButtonWindow.swift; sourceTree = "<group>"; };
-		17BE84D01FF7BCE900E5556C /* check-mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-mark.png"; sourceTree = "<group>"; };
 		8FD2848C1F0E2AE3007EEBD6 /* DefectRecording-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DefectRecording-Bridging-Header.h"; sourceTree = "<group>"; };
 		8FD2848D1F0E2AE3007EEBD6 /* ASScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScreenRecorder.h; sourceTree = "<group>"; };
 		8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScreenRecorder.m; sourceTree = "<group>"; };
@@ -90,14 +83,9 @@
 		8FEB36451FE3F4AD008BA2B8 /* erase_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erase_inactive.png; sourceTree = "<group>"; };
 		8FEB36461FE3F4AD008BA2B8 /* erase_inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "erase_inactive@2x.png"; sourceTree = "<group>"; };
 		8FEB36471FE3F4AD008BA2B8 /* eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eraser.png; sourceTree = "<group>"; };
-		8FEB36481FE3F4AD008BA2B8 /* MagCover59.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MagCover59.jpg; sourceTree = "<group>"; };
-		8FEB36491FE3F4AD008BA2B8 /* radio-on-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-on-button.png"; sourceTree = "<group>"; };
 		8FEB364A1FE3F4AD008BA2B8 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
 		8FEB364B1FE3F4AD008BA2B8 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		8FEB364C1FE3F4AD008BA2B8 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
-		8FEB364D1FE3F4AD008BA2B8 /* shop-dropdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop-dropdown.png"; sourceTree = "<group>"; };
-		8FEB364E1FE3F4AD008BA2B8 /* shop-dropdown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop-dropdown@2x.png"; sourceTree = "<group>"; };
-		8FEB364F1FE3F4AD008BA2B8 /* small-calendar-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-calendar-2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +144,6 @@
 		8FEB36341FE3F4AD008BA2B8 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				17BE84D01FF7BCE900E5556C /* check-mark.png */,
 				8FEB36351FE3F4AD008BA2B8 /* brush.png */,
 				8FEB36361FE3F4AD008BA2B8 /* brush@2x.png */,
 				8FEB36381FE3F4AD008BA2B8 /* checked.png */,
@@ -175,14 +162,9 @@
 				8FEB36451FE3F4AD008BA2B8 /* erase_inactive.png */,
 				8FEB36461FE3F4AD008BA2B8 /* erase_inactive@2x.png */,
 				8FEB36471FE3F4AD008BA2B8 /* eraser.png */,
-				8FEB36481FE3F4AD008BA2B8 /* MagCover59.jpg */,
-				8FEB36491FE3F4AD008BA2B8 /* radio-on-button.png */,
 				8FEB364A1FE3F4AD008BA2B8 /* record.png */,
 				8FEB364B1FE3F4AD008BA2B8 /* refresh.png */,
 				8FEB364C1FE3F4AD008BA2B8 /* refresh@2x.png */,
-				8FEB364D1FE3F4AD008BA2B8 /* shop-dropdown.png */,
-				8FEB364E1FE3F4AD008BA2B8 /* shop-dropdown@2x.png */,
-				8FEB364F1FE3F4AD008BA2B8 /* small-calendar-2.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -249,11 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */,
-				8FEB36631FE3F4AD008BA2B8 /* MagCover59.jpg in Resources */,
 				8FEB36581FE3F4AD008BA2B8 /* draw_active@2x.png in Resources */,
 				8FEB36601FE3F4AD008BA2B8 /* erase_inactive.png in Resources */,
 				8FEB36561FE3F4AD008BA2B8 /* clear-button@2x.png in Resources */,
-				8FEB36691FE3F4AD008BA2B8 /* shop-dropdown@2x.png in Resources */,
 				176390131EF664F600A86097 /* DrawingViewController.xib in Resources */,
 				8FEB365E1FE3F4AD008BA2B8 /* erase_active.png in Resources */,
 				8FEB36621FE3F4AD008BA2B8 /* eraser.png in Resources */,
@@ -261,25 +241,21 @@
 				8FEB36571FE3F4AD008BA2B8 /* draw_active.png in Resources */,
 				8FEB365F1FE3F4AD008BA2B8 /* erase_active@2x.png in Resources */,
 				1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */,
-				8FEB36641FE3F4AD008BA2B8 /* radio-on-button.png in Resources */,
 				8FEB36661FE3F4AD008BA2B8 /* refresh.png in Resources */,
 				8FEB36551FE3F4AD008BA2B8 /* clear-button.png in Resources */,
 				8FEB36501FE3F4AD008BA2B8 /* brush.png in Resources */,
 				8FEB36611FE3F4AD008BA2B8 /* erase_inactive@2x.png in Resources */,
-				8FEB366A1FE3F4AD008BA2B8 /* small-calendar-2.png in Resources */,
 				8FEB36651FE3F4AD008BA2B8 /* record.png in Resources */,
 				8FEB36541FE3F4AD008BA2B8 /* checked@2x.png in Resources */,
 				8FEB365C1FE3F4AD008BA2B8 /* edit@2x.png in Resources */,
 				8FEB365B1FE3F4AD008BA2B8 /* edit.png in Resources */,
 				8FEB36531FE3F4AD008BA2B8 /* checked.png in Resources */,
-				8FEB36681FE3F4AD008BA2B8 /* shop-dropdown.png in Resources */,
 				8FEB36511FE3F4AD008BA2B8 /* brush@2x.png in Resources */,
 				170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */,
 				8FEB365D1FE3F4AD008BA2B8 /* erase@2x.png in Resources */,
 				8FEB365A1FE3F4AD008BA2B8 /* draw_inactive@2x.png in Resources */,
 				8FEB36671FE3F4AD008BA2B8 /* refresh@2x.png in Resources */,
 				170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */,
-				17BE84D11FF7BCE900E5556C /* check-mark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
