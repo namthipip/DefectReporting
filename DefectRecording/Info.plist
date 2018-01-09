@@ -36,5 +36,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow to use photo library</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Allow to use photo library</string>
 </dict>
 </plist>

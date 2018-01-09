@@ -15,7 +15,6 @@ protocol ButtonWindowDelegate {
 class FloatingButtonController: UIViewController {
 
     private(set) var button: UIButton!
-    private(set) var timeLabel: UILabel!
     private let window = FloatingButtonWindow()
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,37 +31,22 @@ class FloatingButtonController: UIViewController {
     override func loadView() {
         let view = UIView()
         let button = UIButton(type: .custom)
-        //button.setTitle("Floating", for: .normal)
-        //button.setTitleColor(UIColor.green, for: .normal)
-        //button.backgroundColor = UIColor.white
+        button.setTitle("00:00", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
         let recordImage = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"rec-button")
-        button.setImage(recordImage, for: .normal)
+        button.setBackgroundImage(recordImage, for: .normal)
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowRadius = 3
         button.layer.shadowOpacity = 0.8
         button.layer.shadowOffset = CGSize.zero
         button.sizeToFit()
         let screenSize = UIScreen.main.bounds.size
-        button.frame = CGRect(origin: CGPoint(x: screenSize.width / 2 - button.bounds.size.width / 2, y: screenSize.height - 65), size: CGSize(width: 50, height: 50))
+        button.frame = CGRect(origin: CGPoint(x: screenSize.width - 75, y: screenSize.height - 75), size: CGSize(width: 60, height: 60))
         button.autoresizingMask = []
         view.addSubview(button)
-        
-        let timeLb = UILabel(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 50))
-        timeLb.backgroundColor = UIColor.black
-        timeLb.textColor = UIColor.white
-        timeLb.alpha = 0.7
-        timeLb.textAlignment = .center
-        timeLb.text = "00:00:00"
-        
-        let viewStatusBar = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 20));
-        viewStatusBar.backgroundColor = UIColor.black
-        //viewStatusBar.alpha = 0.7
-        //view.addSubview(viewStatusBar)
-        view.addSubview(timeLb)
-        
+
         self.view = view
         self.button = button
-        self.timeLabel = timeLb
         window.button = button
         let panner = UIPanGestureRecognizer(target: self, action: #selector(FloatingButtonController.panDidFire(panner:)))
         button.addGestureRecognizer(panner)
@@ -122,15 +106,14 @@ class FloatingButtonController: UIViewController {
     func showFloatingBtn(needShow:Bool){
         if needShow {
             button.isHidden = false
-            timeLabel.isHidden = false
+            button.setTitle("00:00", for: .normal)
         }
         else{
             button.isHidden = true
-            timeLabel.isHidden = true
         }
     }
     
     func updateRecordTime(timeStr:String){
-        self.timeLabel.text = timeStr
+        self.button.setTitle(timeStr, for: .normal)
     }
 }

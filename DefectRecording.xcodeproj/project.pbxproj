@@ -21,11 +21,7 @@
 		1765BB6A1EF823D9000B4F42 /* HiddenStatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */; };
 		178670481EF8E549004E7685 /* FloatingButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670461EF8E549004E7685 /* FloatingButtonController.swift */; };
 		178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670471EF8E549004E7685 /* FloatingButtonWindow.swift */; };
-		17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */; };
-		17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */; };
 		17BE84D11FF7BCE900E5556C /* check-mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 17BE84D01FF7BCE900E5556C /* check-mark.png */; };
-		8F32C90A1FE56EBE0004867B /* SubmitSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */; };
-		8F32C90B1FE56EBE0004867B /* SubmitSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */; };
 		8FD2848F1F0E2AE3007EEBD6 /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */; };
 		8FEB36501FE3F4AD008BA2B8 /* brush.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36351FE3F4AD008BA2B8 /* brush.png */; };
 		8FEB36511FE3F4AD008BA2B8 /* brush@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36361FE3F4AD008BA2B8 /* brush@2x.png */; };
@@ -72,11 +68,7 @@
 		1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenStatusBarViewController.swift; sourceTree = "<group>"; };
 		178670461EF8E549004E7685 /* FloatingButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButtonController.swift; sourceTree = "<group>"; };
 		178670471EF8E549004E7685 /* FloatingButtonWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButtonWindow.swift; sourceTree = "<group>"; };
-		17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectAddDetailViewController.swift; sourceTree = "<group>"; };
-		17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefectAddDetailViewController.xib; sourceTree = "<group>"; };
 		17BE84D01FF7BCE900E5556C /* check-mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-mark.png"; sourceTree = "<group>"; };
-		8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitSuccessViewController.swift; sourceTree = "<group>"; };
-		8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitSuccessViewController.xib; sourceTree = "<group>"; };
 		8FD2848C1F0E2AE3007EEBD6 /* DefectRecording-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DefectRecording-Bridging-Header.h"; sourceTree = "<group>"; };
 		8FD2848D1F0E2AE3007EEBD6 /* ASScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScreenRecorder.h; sourceTree = "<group>"; };
 		8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScreenRecorder.m; sourceTree = "<group>"; };
@@ -153,14 +145,10 @@
 				1763900B1EED503700A86097 /* RecordTypeViewController.xib */,
 				176390101EF664F600A86097 /* DrawingViewController.swift */,
 				176390111EF664F600A86097 /* DrawingViewController.xib */,
-				17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */,
-				17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */,
 				1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */,
 				178670461EF8E549004E7685 /* FloatingButtonController.swift */,
 				178670471EF8E549004E7685 /* FloatingButtonWindow.swift */,
 				8FD2848C1F0E2AE3007EEBD6 /* DefectRecording-Bridging-Header.h */,
-				8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */,
-				8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */,
 			);
 			path = DefectRecording;
 			sourceTree = "<group>";
@@ -270,7 +258,6 @@
 				8FEB365E1FE3F4AD008BA2B8 /* erase_active.png in Resources */,
 				8FEB36621FE3F4AD008BA2B8 /* eraser.png in Resources */,
 				8FEB36591FE3F4AD008BA2B8 /* draw_inactive.png in Resources */,
-				8F32C90B1FE56EBE0004867B /* SubmitSuccessViewController.xib in Resources */,
 				8FEB36571FE3F4AD008BA2B8 /* draw_active.png in Resources */,
 				8FEB365F1FE3F4AD008BA2B8 /* erase_active@2x.png in Resources */,
 				1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */,
@@ -281,7 +268,6 @@
 				8FEB36611FE3F4AD008BA2B8 /* erase_inactive@2x.png in Resources */,
 				8FEB366A1FE3F4AD008BA2B8 /* small-calendar-2.png in Resources */,
 				8FEB36651FE3F4AD008BA2B8 /* record.png in Resources */,
-				17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */,
 				8FEB36541FE3F4AD008BA2B8 /* checked@2x.png in Resources */,
 				8FEB365C1FE3F4AD008BA2B8 /* edit@2x.png in Resources */,
 				8FEB365B1FE3F4AD008BA2B8 /* edit.png in Resources */,
@@ -304,7 +290,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */,
 				171B58E41EEB01DF00294A00 /* MotionEvent.swift in Sources */,
 				178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */,
 				8FD2848F1F0E2AE3007EEBD6 /* ASScreenRecorder.m in Sources */,
@@ -312,7 +297,6 @@
 				176390121EF664F600A86097 /* DrawingViewController.swift in Sources */,
 				1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */,
 				171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */,
-				8F32C90A1FE56EBE0004867B /* SubmitSuccessViewController.swift in Sources */,
 				170DA4A11EE45AE000E4F857 /* DefectReportViewController.swift in Sources */,
 				1765BB6A1EF823D9000B4F42 /* HiddenStatusBarViewController.swift in Sources */,
 				170DA49F1EE45AE000E4F857 /* AppDelegate.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import ReplayKit
+import Photos
 
 enum EventType {
     case shake
@@ -24,7 +24,7 @@ public class DefectRecordShareInstance : NSObject{
     
     var timer = Timer()
     
-    var second = 0
+    var recordDuration = 0
     
     static let sharedInstance : DefectRecordShareInstance = {
         let instance = DefectRecordShareInstance()
@@ -66,8 +66,7 @@ public class DefectRecordShareInstance : NSObject{
     public func showAnnotationView() {
         let currentView:UIViewController = UIApplication.topViewController()!
         if currentView is RecordTypeViewController ||
-            currentView is DrawingViewController ||
-            currentView is DefectAddDetailViewController {
+            currentView is DrawingViewController {
             return
         }
         
@@ -91,10 +90,6 @@ public class DefectRecordShareInstance : NSObject{
         
         sender.removeTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
         sender.addTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
-        //sender.setTitle("Stop Recording", for: .normal)
-        //sender.setTitleColor(UIColor.red, for: .normal)
-        let recordImage = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"record")
-        sender.setImage(recordImage, for: .normal)
         
     }
     
@@ -102,22 +97,19 @@ public class DefectRecordShareInstance : NSObject{
         print("Stop screen record")
         screenRecoder.stopRecording { 
             self.floatingButtonController?.showFloatingBtn(needShow: false)
+            self.recordDuration = 0
             self.timer.invalidate()
             sender.removeTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
             sender.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
-            //sender.setTitle("Start Recording", for: .normal)
-            //sender.setTitleColor(UIColor.blue, for: .normal)
-            let recordImage = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"rec-button")
-            sender.setImage(recordImage, for: .normal)
             do{
                 let videoData = try Data(contentsOf: self.screenRecoder.videoURL)
                 print(videoData)
                 let currentView:UIViewController = UIApplication.topViewController()!
-                let defectDetailView = DefectAddDetailViewController(videoUrl: self.screenRecoder.videoURL)
+                self.saveVideoRecordFile()
+                let activityItem = URL(fileURLWithPath: self.screenRecoder.videoURL.absoluteString)
                 self.screenRecoder.videoURL = nil
-                defectDetailView.navigationItem.hidesBackButton = true
-                let navigation = UINavigationController(rootViewController: defectDetailView)
-                currentView.present(navigation, animated: true, completion: nil)
+                let activityVc = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
+                currentView.present(activityVc, animated: true, completion: nil)
             }
             catch{
             
@@ -127,11 +119,10 @@ public class DefectRecordShareInstance : NSObject{
     }
     
     func updateRecordTime(){
-        second = second + 1
-        let hours = second / 3600
-        let minutes = second / 60 % 60
-        let seconds = second % 60
-        let timeString = String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+        recordDuration = recordDuration + 1
+        let minutes = recordDuration / 60 % 60
+        let seconds = recordDuration % 60
+        let timeString = String(format:"%02i:%02i", minutes, seconds)
         self.floatingButtonController?.updateRecordTime(timeStr: timeString)
     }
 
@@ -168,18 +159,14 @@ public class DefectRecordShareInstance : NSObject{
         
     }
     
-    
-    
-}
-    
-
-extension DefectRecordShareInstance : RPPreviewViewControllerDelegate{
-    
-    public func previewController(_ previewController: RPPreviewViewController, didFinishWithActivityTypes activityTypes: Set<String>) {
-        print(activityTypes)
-        previewController.dismiss(animated: true, completion: nil)
-        
+    func saveVideoRecordFile(){
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.screenRecoder.videoURL)
+        }) { saved, error in
+        }
     }
+    
+    
     
 }
 

@@ -27,9 +27,13 @@ class RecordTypeViewController: UIViewController {
         viewAnnotaionType.layer.masksToBounds = true
     }
     
-    
-    @IBAction func commentTap(_ sender: Any) {
-        
+    @IBAction func shareDebugLog(_ sender: Any) {
+        self.dismiss(animated: true) {
+            let currentView:UIViewController = UIApplication.topViewController()!
+            let activityItem = URL(fileURLWithPath: DefectRecordShareInstance.sharedInstance.getFilePath())
+            let activityVc = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
+            currentView.present(activityVc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func screenRecordTap(_ sender: Any) {

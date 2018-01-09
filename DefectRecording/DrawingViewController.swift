@@ -95,10 +95,9 @@ class DrawingViewController: UIViewController {
         tempImgView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImgView.frame.size.width, height: tempImgView.frame.size.height), blendMode: .normal, alpha: opacity)
         tempImgView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
-        let defectDetailView = DefectAddDetailViewController(image: tempImgView.image!)
-        defectDetailView.navigationItem.hidesBackButton = true
-        self.navigationController?.pushViewController(defectDetailView, animated: true)
+        UIImageWriteToSavedPhotosAlbum(tempImgView.image!, nil, nil, nil)
+        let activityVc = UIActivityViewController(activityItems: [tempImgView.image!], applicationActivities: nil)
+        self.present(activityVc, animated: true, completion: nil)
     }
    
     @IBAction func resetDrawing(_ sender: Any) {
