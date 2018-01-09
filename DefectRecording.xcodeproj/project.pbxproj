@@ -36,7 +36,6 @@
 		175D27E520052E6800F1F8EC /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 175D27CF20052E6700F1F8EC /* record.png */; };
 		175D27E620052E6800F1F8EC /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 175D27D020052E6700F1F8EC /* refresh.png */; };
 		175D27E720052E6800F1F8EC /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175D27D120052E6700F1F8EC /* refresh@2x.png */; };
-		175D27EA2005300200F1F8EC /* rec-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 175D27E92005300200F1F8EC /* rec-button.png */; };
 		1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763900A1EED503700A86097 /* RecordTypeViewController.swift */; };
 		1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1763900B1EED503700A86097 /* RecordTypeViewController.xib */; };
 		176390121EF664F600A86097 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176390101EF664F600A86097 /* DrawingViewController.swift */; };
@@ -79,7 +78,6 @@
 		175D27CF20052E6700F1F8EC /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
 		175D27D020052E6700F1F8EC /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		175D27D120052E6700F1F8EC /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
-		175D27E92005300200F1F8EC /* rec-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rec-button.png"; sourceTree = "<group>"; };
 		1763900A1EED503700A86097 /* RecordTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTypeViewController.swift; sourceTree = "<group>"; };
 		1763900B1EED503700A86097 /* RecordTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordTypeViewController.xib; sourceTree = "<group>"; };
 		176390101EF664F600A86097 /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 		170DA49D1EE45AE000E4F857 /* DefectRecording */ = {
 			isa = PBXGroup;
 			children = (
-				175D27E92005300200F1F8EC /* rec-button.png */,
 				175D27BB20052E6700F1F8EC /* image */,
 				8FD2848D1F0E2AE3007EEBD6 /* ASScreenRecorder.h */,
 				8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */,
@@ -252,7 +249,6 @@
 				175D27E620052E6800F1F8EC /* refresh.png in Resources */,
 				175D27D520052E6800F1F8EC /* checked@2x.png in Resources */,
 				175D27D920052E6800F1F8EC /* draw_active@2x.png in Resources */,
-				175D27EA2005300200F1F8EC /* rec-button.png in Resources */,
 				175D27D220052E6800F1F8EC /* brush.png in Resources */,
 				175D27E020052E6800F1F8EC /* erase_active@2x.png in Resources */,
 				1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */,
