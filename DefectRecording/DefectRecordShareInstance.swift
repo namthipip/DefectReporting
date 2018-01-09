@@ -146,9 +146,14 @@ public class DefectRecordShareInstance : NSObject{
         //        let msg = String.init(format: "", __builtin_va_list)
         //        fileHandle?.write(__darwin_va_list)
         //        fileHandle?.closeFile()
+        #if DEBUG
         if UIDevice.current.batteryState != .charging{
             freopen(getFilePath().cString(using: String.Encoding.ascii)!, "a+", stderr)
         }
+        #else
+            
+        #endif
+        
     }
         
     
