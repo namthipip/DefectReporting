@@ -1,0 +1,620 @@
+2018/01/10 01:09:22:628 <Error> ENService.m[setPostDataIfNeed]<158> : Aeb/qydp1KBC7WpvmZOlOzI7HhQVg2czb8pazNM7Z1ippVX095dTrqMPe47C2PJAhB
+2018/01/10 01:09:22:629 <Verbose> ENService.m[setPostDataIfNeed]<204> : POST Data: &platform=6&osVersion=11.2.1&advisoryModifyDate=20171214121423&DB2=MxINatj/XHXAg5cEIvpqcvUNLmqhzGPJ876x/lmFyPs%3D&language=T&messageDateTime=20171222170215&listAllServicesInfoSeq=%5B%7B%22infoSeq%22:1,%22infoName%22:%22ADVISORY%22%7D,%7B%22infoSeq%22:2,%22infoName%22:%22CURRENCY%22%7D%5D&menuModifyDate=20171214171006&modelName=iPhone10,6&appVersion=4.1&DM1=39162531194a&seasonalModifyDateTime=&DKA3=eb/qydp1KBC7WpvmZOlOzI7HhQVg2czb8pazNM7Z1ippVX095dTrqMPe47C2PJAh&forceUpdatedDate=&v=1&seasonalScreenID=&DA2=8022E291CEDFB3E61836D679A2A455E2&themeModifyDate=20171004105919&sortAllServiceFlag=Y&command=&m=36&forceAllServiceUpdatedDate=20171107120502&labelModifyDateTime=20171225181812
+2018/01/10 01:09:22:675 <Verbose> ENService.m[callServiceWithPostAsync2:completion:]<463> : Call Service: https:/rt10test.kasikornbank.com/mercury-native/security_native-startApplication
+2018-01-10 01:09:22.677 Dev K PLUS[2843:633437] Post Data 2: &platform=6&osVersion=11.2.1&advisoryModifyDate=20171214121423&DB2=MxINatj/XHXAg5cEIvpqcvUNLmqhzGPJ876x/lmFyPs%3D&language=T&messageDateTime=20171222170215&listAllServicesInfoSeq=%5B%7B%22infoSeq%22:1,%22infoName%22:%22ADVISORY%22%7D,%7B%22infoSeq%22:2,%22infoName%22:%22CURRENCY%22%7D%5D&menuModifyDate=20171214171006&modelName=iPhone10,6&appVersion=4.1&DM1=39162531194a&seasonalModifyDateTime=&DKA3=eb/qydp1KBC7WpvmZOlOzI7HhQVg2czb8pazNM7Z1ippVX095dTrqMPe47C2PJAh&forceUpdatedDate=&v=1&seasonalScreenID=&DA2=8022E291CEDFB3E61836D679A2A455E2&themeModifyDate=20171004105919&sortAllServiceFlag=Y&command=&m=36&forceAllServiceUpdatedDate=20171107120502&labelModifyDateTime=20171225181812
+2018-01-10 01:09:22.681 Dev K PLUS[2843:633437] isReachable: true
+2018-01-10 01:09:22.681 Dev K PLUS[2843:633437] isWifi: false
+2018-01-10 01:09:22.681 Dev K PLUS[2843:633437] isWWAN: true
+2018-01-10 01:09:23.120 Dev K PLUS[2843:633437] HTTP Status Code = 200
+2018/01/10 01:09:23:121 <Warning> JsonReader.m[connectionDidFinishLoading:]<193> : responseSize: 14763 bytes
+2018/01/10 01:09:23:125 <Verbose> JsonReader.m[connectionDidFinishLoading:]<227> : {
+  "clientKey" : "6847678E614BD4D203E86EF6DF324A20EB9E4BD1DE6B1D5BA9D3D7A087D47187",
+  "openAccountURL" : "www.google.co.th",
+  "listAdvisoryPromotion" : [
+    [
+      {
+        "mainId" : "",
+        "messageTextEn" : "ADVISORY_iPhone-Native_EN",
+        "status" : "",
+        "imageUpdateDateEn" : {
+          "year" : 117,
+          "time" : 1513228388710,
+          "day" : 4,
+          "date" : 14,
+          "hours" : 12,
+          "month" : 11,
+          "nanos" : 710000000,
+          "seconds" : 8,
+          "minutes" : 13,
+          "timezoneOffset" : -420
+        },
+        "imageUrlEn" : "\/mercury-native\/AdvisoryPromotionImageLoadServlet?groupName=ADVISORY&sid=1&language=E&platform=iPhone-Native",
+        "imageUrlTh" : "\/mercury-native\/AdvisoryPromotionImageLoadServlet?groupName=ADVISORY&sid=1&language=T&platform=iPhone-Native",
+        "needReloadSubFlag" : "N",
+        "customerGroup" : "",
+        "messageText" : "",
+        "coverUpdateDateEn" : {
+          "year" : 117,
+          "time" : 1513228388703,
+          "day" : 4,
+          "date" : 14,
+          "hours" : 12,
+          "month" : 11,
+          "nanos" : 703000000,
+          "seconds" : 8,
+          "minutes" : 13,
+          "timezoneOffset" : -420
+        },
+        "imageUrl" : "",
+        "messageDesc" : "",
+        "coverUrlEn" : "\/mercury-native\/AdvisoryPromotionImageLoadServlet?groupName=ADVISORY&language=E&platform=iPhone-Native",
+        "coverUrlTh" : "\/mercury-native\/AdvisoryPromotionImageLoadServlet?groupName=ADVISORY&language=T&platform=iPhone-Native",
+        "imagePathEn" : "",
+        "needReloadMainFlag" : "N",
+        "imageUpdateDateTh" : {
+          "year" : 117,
+          "time" : 1513228435170,
+          "day" : 4,
+          "date" : 14,
+          "hours" : 12,
+          "month" : 11,
+          "nanos" : 170000000,
+          "seconds" : 55,
+          "minutes" : 13,
+          "timezoneOffset" : -420
+        },
+        "imagePath" : "",
+        "imagePathTh" : "",
+        "platform" : "iPhone-Native",
+        "seq" : "1",
+        "subId" : "1",
+        "coverPathEn" : "",
+        "groupName" : "ADVISORY",
+        "messageLang" : "",
+        "messageTextTh" : "ADVISORY_iPhone-Native_TH",
+        "coverPathTh" : "",
+        "coverUpdateDateTh" : {
+          "year" : 117,
+          "time" : 1513228435167,
+          "day" : 4,
+          "date" : 14,
+          "hours" : 12,
+          "month" : 11,
+          "nanos" : 167000000,
+          "seconds" : 55,
+          "minutes" : 13,
+          "timezoneOffset" : -420
+        }
+      }
+    ],
+    [
+      {
+        "mainId" : "",
+        "messageTextEn" : "PROMOTION_iPhone-Native_EN",
+        "status" : "",
+        "imageUpdateDateEn" : {
+          "year" : 117,
+          "time" : 1497322699373,
+          "day" : 2,
+          "date" : 13,
+          "hours" : 9,
+          "month" : 5,
+          "nanos" : 373000000,
+          "seconds" : 19,
+          "minutes" : 58,
+          "timezoneOffset" : -420
+        },
+        "imageUrlEn" : "\/mercury-native\/AdvisoryPromotionImageLoadServlet?groupName=PROMOTION&sid=1&language=E&platform=iPhone-Native",
+        "imageUrlTh" : "\/mercury-native\/AdvisoryPromotionImageLoadServlet?groupName=PROMOTION&sid=1&language=T&platform=iPhone-Native",
+        "needReloadSubFlag" : "N",
+        "customerGroup" : "",
+        "messageText" : "",
+        "coverUpdateDateEn" : {
+          "year" : 117,
+          "time" : 1497322699363,
+          "day" : 2,
+          "date" : 13,
+          "hours" : 9,
+          "month" : 5,
+          "nanos" : 363000000,
+          "seconds" : 19,
+          "minutes" : 58,
+          "timezoneOffset" : -420
+        },
+        "imageUrl" : "",
+        "messageDesc" : "",
+        "coverUrlEn" : "\/mercury-native\/AdvisoryPromotionImageLoadServlet?groupName=PROMOTION&language=E&platform=iPhone-Native",
+        "coverUrlTh" : "\/mercury-native\/AdvisoryPromotionImageLoadServlet?groupName=PROMOTION&language=T&platform=iPhone-Native",
+        "imagePathEn" : "",
+        "needReloadMainFlag" : "N",
+        "imageUpdateDateTh" : {
+          "year" : 117,
+          "time" : 1497322719223,
+          "day" : 2,
+          "date" : 13,
+          "hours" : 9,
+          "month" : 5,
+          "nanos" : 223000000,
+          "seconds" : 39,
+          "minutes" : 58,
+          "timezoneOffset" : -420
+        },
+        "imagePath" : "",
+        "imagePathTh" : "",
+        "platform" : "iPhone-Native",
+        "seq" : "1",
+        "subId" : "1",
+        "coverPathEn" : "",
+        "groupName" : "PROMOTION",
+        "messageLang" : "",
+        "messageTextTh" : "PROMOTION_iPhone-Native_TH",
+        "coverPathTh" : "",
+        "coverUpdateDateTh" : {
+          "year" : 117,
+          "time" : 1497322719217,
+          "day" : 2,
+          "date" : 13,
+          "hours" : 9,
+          "month" : 5,
+          "nanos" : 217000000,
+          "seconds" : 39,
+          "minutes" : 58,
+          "timezoneOffset" : -420
+        }
+      }
+    ]
+  ],
+  "currencyMoreURL" : "https:\/\/rt10test.kasikornbank.com\/mercury-native-filter\/getCurrencyService",
+  "autoShowMenuTimeInfo" : "2",
+  "helloMessageTH" : "ข้อความยินดีต้อนรับสำหรับหน้า Weather",
+  "mapURL" : "http:\/\/dev.kbank-locator.appspot.com\/?zoom=14",
+  "listTutorialTourLabel" : [
+    {
+      "IOSAppVersion" : "2.0.0",
+      "pictureName" : "TutorialWhatsNew.png",
+      "displayFlag" : "Y",
+      "labelKey" : "TUTORIAL_WHATSNEW",
+      "moduleName" : "TUTORIAL_WHATSNEW",
+      "seqNo" : "0",
+      "androidAppVersion" : "2.0.0",
+      "description" : ""
+    },
+    {
+      "IOSAppVersion" : "2.0.0",
+      "pictureName" : "TutorialGuide.png",
+      "displayFlag" : "Y",
+      "labelKey" : "TUTORIAL_GUIDE",
+      "moduleName" : "TUTORIAL_GUIDE",
+      "seqNo" : "1",
+      "androidAppVersion" : "2.0.0",
+      "description" : ""
+    },
+    {
+      "IOSAppVersion" : "2.0.0",
+      "pictureName" : "TutorialRegister.png",
+      "displayFlag" : "Y",
+      "labelKey" : "TUTORIAL_REGISTER",
+      "moduleName" : "TUTORIAL_REGISTER",
+      "seqNo" : "2",
+      "androidAppVersion" : "2.0.0",
+      "description" : ""
+    },
+    {
+      "IOSAppVersion" : "2.0.0",
+      "pictureName" : "TutorialChkbal.png",
+      "displayFlag" : "Y",
+      "labelKey" : "TUTORIAL_CHKBAL",
+      "moduleName" : "TUTORIAL_CHKBAL",
+      "seqNo" : "3",
+      "androidAppVersion" : "2.0.0",
+      "description" : ""
+    },
+    {
+      "IOSAppVersion" : "2.0.0",
+      "pictureName" : "TutorialTransfer.png",
+      "displayFlag" : "Y",
+      "labelKey" : "TUTORIAL_TRANSFER",
+      "moduleName" : "TUTORIAL_TRANSFER",
+      "seqNo" : "4",
+      "androidAppVersion" : "2.0.0",
+      "description" : ""
+    },
+    {
+      "IOSAppVersion" : "2.0.0",
+      "pictureName" : "TutorialTopup.png",
+      "displayFlag" : "Y",
+      "labelKey" : "TUTORIAL_TOPUP",
+      "moduleName" : "TUTORIAL_TOPUP",
+      "seqNo" : "5",
+      "androidAppVersion" : "2.0.0",
+      "description" : ""
+    },
+    {
+      "IOSAppVersion" : "2.0.0",
+      "pictureName" : "TutorialPayment.png",
+      "displayFlag" : "Y",
+      "labelKey" : "TUTORIAL_PAYMENT",
+      "moduleName" : "TUTORIAL_PAYMENT",
+      "seqNo" : "6",
+      "androidAppVersion" : "2.0.0",
+      "description" : ""
+    },
+    {
+      "IOSAppVersion" : "2.0.0",
+      "pictureName" : "TutorialHistory.png",
+      "displayFlag" : "Y",
+      "labelKey" : "TUTORIAL_HISTORY",
+      "moduleName" : "TUTORIAL_HISTORY",
+      "seqNo" : "7",
+      "androidAppVersion" : "2.0.0",
+      "description" : ""
+    },
+    {
+      "IOSAppVersion" : "2.0.0",
+      "pictureName" : "TutorialRegisterSV.png",
+      "displayFlag" : "Y",
+      "labelKey" : "TUTORIAL_REGISTERSV",
+      "moduleName" : "TUTORIAL_REGISTERSV",
+      "seqNo" : "8",
+      "androidAppVersion" : "2.0.0",
+      "description" : ""
+    },
+    {
+      "IOSAppVersion" : "2.0.0",
+      "pictureName" : "TutorialOther.png",
+      "displayFlag" : "Y",
+      "labelKey" : "TUTORIAL_OTHER",
+      "moduleName" : "TUTORIAL_OTHER",
+      "seqNo" : "10",
+      "androidAppVersion" : "2.0.0",
+      "description" : ""
+    }
+  ],
+  "showNotifyOpenLocation" : "N",
+  "encryptFlag" : "N",
+  "currencyURL" : "https:\/\/rt10test.kasikornbank.com\/mercury-native-filter\/getCurrencyService",
+  "kmapToken" : "aPcwT73vFs43MdKtxcl01npLfDC9jafzIFBUyj8RE6i76zx1FtFhcpK3jvdfpSp0SMWNkdWzvEdCtOpX3UEIRw..",
+  "status" : "S",
+  "announcementImageLastUpdate" : "20171106230201",
+  "showNotifyDuration" : "N",
+  "menuModifyDate" : "20171214171006",
+  "listTheme" : [
+    [
+      {
+        "description" : "Standard",
+        "imageUrlThumbnail" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=1&platform=iPhone-Native&thumbnail=thumbnail",
+        "themeGroupEn" : "General",
+        "themeGroupTh" : "ภาพทั่วไป",
+        "needReloadFlag" : "N",
+        "themeSubId" : "1",
+        "updatedDate" : {
+          "year" : 113,
+          "time" : 1381167158293,
+          "day" : 2,
+          "date" : 8,
+          "hours" : 0,
+          "month" : 9,
+          "nanos" : 293000000,
+          "seconds" : 38,
+          "minutes" : 32,
+          "timezoneOffset" : -420
+        },
+        "imageUrl" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=1&platform=iPhone-Native",
+        "platform" : "iPhone-Native",
+        "themeId" : "1",
+        "themeSeq" : "1",
+        "mainStatus" : "Y",
+        "status" : "Y",
+        "imagePath" : ""
+      },
+      {
+        "description" : "Standard",
+        "imageUrlThumbnail" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=2&platform=iPhone-Native&thumbnail=thumbnail",
+        "themeGroupEn" : "General",
+        "themeGroupTh" : "ภาพทั่วไป",
+        "needReloadFlag" : "N",
+        "themeSubId" : "2",
+        "updatedDate" : {
+          "year" : 117,
+          "time" : 1495523747167,
+          "day" : 2,
+          "date" : 23,
+          "hours" : 14,
+          "month" : 4,
+          "nanos" : 167000000,
+          "seconds" : 47,
+          "minutes" : 15,
+          "timezoneOffset" : -420
+        },
+        "imageUrl" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=2&platform=iPhone-Native",
+        "platform" : "iPhone-Native",
+        "themeId" : "1",
+        "themeSeq" : "2",
+        "mainStatus" : "Y",
+        "status" : "Y",
+        "imagePath" : ""
+      },
+      {
+        "description" : "Standard",
+        "imageUrlThumbnail" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=3&platform=iPhone-Native&thumbnail=thumbnail",
+        "themeGroupEn" : "General",
+        "themeGroupTh" : "ภาพทั่วไป",
+        "needReloadFlag" : "N",
+        "themeSubId" : "3",
+        "updatedDate" : {
+          "year" : 113,
+          "time" : 1381167158297,
+          "day" : 2,
+          "date" : 8,
+          "hours" : 0,
+          "month" : 9,
+          "nanos" : 297000000,
+          "seconds" : 38,
+          "minutes" : 32,
+          "timezoneOffset" : -420
+        },
+        "imageUrl" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=3&platform=iPhone-Native",
+        "platform" : "iPhone-Native",
+        "themeId" : "1",
+        "themeSeq" : "3",
+        "mainStatus" : "Y",
+        "status" : "Y",
+        "imagePath" : ""
+      },
+      {
+        "description" : "Standard",
+        "imageUrlThumbnail" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=4&platform=iPhone-Native&thumbnail=thumbnail",
+        "themeGroupEn" : "General",
+        "themeGroupTh" : "ภาพทั่วไป",
+        "needReloadFlag" : "N",
+        "themeSubId" : "4",
+        "updatedDate" : {
+          "year" : 113,
+          "time" : 1381167158300,
+          "day" : 2,
+          "date" : 8,
+          "hours" : 0,
+          "month" : 9,
+          "nanos" : 300000000,
+          "seconds" : 38,
+          "minutes" : 32,
+          "timezoneOffset" : -420
+        },
+        "imageUrl" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=4&platform=iPhone-Native",
+        "platform" : "iPhone-Native",
+        "themeId" : "1",
+        "themeSeq" : "4",
+        "mainStatus" : "Y",
+        "status" : "Y",
+        "imagePath" : ""
+      },
+      {
+        "description" : "Standard",
+        "imageUrlThumbnail" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=5&platform=iPhone-Native&thumbnail=thumbnail",
+        "themeGroupEn" : "General",
+        "themeGroupTh" : "ภาพทั่วไป",
+        "needReloadFlag" : "N",
+        "themeSubId" : "5",
+        "updatedDate" : {
+          "year" : 113,
+          "time" : 1381167158307,
+          "day" : 2,
+          "date" : 8,
+          "hours" : 0,
+          "month" : 9,
+          "nanos" : 307000000,
+          "seconds" : 38,
+          "minutes" : 32,
+          "timezoneOffset" : -420
+        },
+        "imageUrl" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=5&platform=iPhone-Native",
+        "platform" : "iPhone-Native",
+        "themeId" : "1",
+        "themeSeq" : "5",
+        "mainStatus" : "Y",
+        "status" : "Y",
+        "imagePath" : ""
+      },
+      {
+        "description" : "Standard",
+        "imageUrlThumbnail" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=6&platform=iPhone-Native&thumbnail=thumbnail",
+        "themeGroupEn" : "General",
+        "themeGroupTh" : "ภาพทั่วไป",
+        "needReloadFlag" : "N",
+        "themeSubId" : "6",
+        "updatedDate" : {
+          "year" : 113,
+          "time" : 1381167158307,
+          "day" : 2,
+          "date" : 8,
+          "hours" : 0,
+          "month" : 9,
+          "nanos" : 307000000,
+          "seconds" : 38,
+          "minutes" : 32,
+          "timezoneOffset" : -420
+        },
+        "imageUrl" : "\/mercury-native\/ThemeImageLoadServlet?mid=1&sid=6&platform=iPhone-Native",
+        "platform" : "iPhone-Native",
+        "themeId" : "1",
+        "themeSeq" : "6",
+        "mainStatus" : "Y",
+        "status" : "Y",
+        "imagePath" : ""
+      }
+    ]
+  ],
+  "webVersionURL" : "https:\/\/rt10test.kasikornbank.com\/mercury\/services\/DetectUserAgent",
+  "seasonalScreenFlag" : "N",
+  "messageTextTH" : "",
+  "youtubeKey" : "AIzaSyAK1asc9DUkaJa3khurs845BkwAcH8paKY",
+  "advisoryModifyDate" : "20171214121423",
+  "listYoutube" : {
+    "TUTORIAL_TOPUP" : {
+      "listYoutube" : [
+        {
+          "youtubeIdEn" : "Uygx-ae8lO8",
+          "youtubeIdTh" : "Uygx-ae8lO8",
+          "orientationScreen" : "H"
+        }
+      ],
+      "bgNameEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/TutorialBg\/TOPUP\/E\/bg.jpg",
+      "bgNameTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/TutorialBg\/TOPUP\/T\/bg.jpg"
+    },
+    "TUTORIAL_TRANSFER" : {
+      "listYoutube" : [
+        {
+          "youtubeIdEn" : "j1cfzmX0E84",
+          "youtubeIdTh" : "j1cfzmX0E84",
+          "orientationScreen" : "H"
+        }
+      ],
+      "bgNameEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/TutorialBg\/TRANSFER\/E\/bg.jpg",
+      "bgNameTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/TutorialBg\/TRANSFER\/T\/bg.jpg"
+    },
+    "TUTORIAL_CHKBAL" : {
+      "listYoutube" : [
+        {
+          "youtubeIdEn" : "jdbftDEB_bo",
+          "youtubeIdTh" : "jdbftDEB_bo",
+          "orientationScreen" : "H"
+        }
+      ],
+      "bgNameEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/TutorialBg\/CHKBAL\/E\/bg.jpg",
+      "bgNameTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/TutorialBg\/CHKBAL\/T\/bg.jpg"
+    },
+    "TUTORIAL_PAYMENT" : {
+      "listYoutube" : [
+        {
+          "youtubeIdEn" : "OBnMeGjZ9Lw",
+          "youtubeIdTh" : "OBnMeGjZ9Lw",
+          "orientationScreen" : "H"
+        }
+      ],
+      "bgNameEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/TutorialBg\/PAYMENT\/E\/bg.jpg",
+      "bgNameTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/TutorialBg\/PAYMENT\/T\/bg.jpg"
+    }
+  },
+  "messageTextEN" : "",
+  "serverIndicator" : ".II",
+  "forceAllServiceUpdatedDate" : "20171107120502",
+  "currencyPeriodTimeNewCall" : "7200000",
+  "showOnMoreFlag" : "N",
+  "listAllServicesInfoSeq" : [
+    {
+      "infoSeq" : 1,
+      "infoName" : "ADVISORY",
+      "forcePostionFlag" : "",
+      "displayStatus" : "Y",
+      "description" : "Announcement",
+      "descriptionTh" : "ข่าวประชาสัมพันธ์",
+      "forceReorderFlag" : ""
+    },
+    {
+      "infoSeq" : 2,
+      "infoName" : "CURRENCY",
+      "forcePostionFlag" : "",
+      "displayStatus" : "Y",
+      "description" : "Currency Exchange Rate",
+      "descriptionTh" : "อัตราแลกเปลี่ยน",
+      "forceReorderFlag" : ""
+    }
+  ],
+  "supportBarcodeFlag" : "Y",
+  "display_text" : "ข้อความต้อนรับสำหรับหน้าจอแรก",
+  "helloMessageEN" : "Hello Weather Detail",
+  "labelModifyDateTime" : "20171225181812",
+  "cardPromotionURL" : "https:\/\/secure.kasikornbankgroup.com\/Custom\/Promotioncreditcard\/Pages\/index.html",
+  "announcementImageURL" : "\/mercury-native\/AnnouncementImageLoadServlet?platform=iPhone-Native&language=T",
+  "kmapRefererURL" : "http:\/\/kmap.kasikornbank.com\/emap2\/",
+  "weatherURL" : "",
+  "currencyTime" : "10000",
+  "kmapRadius" : "5000",
+  "allServiceInfoTime" : "1000",
+  "allServiceSlideFlag" : "N",
+  "listTutorialTour" : [
+    {
+      "TUTORIAL_HISTORY" : [
+        {
+          "moduleName" : "TUTORIAL_HISTORY",
+          "urlEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/HISTORY\/E\/Step_1.jpg",
+          "urlTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/HISTORY\/T\/Step_1.jpg"
+        }
+      ],
+      "TUTORIAL_OTHER" : [
+        {
+          "moduleName" : "TUTORIAL_OTHER",
+          "urlEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/OTHER\/E\/Step_1.jpg",
+          "urlTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/OTHER\/T\/Step_1.jpg"
+        }
+      ],
+      "TUTORIAL_PAYMENT" : [
+        {
+          "moduleName" : "TUTORIAL_PAYMENT",
+          "urlEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/PAYMENT\/E\/Step_1.jpg",
+          "urlTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/PAYMENT\/T\/Step_1.jpg"
+        }
+      ],
+      "TUTORIAL_REGISTERSV" : [
+        {
+          "moduleName" : "TUTORIAL_REGISTERSV",
+          "urlEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/REGISTERSV\/E\/Step_1.jpg",
+          "urlTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/REGISTERSV\/T\/Step_1.jpg"
+        }
+      ],
+      "TUTORIAL_TOPUP" : [
+        {
+          "moduleName" : "TUTORIAL_TOPUP",
+          "urlEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/TOPUP\/E\/Step_1.jpg",
+          "urlTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/TOPUP\/T\/Step_1.jpg"
+        }
+      ],
+      "TUTORIAL_REGISTER" : [
+        {
+          "moduleName" : "TUTORIAL_REGISTER",
+          "urlEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/REGISTER\/E\/Step_1.jpg",
+          "urlTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/REGISTER\/T\/Step_1.jpg"
+        }
+      ],
+      "TUTORIAL_TRANSFER" : [
+        {
+          "moduleName" : "TUTORIAL_TRANSFER",
+          "urlEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/TRANSFER\/E\/Step_1.jpg",
+          "urlTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/TRANSFER\/T\/Step_1.jpg"
+        },
+        {
+          "moduleName" : "TUTORIAL_TRANSFER",
+          "urlEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/TRANSFER\/E\/Step_2.jpg",
+          "urlTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/TRANSFER\/T\/Step_2.jpg"
+        }
+      ],
+      "TUTORIAL_CHKBAL" : [
+        {
+          "moduleName" : "TUTORIAL_CHKBAL",
+          "urlEn" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/CHKBAL\/E\/Step_1.jpg",
+          "urlTh" : "https:\/\/rt10test.kasikornbank.com\/mercury-native\/images\/Tutorial\/CHKBAL\/T\/Step_1.jpg"
+        }
+      ]
+    }
+  ],
+  "kSavingURL" : "http:\/\/k-expert.askkbank.com\/savingmemo",
+  "kmapSearchDistance" : "5000",
+  "sqlInjectionRegex" : "('(''|[^'])*')|(;)",
+  "clientIV" : "1010101010101010",
+  "getLocationFlag" : "N",
+  "kmapBaseURL" : "http:\/\/kmap.kasikornbank.com\/ArcGIS\/rest\/services\/KBank1\/MapServer\/",
+  "kmapQueryTaskURL" : "http:\/\/kmap.kasikornbank.com\/ArcGIS\/rest\/services\/kbank_dynamic\/MapServer\/0\/",
+  "language" : "T",
+  "waitTime" : "0",
+  "autoShowMenuTime" : "-1",
+  "themeModifyDate" : "20171004105919",
+  "messageDateTime" : "20171222170215"
+}
+2018/01/10 01:09:23:246 <Warning> AllServiceViewController.m[startLocation]<1233> : server do not user get Location
+2018/01/10 01:09:23:246 <Info> ENService.m[callServiceWithPostAsync2:completion:]<544> : Begin request service url : /security_native-startApplication 
+ at 10/01/2018 01:09:22
+ Get request at 10/01/2018 01:09:23
+ complete UI at 10/01/2018 01:09:23
+2018/01/10 01:09:23:263 <Error> AppDelegate.m[-[AppDelegate application:didRegisterForRemoteNotificationsWithDeviceToken:]]<822> : 64 bytes
+2018/01/10 01:09:23:263 <Error> AppDelegate.m[-[AppDelegate application:didRegisterForRemoteNotificationsWithDeviceToken:]]<823> : device token = 14bc25d8a0a45509a3fd68d445fea7240bfedb0a9fe91cd8e5800bb1cb61d53d
+2018-01-10 01:09:24.003 Dev K PLUS[2843:633437] thip
