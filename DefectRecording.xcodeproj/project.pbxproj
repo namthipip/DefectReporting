@@ -22,11 +22,8 @@
 		178670481EF8E549004E7685 /* FloatingButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670461EF8E549004E7685 /* FloatingButtonController.swift */; };
 		178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670471EF8E549004E7685 /* FloatingButtonWindow.swift */; };
 		8FD2848F1F0E2AE3007EEBD6 /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */; };
-		8FFBC7102005D109004B4592 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC6F92005D0FF004B4592 /* edit@2x.png */; };
-		8FFBC7112005D109004B4592 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC6FA2005D0FF004B4592 /* edit.png */; };
 		8FFBC7122005D109004B4592 /* clear-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC6FB2005D0FF004B4592 /* clear-button.png */; };
 		8FFBC7132005D109004B4592 /* clear-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC6FC2005D100004B4592 /* clear-button@2x.png */; };
-		8FFBC7142005D109004B4592 /* com.kasikornbank.retail2 2018-01-10 10:34.33.606.xcappdata in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC6FD2005D102004B4592 /* com.kasikornbank.retail2 2018-01-10 10:34.33.606.xcappdata */; };
 		8FFBC7152005D109004B4592 /* erase@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC6FE2005D103004B4592 /* erase@2x.png */; };
 		8FFBC7162005D109004B4592 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC6FF2005D103004B4592 /* refresh.png */; };
 		8FFBC7172005D109004B4592 /* rec-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC7002005D103004B4592 /* rec-button.png */; };
@@ -43,8 +40,6 @@
 		8FFBC7222005D109004B4592 /* brush@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC70B2005D107004B4592 /* brush@2x.png */; };
 		8FFBC7232005D109004B4592 /* erase_inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC70C2005D108004B4592 /* erase_inactive@2x.png */; };
 		8FFBC7242005D109004B4592 /* erase_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC70D2005D108004B4592 /* erase_inactive.png */; };
-		8FFBC7252005D109004B4592 /* eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC70E2005D108004B4592 /* eraser.png */; };
-		8FFBC7262005D109004B4592 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC70F2005D109004B4592 /* record.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,11 +62,8 @@
 		8FD2848C1F0E2AE3007EEBD6 /* DefectRecording-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DefectRecording-Bridging-Header.h"; sourceTree = "<group>"; };
 		8FD2848D1F0E2AE3007EEBD6 /* ASScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScreenRecorder.h; sourceTree = "<group>"; };
 		8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScreenRecorder.m; sourceTree = "<group>"; };
-		8FFBC6F92005D0FF004B4592 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
-		8FFBC6FA2005D0FF004B4592 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		8FFBC6FB2005D0FF004B4592 /* clear-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-button.png"; sourceTree = "<group>"; };
 		8FFBC6FC2005D100004B4592 /* clear-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-button@2x.png"; sourceTree = "<group>"; };
-		8FFBC6FD2005D102004B4592 /* com.kasikornbank.retail2 2018-01-10 10:34.33.606.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "com.kasikornbank.retail2 2018-01-10 10:34.33.606.xcappdata"; sourceTree = "<group>"; };
 		8FFBC6FE2005D103004B4592 /* erase@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "erase@2x.png"; sourceTree = "<group>"; };
 		8FFBC6FF2005D103004B4592 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		8FFBC7002005D103004B4592 /* rec-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rec-button.png"; sourceTree = "<group>"; };
@@ -88,8 +80,6 @@
 		8FFBC70B2005D107004B4592 /* brush@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush@2x.png"; sourceTree = "<group>"; };
 		8FFBC70C2005D108004B4592 /* erase_inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "erase_inactive@2x.png"; sourceTree = "<group>"; };
 		8FFBC70D2005D108004B4592 /* erase_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erase_inactive.png; sourceTree = "<group>"; };
-		8FFBC70E2005D108004B4592 /* eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eraser.png; sourceTree = "<group>"; };
-		8FFBC70F2005D109004B4592 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,21 +118,16 @@
 				8FFBC7062005D105004B4592 /* checked@2x.png */,
 				8FFBC6FB2005D0FF004B4592 /* clear-button.png */,
 				8FFBC6FC2005D100004B4592 /* clear-button@2x.png */,
-				8FFBC6FD2005D102004B4592 /* com.kasikornbank.retail2 2018-01-10 10:34.33.606.xcappdata */,
 				8FFBC7052005D105004B4592 /* draw_active.png */,
 				8FFBC7092005D106004B4592 /* draw_active@2x.png */,
 				8FFBC7012005D104004B4592 /* draw_inactive.png */,
 				8FFBC7082005D106004B4592 /* draw_inactive@2x.png */,
-				8FFBC6FA2005D0FF004B4592 /* edit.png */,
-				8FFBC6F92005D0FF004B4592 /* edit@2x.png */,
 				8FFBC70A2005D107004B4592 /* erase_active.png */,
 				8FFBC7032005D104004B4592 /* erase_active@2x.png */,
 				8FFBC70D2005D108004B4592 /* erase_inactive.png */,
 				8FFBC70C2005D108004B4592 /* erase_inactive@2x.png */,
 				8FFBC6FE2005D103004B4592 /* erase@2x.png */,
-				8FFBC70E2005D108004B4592 /* eraser.png */,
 				8FFBC7002005D103004B4592 /* rec-button.png */,
-				8FFBC70F2005D109004B4592 /* record.png */,
 				8FFBC6FF2005D103004B4592 /* refresh.png */,
 				8FFBC7022005D104004B4592 /* refresh@2x.png */,
 				8FD2848D1F0E2AE3007EEBD6 /* ASScreenRecorder.h */,
@@ -233,7 +218,6 @@
 				8FFBC71D2005D109004B4592 /* checked@2x.png in Resources */,
 				8FFBC71B2005D109004B4592 /* brush.png in Resources */,
 				8FFBC71F2005D109004B4592 /* draw_inactive@2x.png in Resources */,
-				8FFBC7112005D109004B4592 /* edit.png in Resources */,
 				8FFBC71C2005D109004B4592 /* draw_active.png in Resources */,
 				8FFBC71E2005D109004B4592 /* checked.png in Resources */,
 				8FFBC7232005D109004B4592 /* erase_inactive@2x.png in Resources */,
@@ -242,20 +226,16 @@
 				8FFBC7162005D109004B4592 /* refresh.png in Resources */,
 				8FFBC7132005D109004B4592 /* clear-button@2x.png in Resources */,
 				8FFBC7202005D109004B4592 /* draw_active@2x.png in Resources */,
-				8FFBC7102005D109004B4592 /* edit@2x.png in Resources */,
 				170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */,
-				8FFBC7262005D109004B4592 /* record.png in Resources */,
 				8FFBC7122005D109004B4592 /* clear-button.png in Resources */,
 				8FFBC7152005D109004B4592 /* erase@2x.png in Resources */,
 				176390131EF664F600A86097 /* DrawingViewController.xib in Resources */,
 				1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */,
 				8FFBC71A2005D109004B4592 /* erase_active@2x.png in Resources */,
 				170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */,
-				8FFBC7252005D109004B4592 /* eraser.png in Resources */,
 				170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */,
 				8FFBC7222005D109004B4592 /* brush@2x.png in Resources */,
 				8FFBC7192005D109004B4592 /* refresh@2x.png in Resources */,
-				8FFBC7142005D109004B4592 /* com.kasikornbank.retail2 2018-01-10 10:34.33.606.xcappdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

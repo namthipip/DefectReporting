@@ -29,7 +29,6 @@ extension UIWindow{
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if touches.first?.tapCount == 2 {
             print("double tap")
-            NSLog("%@", "thip")
             DefectRecordShareInstance.sharedInstance.showAnnotationView()
         }
     }

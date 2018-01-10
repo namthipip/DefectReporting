@@ -111,7 +111,6 @@ class DrawingViewController: UIViewController {
         drawBtn.setImage(drawActive, for: .normal)
         eraseBtn.setImage(eraseInActive, for: .normal)
         eraseMode = false
-        brushWidth = 5
     }
     
     @IBAction func eraseDraw(_ sender: Any) {
@@ -120,7 +119,6 @@ class DrawingViewController: UIViewController {
         drawBtn.setImage(drawInActive, for: .normal)
         eraseBtn.setImage(eraseActive, for: .normal)
         eraseMode = true
-        brushWidth = 10
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -49,7 +49,6 @@ class RecordTypeViewController: UIViewController {
     
     @IBAction func videoRecoedTap(_ sender: Any) {
         self.dismiss(animated: true) {
-//            DefectRecordShareInstance.sharedInstance.floatingButtonController?.button.addTarget(self, action: #selector(self.didTapButton), for: .touchUpInside)
             DefectRecordShareInstance.sharedInstance.addRecordHandler()
             DefectRecordShareInstance.sharedInstance.floatingButtonController?.showFloatingBtn(needShow: true)
         }

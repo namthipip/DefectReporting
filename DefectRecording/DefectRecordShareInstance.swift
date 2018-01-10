@@ -106,17 +106,13 @@ public class DefectRecordShareInstance : NSObject{
             self.timer.invalidate()
             sender.removeTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
             sender.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
-            do{
-                let currentView:UIViewController = UIApplication.topViewController()!
-                self.saveVideoRecordFile()
-                let activityItem = self.getVideoFilePath()
-                self.screenRecoder.videoURL = nil
-                let activityVc = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
-                currentView.present(activityVc, animated: true, completion: nil)
-            }
-            catch{
             
-            }
+            let currentView:UIViewController = UIApplication.topViewController()!
+            self.saveVideoRecordFile()
+            let activityItem = self.getVideoFilePath()
+            self.screenRecoder.videoURL = nil
+            let activityVc = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
+            currentView.present(activityVc, animated: true, completion: nil)
             
          }
     }
@@ -135,15 +131,6 @@ public class DefectRecordShareInstance : NSObject{
     }
     
     func redirectLogToDocuments() {
-//        let fileManager = FileManager.default
-//        if !fileManager.fileExists(atPath: getFilePath()) {
-//            fileManager.createFile(atPath: getFilePath(), contents: Data(), attributes: nil)
-//        }
-        //        let fileHandle = FileHandle.init(forWritingAtPath: getFilePath())
-        //        fileHandle?.truncateFile(atOffset:(fileHandle?.seekToEndOfFile())!)
-        //        let msg = String.init(format: "", __builtin_va_list)
-        //        fileHandle?.write(__darwin_va_list)
-        //        fileHandle?.closeFile()
         #if DEBUG
         if UIDevice.current.batteryState != .charging{
             freopen(getLogFilePath().cString(using: String.Encoding.ascii)!, "a+", stderr)
@@ -162,7 +149,9 @@ public class DefectRecordShareInstance : NSObject{
     func getLogFilePath() -> String {
         let allPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = allPaths.first!
-        return documentsDirectory + "/debug_log.txt"
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "dd/mm/yy hh:mm"
+        return documentsDirectory + "/debug_log_\(dateformatter.string(from: Date())).txt"
     }
     
     func deleteLogFile() {
