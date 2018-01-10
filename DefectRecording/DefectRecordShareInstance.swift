@@ -88,7 +88,7 @@ public class DefectRecordShareInstance : NSObject{
     
     func startRecording(sender: UIButton){
         print("Start screen record")
-        screenRecoder.videoURL = URL(fileURLWithPath: NSHomeDirectory().appending("/tmp/screenCapture.mp4"))
+        screenRecoder.videoURL = getVideoFilePath()
         screenRecoder.startRecording()
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateRecordTime), userInfo: nil, repeats: true)
@@ -107,11 +107,9 @@ public class DefectRecordShareInstance : NSObject{
             sender.removeTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
             sender.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
             do{
-                let videoData = try Data(contentsOf: self.screenRecoder.videoURL)
-                print(videoData)
                 let currentView:UIViewController = UIApplication.topViewController()!
                 self.saveVideoRecordFile()
-                let activityItem = URL(fileURLWithPath: self.screenRecoder.videoURL.absoluteString)
+                let activityItem = self.getVideoFilePath()
                 self.screenRecoder.videoURL = nil
                 let activityVc = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
                 currentView.present(activityVc, animated: true, completion: nil)
@@ -148,16 +146,20 @@ public class DefectRecordShareInstance : NSObject{
         //        fileHandle?.closeFile()
         #if DEBUG
         if UIDevice.current.batteryState != .charging{
-            freopen(getFilePath().cString(using: String.Encoding.ascii)!, "a+", stderr)
+            freopen(getLogFilePath().cString(using: String.Encoding.ascii)!, "a+", stderr)
         }
         #else
             
         #endif
         
     }
+    
+    func getVideoFilePath() -> URL {
+        return URL(fileURLWithPath: NSHomeDirectory().appending("/tmp/screenCapture.mp4"))
+    }
         
     
-    func getFilePath() -> String {
+    func getLogFilePath() -> String {
         let allPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = allPaths.first!
         return documentsDirectory + "/debug_log.txt"
@@ -165,13 +167,13 @@ public class DefectRecordShareInstance : NSObject{
     
     func deleteLogFile() {
         let fileManager = FileManager.default
-        try? fileManager.removeItem(at: URL(fileURLWithPath: getFilePath()))
+        try? fileManager.removeItem(at: URL(fileURLWithPath: getLogFilePath()))
         
     }
     
     func saveVideoRecordFile(){
         PHPhotoLibrary.shared().performChanges({
-            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.screenRecoder.videoURL)
+            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.getVideoFilePath())
         }) { saved, error in
         }
     }

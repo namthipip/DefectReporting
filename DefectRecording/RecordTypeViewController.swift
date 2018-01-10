@@ -30,7 +30,7 @@ class RecordTypeViewController: UIViewController {
     @IBAction func shareDebugLog(_ sender: Any) {
         self.dismiss(animated: true) {
             let currentView:UIViewController = UIApplication.topViewController()!
-            let activityItem = URL(fileURLWithPath: DefectRecordShareInstance.sharedInstance.getFilePath())
+            let activityItem = URL(fileURLWithPath: DefectRecordShareInstance.sharedInstance.getLogFilePath())
             let activityVc = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
             currentView.present(activityVc, animated: true, completion: nil)
         }
