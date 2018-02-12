@@ -13,7 +13,6 @@ class DrawingViewController: UIViewController {
     
     @IBOutlet weak var mainImgView: UIImageView!
     @IBOutlet weak var tempImgView: UIImageView!
-    
     @IBOutlet weak var brushColorBtn: UIButton!
     @IBOutlet weak var brushWidthSlider: UISlider!
     @IBOutlet weak var viewBrushColor: UIView!
@@ -35,7 +34,7 @@ class DrawingViewController: UIViewController {
     var eraseMode = false
     var screenShotImg:UIImage!
     
-   
+    
     public init(image:UIImage){
         super.init(nibName: "DrawingViewController", bundle: Bundle(for: RecordTypeViewController.self))
         screenShotImg = image
@@ -44,24 +43,23 @@ class DrawingViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialUI()
-        
     }
     
     func initialUI(){
         
         let clearButton = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name: "clear-button")
-        let nextButton = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name: "checked")
+        let nextButton = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name: "done-button")
         let cancelBarBtn = UIBarButtonItem(image:clearButton, style: .plain, target: self, action: #selector(self.cancelDrawing))
         let nextBarBtn = UIBarButtonItem(image: nextButton, style: .plain, target: self, action: #selector(self.nextView))
         self.navigationItem.leftBarButtonItem = cancelBarBtn
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = nextBarBtn
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
-
+        
         mainImgView.image = screenShotImg
         tempImgView.image = screenShotImg
         brushColorBtn.backgroundColor = stokeColor
@@ -87,20 +85,22 @@ class DrawingViewController: UIViewController {
     func cancelDrawing(){
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
-
     
     func nextView(){
-        UIGraphicsBeginImageContextWithOptions(tempImgView.frame.size, false, 0.0)
-        mainImgView.image?.draw(in: CGRect(x: 0, y: 0, width: mainImgView.frame.size.width, height: mainImgView.frame.size.height), blendMode: .normal, alpha: 1.0)
-        tempImgView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImgView.frame.size.width, height: tempImgView.frame.size.height), blendMode: .normal, alpha: opacity)
-        tempImgView.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        let defectDetailView = DefectAddDetailViewController(image: tempImgView.image!)
-        defectDetailView.navigationItem.hidesBackButton = true
-        self.navigationController?.pushViewController(defectDetailView, animated: true)
+        if let imageSize = tempImgView.image?.size{
+            UIGraphicsBeginImageContextWithOptions(imageSize, false, 0.0)
+            mainImgView.image?.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height), blendMode: .normal, alpha: 1.0)
+            tempImgView.image?.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height), blendMode: .normal, alpha: opacity)
+            tempImgView.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            UIImageWriteToSavedPhotosAlbum(tempImgView.image!, nil, nil, nil)
+            let defectDetailView = DefectAddDetailViewController(image: tempImgView.image!)
+            defectDetailView.navigationItem.hidesBackButton = true
+            self.navigationController?.pushViewController(defectDetailView, animated: true)
+        }
     }
-   
+    
     @IBAction func resetDrawing(_ sender: Any) {
         tempImgView.image = screenShotImg
     }
@@ -112,7 +112,6 @@ class DrawingViewController: UIViewController {
         drawBtn.setImage(drawActive, for: .normal)
         eraseBtn.setImage(eraseInActive, for: .normal)
         eraseMode = false
-        brushWidth = 5
     }
     
     @IBAction func eraseDraw(_ sender: Any) {
@@ -121,30 +120,24 @@ class DrawingViewController: UIViewController {
         drawBtn.setImage(drawInActive, for: .normal)
         eraseBtn.setImage(eraseActive, for: .normal)
         eraseMode = true
-        brushWidth = 10
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         swiped = false
         if let touch = touches.first {
-            lastPoint = touch.location(in: self.view)
+            lastPoint = touch.location(in: self.tempImgView)
         }
     }
     
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
         
-        // 1
-        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
+        UIGraphicsBeginImageContextWithOptions(tempImgView.frame.size, false, 0.0)
         if let context = UIGraphicsGetCurrentContext(){
-            tempImgView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
-            
-            // 2
+            tempImgView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImgView.frame.size.width, height: tempImgView.frame.size.height))
             context.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
             context.addLine(to: CGPoint(x: toPoint.x, y: toPoint.y))
-            
-            // 3
             context.setLineCap(.round)
-        
+            
             if eraseMode {
                 context.setBlendMode(.copy)
                 context.setStrokeColor(red: 0, green: 0, blue: 0, alpha: 0)
@@ -155,35 +148,28 @@ class DrawingViewController: UIViewController {
             }
             
             context.setLineWidth(brushWidth)
-            
-            // 4
             context.strokePath()
             
-            // 5
             tempImgView.image = UIGraphicsGetImageFromCurrentImageContext()
             tempImgView.alpha = opacity
-
+            
         }
         UIGraphicsEndImageContext()
         
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // 6
         swiped = true
         if let touch = touches.first {
-            let currentPoint = touch.location(in: view)
+            let currentPoint = touch.location(in: tempImgView)
             drawLineFrom(fromPoint: lastPoint, toPoint: currentPoint)
-            
-            // 7
             lastPoint = currentPoint
         }
-
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !swiped {
-            // draw a single point
             drawLineFrom(fromPoint: lastPoint, toPoint: lastPoint)
         }
     }
@@ -219,3 +205,4 @@ class DrawingViewController: UIViewController {
     
     
 }
+

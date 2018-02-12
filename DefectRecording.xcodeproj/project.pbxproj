@@ -29,8 +29,8 @@
 		8FD2848F1F0E2AE3007EEBD6 /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */; };
 		8FEB36501FE3F4AD008BA2B8 /* brush.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36351FE3F4AD008BA2B8 /* brush.png */; };
 		8FEB36511FE3F4AD008BA2B8 /* brush@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36361FE3F4AD008BA2B8 /* brush@2x.png */; };
-		8FEB36531FE3F4AD008BA2B8 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36381FE3F4AD008BA2B8 /* checked.png */; };
-		8FEB36541FE3F4AD008BA2B8 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36391FE3F4AD008BA2B8 /* checked@2x.png */; };
+		8FEB36531FE3F4AD008BA2B8 /* done-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36381FE3F4AD008BA2B8 /* done-button.png */; };
+		8FEB36541FE3F4AD008BA2B8 /* done-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36391FE3F4AD008BA2B8 /* done-button@2x.png */; };
 		8FEB36551FE3F4AD008BA2B8 /* clear-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB363A1FE3F4AD008BA2B8 /* clear-button.png */; };
 		8FEB36561FE3F4AD008BA2B8 /* clear-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB363B1FE3F4AD008BA2B8 /* clear-button@2x.png */; };
 		8FEB36571FE3F4AD008BA2B8 /* draw_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB363C1FE3F4AD008BA2B8 /* draw_active.png */; };
@@ -82,8 +82,8 @@
 		8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScreenRecorder.m; sourceTree = "<group>"; };
 		8FEB36351FE3F4AD008BA2B8 /* brush.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush.png; sourceTree = "<group>"; };
 		8FEB36361FE3F4AD008BA2B8 /* brush@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush@2x.png"; sourceTree = "<group>"; };
-		8FEB36381FE3F4AD008BA2B8 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
-		8FEB36391FE3F4AD008BA2B8 /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
+		8FEB36381FE3F4AD008BA2B8 /* done-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-button.png"; sourceTree = "<group>"; };
+		8FEB36391FE3F4AD008BA2B8 /* done-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-button@2x.png"; sourceTree = "<group>"; };
 		8FEB363A1FE3F4AD008BA2B8 /* clear-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-button.png"; sourceTree = "<group>"; };
 		8FEB363B1FE3F4AD008BA2B8 /* clear-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-button@2x.png"; sourceTree = "<group>"; };
 		8FEB363C1FE3F4AD008BA2B8 /* draw_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = draw_active.png; sourceTree = "<group>"; };
@@ -171,8 +171,8 @@
 				17BE84D01FF7BCE900E5556C /* check-mark.png */,
 				8FEB36351FE3F4AD008BA2B8 /* brush.png */,
 				8FEB36361FE3F4AD008BA2B8 /* brush@2x.png */,
-				8FEB36381FE3F4AD008BA2B8 /* checked.png */,
-				8FEB36391FE3F4AD008BA2B8 /* checked@2x.png */,
+				8FEB36381FE3F4AD008BA2B8 /* done-button.png */,
+				8FEB36391FE3F4AD008BA2B8 /* done-button@2x.png */,
 				8FEB363A1FE3F4AD008BA2B8 /* clear-button.png */,
 				8FEB363B1FE3F4AD008BA2B8 /* clear-button@2x.png */,
 				8FEB363C1FE3F4AD008BA2B8 /* draw_active.png */,
@@ -282,10 +282,10 @@
 				8FEB366A1FE3F4AD008BA2B8 /* small-calendar-2.png in Resources */,
 				8FEB36651FE3F4AD008BA2B8 /* record.png in Resources */,
 				17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */,
-				8FEB36541FE3F4AD008BA2B8 /* checked@2x.png in Resources */,
+				8FEB36541FE3F4AD008BA2B8 /* done-button@2x.png in Resources */,
 				8FEB365C1FE3F4AD008BA2B8 /* edit@2x.png in Resources */,
 				8FEB365B1FE3F4AD008BA2B8 /* edit.png in Resources */,
-				8FEB36531FE3F4AD008BA2B8 /* checked.png in Resources */,
+				8FEB36531FE3F4AD008BA2B8 /* done-button.png in Resources */,
 				8FEB36681FE3F4AD008BA2B8 /* shop-dropdown.png in Resources */,
 				8FEB36511FE3F4AD008BA2B8 /* brush@2x.png in Resources */,
 				170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */,
