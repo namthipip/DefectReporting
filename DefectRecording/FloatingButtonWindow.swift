@@ -26,5 +26,6 @@ class FloatingButtonWindow: UIWindow {
         let buttonPoint = convert(point, to: button)
         return button.point(inside: buttonPoint, with: event)
     }
-
+    
 }
+

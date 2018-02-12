@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import ReplayKit
+import Photos
 
 enum EventType {
     case shake
@@ -24,7 +24,7 @@ public class DefectRecordShareInstance : NSObject{
     
     var timer = Timer()
     
-    var second = 0
+    var recordDuration = 0
     
     static let sharedInstance : DefectRecordShareInstance = {
         let instance = DefectRecordShareInstance()
@@ -64,6 +64,7 @@ public class DefectRecordShareInstance : NSObject{
     }
     
     public func showAnnotationView() {
+        #if DEBUG
         let currentView:UIViewController = UIApplication.topViewController()!
         if currentView is RecordTypeViewController ||
             currentView is DrawingViewController ||
@@ -76,37 +77,28 @@ public class DefectRecordShareInstance : NSObject{
         currentView.present(reportTypeView, animated: true, completion: {
             
         })
-    }
-    
-    func didTapButton() {
-        print("Tap Button")
+        #endif
     }
     
     func startRecording(sender: UIButton){
         print("Start screen record")
-        screenRecoder.videoURL = URL(fileURLWithPath: NSHomeDirectory().appending("/tmp/screenCapture.mp4"))
+        screenRecoder.videoURL = getVideoFilePath()
         screenRecoder.startRecording()
-        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateRecordTime), userInfo: nil, repeats: true)
-        
         sender.removeTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
         sender.addTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
-        //sender.setTitle("Stop Recording", for: .normal)
-        //sender.setTitleColor(UIColor.red, for: .normal)
-        let recordImage = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"record")
-        sender.setImage(recordImage, for: .normal)
         
     }
     
     func stopRecording(sender: UIButton) {
         print("Stop screen record")
-        screenRecoder.stopRecording { 
+        screenRecoder.stopRecording {
+            self.saveVideoRecordFile()
             self.floatingButtonController?.showFloatingBtn(needShow: false)
             self.timer.invalidate()
+            self.recordDuration = 0
             sender.removeTarget(self, action: #selector(self.stopRecording(sender:)), for: .touchUpInside)
             sender.addTarget(self, action: #selector(self.startRecording(sender:)), for: .touchUpInside)
-            //sender.setTitle("Start Recording", for: .normal)
-            //sender.setTitleColor(UIColor.blue, for: .normal)
             let recordImage = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"rec-button")
             sender.setImage(recordImage, for: .normal)
             do{
@@ -127,11 +119,10 @@ public class DefectRecordShareInstance : NSObject{
     }
     
     func updateRecordTime(){
-        second = second + 1
-        let hours = second / 3600
-        let minutes = second / 60 % 60
-        let seconds = second % 60
-        let timeString = String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+        recordDuration = recordDuration + 1
+        let minutes = recordDuration / 60 % 60
+        let seconds = recordDuration % 60
+        let timeString = String(format:"%02i:%02i", minutes, seconds)
         self.floatingButtonController?.updateRecordTime(timeStr: timeString)
     }
 
@@ -141,45 +132,38 @@ public class DefectRecordShareInstance : NSObject{
     }
     
     func redirectLogToDocuments() {
-//        let fileManager = FileManager.default
-//        if !fileManager.fileExists(atPath: getFilePath()) {
-//            fileManager.createFile(atPath: getFilePath(), contents: Data(), attributes: nil)
-//        }
-        //        let fileHandle = FileHandle.init(forWritingAtPath: getFilePath())
-        //        fileHandle?.truncateFile(atOffset:(fileHandle?.seekToEndOfFile())!)
-        //        let msg = String.init(format: "", __builtin_va_list)
-        //        fileHandle?.write(__darwin_va_list)
-        //        fileHandle?.closeFile()
-        if UIDevice.current.batteryState != .charging{
-            freopen(getFilePath().cString(using: String.Encoding.ascii)!, "a+", stderr)
-        }
+        #if DEBUG
+            if (isatty(STDERR_FILENO) == 0){
+                freopen(self.getLogFilePath().cString(using: String.Encoding.ascii)!, "a+", stderr)
+            }
+        #endif
     }
         
     
-    func getFilePath() -> String {
+    func getLogFilePath() -> String {
         let allPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = allPaths.first!
         return documentsDirectory + "/debug_log.txt"
     }
     
+    func getVideoFilePath() -> URL {
+        return URL(fileURLWithPath: NSHomeDirectory().appending("/tmp/screenCapture.mp4"))
+    }
+    
     func deleteLogFile() {
         let fileManager = FileManager.default
-        try? fileManager.removeItem(at: URL(fileURLWithPath: getFilePath()))
+        try? fileManager.removeItem(at: URL(fileURLWithPath: getLogFilePath()))
         
     }
     
-    
-    
-}
-    
-
-extension DefectRecordShareInstance : RPPreviewViewControllerDelegate{
-    
-    public func previewController(_ previewController: RPPreviewViewController, didFinishWithActivityTypes activityTypes: Set<String>) {
-        print(activityTypes)
-        previewController.dismiss(animated: true, completion: nil)
-        
+    func saveVideoRecordFile(){
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.getVideoFilePath())
+        }) { saved, error in
+        }
     }
+    
+    
     
 }
 
