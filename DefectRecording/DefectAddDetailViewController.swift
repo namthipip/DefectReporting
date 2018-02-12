@@ -16,21 +16,19 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBOutlet weak var defectImg: UIImageView!
     
-    @IBOutlet weak var prioritySlider: UISlider!
-    
     @IBOutlet weak var dueDateTxt: UITextField!
     
     @IBOutlet weak var descripTxt: UITextField!
     
     @IBOutlet weak var expectedTxt: UITextField!
     
+    @IBOutlet weak var typeTxt: UITextField!
+  
+    @IBOutlet weak var priorityTxt: UITextField!
+    
     @IBOutlet weak var videoPreviewLayer: UIView!
     
     @IBOutlet weak var severityTxt: UITextField!
-    
-    @IBOutlet weak var checkboxUI: UIButton!
-    
-    @IBOutlet weak var checkboxFunctional: UIButton!
     
     var drawImg:UIImage?
 
@@ -69,21 +67,11 @@ class DefectAddDetailViewController: UIViewController {
         super.viewDidLoad()
         defectImg.image = drawImg
         self.title = "Defect Detail"
-        let numOfSteps = Float(priorityValue.count - 1)
-        prioritySlider.minimumValue = 0
-        prioritySlider.maximumValue = numOfSteps
-        prioritySlider.isContinuous = true
-        prioritySlider.value = 0
-        prioritySlider.addTarget(self, action: #selector(self.priorityChange(slider:)), for: .valueChanged)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         setupDueDatetextfield()
-        
-        checkboxUI.setCornerCircle()
-        checkboxFunctional.setCornerCircle()
-        
         
         if let url = videoURL{
             self.player = AVPlayer(url: url)
@@ -149,7 +137,6 @@ class DefectAddDetailViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setGradientSlider(slider: prioritySlider)
     }
     
     func setGradientSlider(slider:UISlider) {
@@ -230,16 +217,6 @@ class DefectAddDetailViewController: UIViewController {
         self.scrollView.scrollIndicatorInsets = contentInsets
         self.view.endEditing(true)
         self.scrollView.isScrollEnabled = true
-        
-    }
-    
-    
-    @IBAction func selectDefectType(_ sender: Any) {
-        let checkBox = sender as! UIButton
-        checkboxFunctional.setBackgroundImage(nil, for: .normal)
-        checkboxUI.setBackgroundImage(nil, for: .normal)
-        let radioOn = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"radio-on-button")
-        checkBox.setBackgroundImage(radioOn, for: .normal)
         
     }
     
