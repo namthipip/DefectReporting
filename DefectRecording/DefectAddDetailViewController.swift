@@ -31,8 +31,6 @@ class DefectAddDetailViewController: UIViewController {
     @IBOutlet weak var severityTxt: UITextField!
     
     var drawImg:UIImage?
-
-    let priorityValue:[Int] = [0,5,10]
     
     var datePicker:UIDatePicker!
     
@@ -45,8 +43,10 @@ class DefectAddDetailViewController: UIViewController {
     var videoURL:URL?
     
     var severityValue = ["Inconsequencial" , "Minor" , "Major" , "Critical" , "Blocking"]
+    var priorityValue = ["Low" , "Medium" , "High"]
+    var typeValue = ["UI" , "Service" , "Logic" , "Other"]
     
-    var severityPicker = UIPickerView()
+    var inputPicker = UIPickerView()
     
     public init(image:UIImage){
         super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
@@ -67,12 +67,8 @@ class DefectAddDetailViewController: UIViewController {
         super.viewDidLoad()
         defectImg.image = drawImg
         self.title = "Defect Detail"
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
-        setupDueDatetextfield()
-        
+        setTextFieldInput()
+    
         if let url = videoURL{
             self.player = AVPlayer(url: url)
             self.avpController = AVPlayerViewController()
@@ -84,79 +80,8 @@ class DefectAddDetailViewController: UIViewController {
         
     }
     
-    func setupToolbar(toolbars:[UIToolbar]){
-        for toolbar in toolbars {
-            toolbar.sizeToFit()
-            toolbar.backgroundColor = UIColor.clear
-            toolbar.isTranslucent = false
-            toolbar.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
-        }
-    }
-    
-    func setupDueDatetextfield(){
-        let keyboardToolbar = UIToolbar()
-        let dueDateToolbar = UIToolbar()
-        let severityToolbar = UIToolbar()
-        
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
-                                            target: nil, action: nil)
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done,
-                                            target: self.view, action: #selector(UIView.endEditing(_:)))
-        
-        keyboardToolbar.items = [flexBarButton,doneBarButton]
-        descripTxt.inputAccessoryView = keyboardToolbar
-        expectedTxt.inputAccessoryView = keyboardToolbar
-        
-        let doneDateBarButton = UIBarButtonItem(barButtonSystemItem: .done,
-                                                target: self, action: #selector(self.didEnterDuedate))
-        
-        dueDateToolbar.items = [flexBarButton,doneDateBarButton]
-        
-        datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        
-        dueDateTxt.inputView = datePicker
-        dueDateTxt.inputAccessoryView = dueDateToolbar
-        dueDateTxt.addRightView()
-        
-        let doneSeverityBarButton = UIBarButtonItem(barButtonSystemItem: .done,
-                                                target: self, action: #selector(self.didEnterSeverity))
-        
-        severityToolbar.items = [flexBarButton,doneSeverityBarButton]
-        severityTxt.inputAccessoryView = severityToolbar
-        severityTxt.addRightView()
-        severityTxt.inputView = severityPicker
-        severityPicker.delegate = self
-        
-        setupToolbar(toolbars: [keyboardToolbar,dueDateToolbar,severityToolbar])
-        
-        dueDateTxt.delegate = self
-        descripTxt.delegate = self
-        severityTxt.delegate = self
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-    }
-    
-    func setGradientSlider(slider:UISlider) {
-        let tgl = CAGradientLayer()
-        let frame = CGRect(x: 0, y: 0, width: slider.frame.width, height: 5)
-        tgl.frame = frame
-        
-        tgl.colors = [UIColor(red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.2).cgColor , UIColor(red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.6).cgColor ,UIColor(red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0).cgColor]
-        tgl.startPoint = CGPoint(x: 0.0, y:  1.0)
-        tgl.endPoint = CGPoint(x: 1.0, y:  1.0)
-        
-        UIGraphicsBeginImageContextWithOptions(tgl.frame.size, tgl.isOpaque, 0.0);
-        tgl.render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        let trackImg = image?.resizableImage(withCapInsets: UIEdgeInsets.zero)
-        slider.setMinimumTrackImage(trackImg, for: .normal)
-        slider.setMaximumTrackImage(trackImg, for: .normal)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -165,59 +90,26 @@ class DefectAddDetailViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
     }
     
-    
-    func priorityChange(slider:UISlider) {
-        let index = Int(slider.value + 0.5)
-        slider.setValue(Float(index), animated: false)        
+    func setTextFieldInput() {
+        inputPicker.delegate = self
+        inputPicker.dataSource = self
+        typeTxt.delegate = self
+        typeTxt.inputView = inputPicker
+        severityTxt.inputView = inputPicker
+        severityTxt.delegate = self
+        priorityTxt.inputView = inputPicker
+        priorityTxt.delegate = self
+        datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        dueDateTxt.inputView = datePicker
+        dueDateTxt.delegate = self
     }
     
-    func didEnterDuedate(){
+    func didEnterDuedate() {
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "dd/MM/yyyy"
         dueDateTxt.text = dateFormat.string(from: datePicker.date)
         dueDateTxt.resignFirstResponder()
-    }
-    
-    func didEnterSeverity(){
-        severityTxt.resignFirstResponder()
-    }
-    
-    func keyboardWillShow(notification: NSNotification)
-    {
-        //Need to calculate keyboard exact size due to Apple suggestions
-        self.scrollView.isScrollEnabled = true
-        //let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
-        let keyboardSize = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0)
-        
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
-        
-        var aRect : CGRect = self.view.frame
-        aRect.size.height -= keyboardSize.height
-        if activeField != nil
-        {
-            if (!aRect.contains(activeField!.frame.origin))
-            {
-                self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
-            }
-        }
-        
-        
-    }
-
-    
-    func keyboardWillHide(notification: NSNotification)
-    {
-        //Once keyboard disappears, restore original position
-        let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
-        //let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(64.0, 0.0, 0.0, 0.0)
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
-        self.view.endEditing(true)
-        self.scrollView.isScrollEnabled = true
-        
     }
     
     @IBAction func saveDefect(_ sender: Any) {
@@ -239,10 +131,14 @@ extension DefectAddDetailViewController : UITextFieldDelegate{
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
+        inputPicker.reloadAllComponents()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
+        if textField == dueDateTxt {
+            didEnterDuedate()
+        }
     }
     
 }
@@ -254,15 +150,34 @@ extension DefectAddDetailViewController : UIPickerViewDelegate , UIPickerViewDat
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return severityValue.count
+        if activeField == typeTxt {
+            return typeValue.count
+        }else if activeField == severityTxt {
+            return severityValue.count
+        }else {
+            return priorityValue.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return severityValue[row]
+        if activeField == typeTxt {
+            return typeValue[row]
+        }else if activeField == severityTxt {
+            return severityValue[row]
+        }else {
+            return priorityValue[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        severityTxt.text = severityValue[row]
+        if activeField == typeTxt {
+            typeTxt.text = typeValue[row]
+        }else if activeField == severityTxt {
+            severityTxt.text = severityValue[row]
+        }else {
+            priorityTxt.text = priorityValue[row]
+        }
+        
     }
 
     

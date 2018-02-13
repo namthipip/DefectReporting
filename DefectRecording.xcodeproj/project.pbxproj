@@ -53,6 +53,7 @@
 		8FEB36681FE3F4AD008BA2B8 /* shop-dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364D1FE3F4AD008BA2B8 /* shop-dropdown.png */; };
 		8FEB36691FE3F4AD008BA2B8 /* shop-dropdown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364E1FE3F4AD008BA2B8 /* shop-dropdown@2x.png */; };
 		8FEB366A1FE3F4AD008BA2B8 /* small-calendar-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364F1FE3F4AD008BA2B8 /* small-calendar-2.png */; };
+		DBC5C382C079ACE94B4A736B /* Pods_DefectRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7FEA2D3A237551B255B471 /* Pods_DefectRecording.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectAddDetailViewController.swift; sourceTree = "<group>"; };
 		17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefectAddDetailViewController.xib; sourceTree = "<group>"; };
 		17BE84D01FF7BCE900E5556C /* check-mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-mark.png"; sourceTree = "<group>"; };
+		32857AD3B69EE898330CF4BC /* Pods-DefectRecording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DefectRecording.release.xcconfig"; path = "Pods/Target Support Files/Pods-DefectRecording/Pods-DefectRecording.release.xcconfig"; sourceTree = "<group>"; };
+		8E7FEA2D3A237551B255B471 /* Pods_DefectRecording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DefectRecording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitSuccessViewController.swift; sourceTree = "<group>"; };
 		8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitSuccessViewController.xib; sourceTree = "<group>"; };
 		8FD2848C1F0E2AE3007EEBD6 /* DefectRecording-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DefectRecording-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 		8FEB364D1FE3F4AD008BA2B8 /* shop-dropdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop-dropdown.png"; sourceTree = "<group>"; };
 		8FEB364E1FE3F4AD008BA2B8 /* shop-dropdown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop-dropdown@2x.png"; sourceTree = "<group>"; };
 		8FEB364F1FE3F4AD008BA2B8 /* small-calendar-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-calendar-2.png"; sourceTree = "<group>"; };
+		A39A755CB76A814B416EE5EA /* Pods-DefectRecording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DefectRecording.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DefectRecording/Pods-DefectRecording.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC5C382C079ACE94B4A736B /* Pods_DefectRecording.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +129,8 @@
 			children = (
 				170DA49D1EE45AE000E4F857 /* DefectRecording */,
 				170DA49C1EE45AE000E4F857 /* Products */,
+				58A7BFC2724BCF9299A49E51 /* Pods */,
+				88F48DB890A307880708CF9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +170,23 @@
 				8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */,
 			);
 			path = DefectRecording;
+			sourceTree = "<group>";
+		};
+		58A7BFC2724BCF9299A49E51 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A39A755CB76A814B416EE5EA /* Pods-DefectRecording.debug.xcconfig */,
+				32857AD3B69EE898330CF4BC /* Pods-DefectRecording.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		88F48DB890A307880708CF9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E7FEA2D3A237551B255B471 /* Pods_DefectRecording.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8FEB36341FE3F4AD008BA2B8 /* Image */ = {
@@ -206,9 +230,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 170DA4AD1EE45AE000E4F857 /* Build configuration list for PBXNativeTarget "DefectRecording" */;
 			buildPhases = (
+				3AEFB2AFF0EB968DADB69A83 /* [CP] Check Pods Manifest.lock */,
 				170DA4971EE45AE000E4F857 /* Sources */,
 				170DA4981EE45AE000E4F857 /* Frameworks */,
 				170DA4991EE45AE000E4F857 /* Resources */,
+				A4C4BA2E5E2E07863FF032F5 /* [CP] Embed Pods Frameworks */,
+				05E761BE9B008237CFB230F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,6 +325,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05E761BE9B008237CFB230F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DefectRecording/Pods-DefectRecording-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AEFB2AFF0EB968DADB69A83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A4C4BA2E5E2E07863FF032F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DefectRecording/Pods-DefectRecording-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		170DA4971EE45AE000E4F857 /* Sources */ = {
@@ -436,6 +511,7 @@
 		};
 		170DA4AE1EE45AE000E4F857 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A39A755CB76A814B416EE5EA /* Pods-DefectRecording.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -452,6 +528,7 @@
 		};
 		170DA4AF1EE45AE000E4F857 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32857AD3B69EE898330CF4BC /* Pods-DefectRecording.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
