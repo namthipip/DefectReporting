@@ -30,6 +30,8 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBOutlet weak var severityTxt: UITextField!
     
+    @IBOutlet weak var reportDefectButton: UIButton!
+    
     var drawImg:UIImage?
     
     var datePicker:UIDatePicker!
@@ -68,6 +70,8 @@ class DefectAddDetailViewController: UIViewController {
         defectImg.image = drawImg
         self.title = "Defect Detail"
         setTextFieldInput()
+        reportDefectButton.layer.cornerRadius = 5
+        reportDefectButton.layer.masksToBounds = true
     
         if let url = videoURL{
             self.player = AVPlayer(url: url)
@@ -95,14 +99,18 @@ class DefectAddDetailViewController: UIViewController {
         inputPicker.dataSource = self
         typeTxt.delegate = self
         typeTxt.inputView = inputPicker
+        typeTxt.addRightView()
         severityTxt.inputView = inputPicker
         severityTxt.delegate = self
+        severityTxt.addRightView()
         priorityTxt.inputView = inputPicker
         priorityTxt.delegate = self
+        priorityTxt.addRightView()
         datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         dueDateTxt.inputView = datePicker
         dueDateTxt.delegate = self
+        dueDateTxt.addRightView()
     }
     
     func didEnterDuedate() {
