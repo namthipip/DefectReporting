@@ -170,9 +170,20 @@ public class DefectRecordShareInstance : NSObject{
 extension UITextField {
     func addRightView(){
         self.rightViewMode = .always
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
-        imageView.image = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"shop-dropdown")
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        imageView.image = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"icon_dropdown")
         self.rightView = imageView
+    }
+}
+
+extension UIView {
+    func setBorderRadius(radius:CGFloat)    {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
+    func setBorderColor(color:UIColor) {
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = 1.0
     }
 }
 

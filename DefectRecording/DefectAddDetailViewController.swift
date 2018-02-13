@@ -18,9 +18,9 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBOutlet weak var dueDateTxt: UITextField!
     
-    @IBOutlet weak var descripTxt: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
-    @IBOutlet weak var expectedTxt: UITextField!
+    @IBOutlet weak var expextedResultTextView: UITextView!
     
     @IBOutlet weak var typeTxt: UITextField!
   
@@ -31,6 +31,14 @@ class DefectAddDetailViewController: UIViewController {
     @IBOutlet weak var severityTxt: UITextField!
     
     @IBOutlet weak var reportDefectButton: UIButton!
+    
+    @IBOutlet weak var typeView: UIView!
+    
+    @IBOutlet weak var severityView: UIView!
+    
+    @IBOutlet weak var priorityView: UIView!
+    
+    @IBOutlet weak var dueDateView: UIView!
     
     var drawImg:UIImage?
     
@@ -68,11 +76,12 @@ class DefectAddDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         defectImg.image = drawImg
-        self.title = "Defect Detail"
+        self.title = "Report Defect"
         setTextFieldInput()
-        reportDefectButton.layer.cornerRadius = 5
-        reportDefectButton.layer.masksToBounds = true
-    
+        reportDefectButton.setBorderRadius(radius: 5)
+        setStyleView(views: [descriptionTextView,expextedResultTextView,typeView,severityView,priorityView,dueDateView])
+        setInitialValue()
+
         if let url = videoURL{
             self.player = AVPlayer(url: url)
             self.avpController = AVPlayerViewController()
@@ -82,6 +91,21 @@ class DefectAddDetailViewController: UIViewController {
             self.videoPreviewLayer.addSubview(avpController.view)
         }
         
+    }
+    
+    func setStyleView(views:[UIView]){
+        for view in views {
+            view.setBorderRadius(radius: 3)
+            view.setBorderColor(color: .lightGray)
+        }
+    }
+    
+    func setInitialValue() {
+        severityTxt.text = severityValue[0]
+        priorityTxt.text = priorityValue[0]
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "dd/MM/yyyy"
+        dueDateTxt.text = dateFormat.string(from: Date())
     }
     
     override func viewDidLayoutSubviews() {

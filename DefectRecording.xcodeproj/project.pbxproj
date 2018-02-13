@@ -24,6 +24,7 @@
 		17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */; };
 		17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */; };
 		17BE84D11FF7BCE900E5556C /* check-mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 17BE84D01FF7BCE900E5556C /* check-mark.png */; };
+		8E03FDD72032F18F00618A0B /* icon_dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E03FDD62032F18F00618A0B /* icon_dropdown.png */; };
 		8F32C90A1FE56EBE0004867B /* SubmitSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */; };
 		8F32C90B1FE56EBE0004867B /* SubmitSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */; };
 		8FD2848F1F0E2AE3007EEBD6 /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */; };
@@ -50,8 +51,6 @@
 		8FEB36651FE3F4AD008BA2B8 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364A1FE3F4AD008BA2B8 /* record.png */; };
 		8FEB36661FE3F4AD008BA2B8 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364B1FE3F4AD008BA2B8 /* refresh.png */; };
 		8FEB36671FE3F4AD008BA2B8 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364C1FE3F4AD008BA2B8 /* refresh@2x.png */; };
-		8FEB36681FE3F4AD008BA2B8 /* shop-dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364D1FE3F4AD008BA2B8 /* shop-dropdown.png */; };
-		8FEB36691FE3F4AD008BA2B8 /* shop-dropdown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364E1FE3F4AD008BA2B8 /* shop-dropdown@2x.png */; };
 		8FEB366A1FE3F4AD008BA2B8 /* small-calendar-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB364F1FE3F4AD008BA2B8 /* small-calendar-2.png */; };
 		DBC5C382C079ACE94B4A736B /* Pods_DefectRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7FEA2D3A237551B255B471 /* Pods_DefectRecording.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +76,7 @@
 		17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefectAddDetailViewController.xib; sourceTree = "<group>"; };
 		17BE84D01FF7BCE900E5556C /* check-mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-mark.png"; sourceTree = "<group>"; };
 		32857AD3B69EE898330CF4BC /* Pods-DefectRecording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DefectRecording.release.xcconfig"; path = "Pods/Target Support Files/Pods-DefectRecording/Pods-DefectRecording.release.xcconfig"; sourceTree = "<group>"; };
+		8E03FDD62032F18F00618A0B /* icon_dropdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_dropdown.png; sourceTree = "<group>"; };
 		8E7FEA2D3A237551B255B471 /* Pods_DefectRecording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DefectRecording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitSuccessViewController.swift; sourceTree = "<group>"; };
 		8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitSuccessViewController.xib; sourceTree = "<group>"; };
@@ -106,8 +106,6 @@
 		8FEB364A1FE3F4AD008BA2B8 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
 		8FEB364B1FE3F4AD008BA2B8 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		8FEB364C1FE3F4AD008BA2B8 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
-		8FEB364D1FE3F4AD008BA2B8 /* shop-dropdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop-dropdown.png"; sourceTree = "<group>"; };
-		8FEB364E1FE3F4AD008BA2B8 /* shop-dropdown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop-dropdown@2x.png"; sourceTree = "<group>"; };
 		8FEB364F1FE3F4AD008BA2B8 /* small-calendar-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-calendar-2.png"; sourceTree = "<group>"; };
 		A39A755CB76A814B416EE5EA /* Pods-DefectRecording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DefectRecording.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DefectRecording/Pods-DefectRecording.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,9 +214,8 @@
 				8FEB364A1FE3F4AD008BA2B8 /* record.png */,
 				8FEB364B1FE3F4AD008BA2B8 /* refresh.png */,
 				8FEB364C1FE3F4AD008BA2B8 /* refresh@2x.png */,
-				8FEB364D1FE3F4AD008BA2B8 /* shop-dropdown.png */,
-				8FEB364E1FE3F4AD008BA2B8 /* shop-dropdown@2x.png */,
 				8FEB364F1FE3F4AD008BA2B8 /* small-calendar-2.png */,
+				8E03FDD62032F18F00618A0B /* icon_dropdown.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -292,7 +289,6 @@
 				8FEB36581FE3F4AD008BA2B8 /* draw_active@2x.png in Resources */,
 				8FEB36601FE3F4AD008BA2B8 /* erase_inactive.png in Resources */,
 				8FEB36561FE3F4AD008BA2B8 /* clear-button@2x.png in Resources */,
-				8FEB36691FE3F4AD008BA2B8 /* shop-dropdown@2x.png in Resources */,
 				176390131EF664F600A86097 /* DrawingViewController.xib in Resources */,
 				8FEB365E1FE3F4AD008BA2B8 /* erase_active.png in Resources */,
 				8FEB36621FE3F4AD008BA2B8 /* eraser.png in Resources */,
@@ -308,12 +304,12 @@
 				8FEB36611FE3F4AD008BA2B8 /* erase_inactive@2x.png in Resources */,
 				8FEB366A1FE3F4AD008BA2B8 /* small-calendar-2.png in Resources */,
 				8FEB36651FE3F4AD008BA2B8 /* record.png in Resources */,
+				8E03FDD72032F18F00618A0B /* icon_dropdown.png in Resources */,
 				17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */,
 				8FEB36541FE3F4AD008BA2B8 /* done-button@2x.png in Resources */,
 				8FEB365C1FE3F4AD008BA2B8 /* edit@2x.png in Resources */,
 				8FEB365B1FE3F4AD008BA2B8 /* edit.png in Resources */,
 				8FEB36531FE3F4AD008BA2B8 /* done-button.png in Resources */,
-				8FEB36681FE3F4AD008BA2B8 /* shop-dropdown.png in Resources */,
 				8FEB36511FE3F4AD008BA2B8 /* brush@2x.png in Resources */,
 				170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */,
 				8FEB365D1FE3F4AD008BA2B8 /* erase@2x.png in Resources */,
@@ -348,13 +344,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DefectRecording-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A4C4BA2E5E2E07863FF032F5 /* [CP] Embed Pods Frameworks */ = {
@@ -363,9 +362,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DefectRecording/Pods-DefectRecording-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
