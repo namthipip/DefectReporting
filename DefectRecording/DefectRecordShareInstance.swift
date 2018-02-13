@@ -170,7 +170,7 @@ public class DefectRecordShareInstance : NSObject{
 extension UITextField {
     func addRightView(){
         self.rightViewMode = .always
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         imageView.image = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"icon_dropdown")
         self.rightView = imageView
     }
