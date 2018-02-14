@@ -86,7 +86,7 @@ class DefectAddDetailViewController: UIViewController {
             self.player = AVPlayer(url: url)
             self.avpController = AVPlayerViewController()
             self.avpController.player = self.player
-            avpController.view.frame = videoPreviewLayer.frame
+            avpController.view.frame = CGRect(x: 0, y: 0, width: videoPreviewLayer.frame.size.width, height: videoPreviewLayer.frame.size.height)
             self.addChildViewController(avpController)
             self.videoPreviewLayer.addSubview(avpController.view)
         }
