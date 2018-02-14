@@ -56,6 +56,9 @@ class DefectAddDetailViewController: UIViewController {
     var priorityValue = ["Low" , "Medium" , "High"]
     var typeValue = ["UI" , "Service" , "Logic" , "Other"]
     
+    var viewLoading:UIView = UIView()
+    var activityIndicator = UIActivityIndicatorView()
+    
     var inputPicker = UIPickerView()
     
     public init(image:UIImage){
@@ -79,8 +82,9 @@ class DefectAddDetailViewController: UIViewController {
         self.title = "Report Defect"
         setTextFieldInput()
         reportDefectButton.setBorderRadius(radius: 5)
-        setStyleView(views: [descriptionTextView,expectResultTextView,typeView,severityView,priorityView,dueDateView])
+        setStyleView(views: [descriptionTextView,expectedResultTextView,typeView,severityView,priorityView,dueDateView])
         setInitialValue()
+        initialLoadingView()
         
         if let url = videoURL{
             self.player = AVPlayer(url: url)
@@ -91,6 +95,38 @@ class DefectAddDetailViewController: UIViewController {
             self.videoPreviewLayer.addSubview(avpController.view)
         }
         
+    }
+    
+    func initialLoadingView() {
+        viewLoading.backgroundColor = UIColor.black
+        viewLoading.alpha = 0.7
+        activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator.color = UIColor.green
+        activityIndicator.frame = CGRect(x: (self.navigationController?.view.frame.size.width)!/2 - 25, y: (self.navigationController?.view.frame.size.height)!/2 - 25, width: 50, height: 50)
+        viewLoading.frame = view.frame
+        viewLoading.addSubview(activityIndicator)
+    }
+    
+    func showLoadingView() {
+        self.navigationController?.view.addSubview(viewLoading)
+        activityIndicator.startAnimating()
+    }
+    
+    func hideLoading() {
+        DispatchQueue.main.async {
+            self.viewLoading.removeFromSuperview()
+        }
+        
+    }
+    
+    func gotoSuccessView() {
+        DispatchQueue.main.async {
+            let submitComplete = SubmitSuccessViewController()
+            submitComplete.modalPresentationStyle = .overCurrentContext
+            self.navigationController?.present(submitComplete, animated: true, completion: {
+                
+            })
+        }
     }
     
     func setStyleView(views:[UIView]){
@@ -147,14 +183,11 @@ class DefectAddDetailViewController: UIViewController {
     @IBAction func saveDefect(_ sender: Any) {
         self.view.endEditing(true)
         callServiceCreateDefect()
-        let submitComplete = SubmitSuccessViewController()
-        submitComplete.modalPresentationStyle = .overCurrentContext
-        self.navigationController?.present(submitComplete, animated: true, completion: {
-            
-        })
     }
     
     func callServiceCreateDefect() {
+        
+        showLoadingView()
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         let systemVersion = UIDevice.current.systemVersion
         
@@ -191,6 +224,8 @@ class DefectAddDetailViewController: UIViewController {
         
         let task = session.dataTask(with: request) { (data, response, error) in
             print(response)
+            self.hideLoading()
+            self.gotoSuccessView()
             guard error == nil,let data = data else {
                 return
             }
