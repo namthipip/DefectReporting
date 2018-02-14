@@ -13,7 +13,7 @@ class SubmitSuccessViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _ = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.dismissView), userInfo: nil, repeats: false)
+        _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.dismissView), userInfo: nil, repeats: false)
 
         // Do any additional setup after loading the view.
     }
