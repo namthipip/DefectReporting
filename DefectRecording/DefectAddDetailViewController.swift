@@ -96,7 +96,7 @@ class DefectAddDetailViewController: UIViewController {
     func setStyleView(views:[UIView]){
         for view in views {
             view.setBorderRadius(radius: 3)
-            view.setBorderColor(color: .lightGray)
+            view.setBorderColor(color: UIColor(red: 235/255.0, green: 235/255.0, blue: 241/255.0, alpha: 1.0))
         }
     }
     
