@@ -11,7 +11,7 @@ import AVFoundation
 import AVKit
 
 class DefectAddDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var defectImg: UIImageView!
@@ -20,10 +20,10 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBOutlet weak var descriptionTextView: UITextView!
     
-    @IBOutlet weak var expextedResultTextView: UITextView!
+    @IBOutlet weak var expectedResultTextView: UITextView!
     
     @IBOutlet weak var typeTxt: UITextField!
-  
+    
     @IBOutlet weak var priorityTxt: UITextField!
     
     @IBOutlet weak var videoPreviewLayer: UIView!
@@ -67,7 +67,7 @@ class DefectAddDetailViewController: UIViewController {
         super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
         videoURL = videoUrl
     }
-
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -79,9 +79,9 @@ class DefectAddDetailViewController: UIViewController {
         self.title = "Report Defect"
         setTextFieldInput()
         reportDefectButton.setBorderRadius(radius: 5)
-        setStyleView(views: [descriptionTextView,expextedResultTextView,typeView,severityView,priorityView,dueDateView])
+        setStyleView(views: [descriptionTextView,expectResultTextView,typeView,severityView,priorityView,dueDateView])
         setInitialValue()
-
+        
         if let url = videoURL{
             self.player = AVPlayer(url: url)
             self.avpController = AVPlayerViewController()
@@ -146,11 +146,79 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBAction func saveDefect(_ sender: Any) {
         self.view.endEditing(true)
+        callServiceCreateDefect()
         let submitComplete = SubmitSuccessViewController()
         submitComplete.modalPresentationStyle = .overCurrentContext
         self.navigationController?.present(submitComplete, animated: true, completion: {
-
+            
         })
+    }
+    
+    func callServiceCreateDefect() {
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        let systemVersion = UIDevice.current.systemVersion
+        
+        let parameters = [ "reporter": "namthip.si",
+                           "defectDesc": descriptionTextView.text!,
+                           "expectedResult": expectedResultTextView.text!,
+                           "appVersion": appVersion!,
+                           "deviceOSVersion": systemVersion,
+                           "attachmentType": ((videoURL) != nil) ? "video":"image",
+                           "attachmentData": getBase64String(),
+                           "dueDate": dueDateTxt.text!,
+                           "typeID": "2",
+                           "statusID": "1",
+                           "priorityID":"1",
+                           "severityID": "1",
+                           "platformID": "1",
+                           "projectID": "1"] as [String : Any]
+        
+        let url = URL(string: "https://defect-recorder.herokuapp.com/defect/createDefect")!
+        let sessionConfig = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+            
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            print(response)
+            guard error == nil,let data = data else {
+                return
+            }
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    print(json)
+                    
+                }
+            }catch let (error) {
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
+        
+    }
+    
+    func getBase64String() -> String {
+        if let url = videoURL{
+            guard let attachmentData = try? Data(contentsOf: url) else {
+                return ""
+            }
+            return attachmentData.base64EncodedString(options: .lineLength64Characters)
+        }else {
+            let attachmentData = UIImagePNGRepresentation(defectImg.image!)
+            return attachmentData!.base64EncodedString(options: .lineLength64Characters)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -211,6 +279,6 @@ extension DefectAddDetailViewController : UIPickerViewDelegate , UIPickerViewDat
         }
         
     }
-
+    
     
 }

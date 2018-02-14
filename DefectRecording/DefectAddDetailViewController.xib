@@ -16,7 +16,7 @@
                 <outlet property="descriptionTextView" destination="ytY-EU-xMg" id="3Iq-yI-JuB"/>
                 <outlet property="dueDateTxt" destination="krG-o7-t9y" id="sfg-mO-dme"/>
                 <outlet property="dueDateView" destination="Y5U-nV-9lt" id="wkR-F1-KDa"/>
-                <outlet property="expextedResultTextView" destination="8fX-sw-wsh" id="wVq-dd-Cmx"/>
+                <outlet property="expectedResultTextView" destination="8fX-sw-wsh" id="ECI-pV-jfw"/>
                 <outlet property="priorityTxt" destination="4GM-T8-DKH" id="3Cn-qF-wPP"/>
                 <outlet property="priorityView" destination="Qtl-V4-OXv" id="8Aa-c9-Lze"/>
                 <outlet property="reportDefectButton" destination="qT7-67-kPY" id="lhE-iT-Lcz"/>
