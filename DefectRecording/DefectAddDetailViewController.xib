@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,6 +24,7 @@
                 <outlet property="scrollView" destination="al7-34-orJ" id="CGb-lg-UuX"/>
                 <outlet property="severityTxt" destination="VsO-0Z-ajV" id="gPn-Vb-1SN"/>
                 <outlet property="severityView" destination="kjt-xT-f4G" id="070-Sc-Myi"/>
+                <outlet property="submitSuccessView" destination="Go6-RG-jfl" id="7GB-px-hZi"/>
                 <outlet property="typeTxt" destination="50X-Vs-Rdv" id="5nf-Aw-sNC"/>
                 <outlet property="typeView" destination="a4x-tu-hz3" id="4a7-mp-GXK"/>
                 <outlet property="videoPreviewLayer" destination="wqK-XI-5J2" id="TOo-lF-dS6"/>
@@ -233,6 +235,36 @@
                                 <action selector="saveDefect:" destination="-1" eventType="touchUpInside" id="VJQ-Q1-lKz"/>
                             </connections>
                         </button>
+                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Go6-RG-jfl">
+                            <rect key="frame" x="93.5" y="500" width="187.5" height="100"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check-mark.png" translatesAutoresizingMaskIntoConstraints="NO" id="UV0-lH-6EU">
+                                    <rect key="frame" x="69" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="UV0-lH-6EU" secondAttribute="height" multiplier="1:1" id="Fga-sE-5cg"/>
+                                        <constraint firstAttribute="height" constant="50" id="aEL-46-CTj"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit Success" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hb9-NU-fGo">
+                                    <rect key="frame" x="0.0" y="70" width="187.5" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="IG8-JI-wps"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="UV0-lH-6EU" firstAttribute="centerX" secondItem="Go6-RG-jfl" secondAttribute="centerX" id="33D-Wd-x7p"/>
+                                <constraint firstAttribute="trailing" secondItem="Hb9-NU-fGo" secondAttribute="trailing" id="ApF-sl-Gic"/>
+                                <constraint firstItem="Hb9-NU-fGo" firstAttribute="top" secondItem="UV0-lH-6EU" secondAttribute="bottom" constant="20" id="IJe-zW-RPw"/>
+                                <constraint firstItem="Hb9-NU-fGo" firstAttribute="leading" secondItem="Go6-RG-jfl" secondAttribute="leading" id="UAB-AF-akF"/>
+                                <constraint firstItem="UV0-lH-6EU" firstAttribute="top" secondItem="Go6-RG-jfl" secondAttribute="top" id="a36-Dd-qEP"/>
+                                <constraint firstAttribute="height" constant="100" id="gQ7-Qs-hb1"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="kjt-xT-f4G" firstAttribute="leading" secondItem="a4x-tu-hz3" secondAttribute="leading" id="2MM-GA-I8S"/>
@@ -242,6 +274,7 @@
                         <constraint firstItem="EeB-86-o7z" firstAttribute="top" secondItem="wqK-XI-5J2" secondAttribute="bottom" constant="20" id="AAS-dH-tHM"/>
                         <constraint firstAttribute="bottom" secondItem="qT7-67-kPY" secondAttribute="bottom" constant="10" id="Hbs-Yr-fZV"/>
                         <constraint firstItem="8fX-sw-wsh" firstAttribute="top" secondItem="ZXD-RG-qOu" secondAttribute="bottom" constant="8" id="ILs-vv-SYh"/>
+                        <constraint firstItem="Go6-RG-jfl" firstAttribute="centerX" secondItem="al7-34-orJ" secondAttribute="centerX" id="Jtx-fY-TxC"/>
                         <constraint firstItem="qT7-67-kPY" firstAttribute="leading" secondItem="al7-34-orJ" secondAttribute="leading" constant="10" id="O4T-YD-GMy"/>
                         <constraint firstAttribute="trailing" secondItem="wqK-XI-5J2" secondAttribute="trailing" id="Oym-zh-nAT"/>
                         <constraint firstAttribute="trailing" secondItem="ytY-EU-xMg" secondAttribute="trailing" constant="20" id="P7J-iy-a2p"/>
@@ -252,6 +285,7 @@
                         <constraint firstItem="Y5U-nV-9lt" firstAttribute="trailing" secondItem="Qtl-V4-OXv" secondAttribute="trailing" id="TOu-II-JEl"/>
                         <constraint firstItem="a4x-tu-hz3" firstAttribute="trailing" secondItem="8fX-sw-wsh" secondAttribute="trailing" id="V1M-2w-eAR"/>
                         <constraint firstItem="ytY-EU-xMg" firstAttribute="top" secondItem="wdm-Jj-O4l" secondAttribute="bottom" constant="9" id="VTW-1i-fgu"/>
+                        <constraint firstItem="Go6-RG-jfl" firstAttribute="centerY" secondItem="al7-34-orJ" secondAttribute="centerY" id="Vq1-Py-4Fz"/>
                         <constraint firstItem="EeB-86-o7z" firstAttribute="leading" secondItem="al7-34-orJ" secondAttribute="leading" constant="15" id="VtI-Im-gDT"/>
                         <constraint firstAttribute="trailing" secondItem="EeB-86-o7z" secondAttribute="trailing" constant="10" id="YNm-fO-IiO"/>
                         <constraint firstItem="Qtl-V4-OXv" firstAttribute="trailing" secondItem="kjt-xT-f4G" secondAttribute="trailing" id="aE9-Y0-yQU"/>
@@ -268,6 +302,7 @@
                         <constraint firstItem="wdm-Jj-O4l" firstAttribute="top" secondItem="EeB-86-o7z" secondAttribute="bottom" constant="20" id="pcH-Kr-3OI"/>
                         <constraint firstItem="ZXD-RG-qOu" firstAttribute="top" secondItem="ytY-EU-xMg" secondAttribute="bottom" constant="10" id="rAy-X8-ywB"/>
                         <constraint firstItem="wqK-XI-5J2" firstAttribute="top" secondItem="g3f-Mf-tMg" secondAttribute="bottom" constant="20" id="tnn-GP-NyW"/>
+                        <constraint firstItem="Go6-RG-jfl" firstAttribute="width" secondItem="al7-34-orJ" secondAttribute="width" multiplier="0.5" id="xDW-wV-LSX"/>
                         <constraint firstItem="wqK-XI-5J2" firstAttribute="centerX" secondItem="al7-34-orJ" secondAttribute="centerX" id="y6z-Ye-NXY"/>
                         <constraint firstItem="a4x-tu-hz3" firstAttribute="top" secondItem="8fX-sw-wsh" secondAttribute="bottom" constant="10" id="yG0-jQ-arq"/>
                         <constraint firstItem="qT7-67-kPY" firstAttribute="top" secondItem="Y5U-nV-9lt" secondAttribute="bottom" constant="20" id="yjg-B1-6Z1"/>
@@ -286,4 +321,7 @@
             <point key="canvasLocation" x="47.5" y="111"/>
         </view>
     </objects>
+    <resources>
+        <image name="check-mark.png" width="64" height="64"/>
+    </resources>
 </document>

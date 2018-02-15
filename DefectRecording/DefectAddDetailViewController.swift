@@ -40,6 +40,8 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBOutlet weak var dueDateView: UIView!
     
+    @IBOutlet weak var submitSuccessView: UIView!
+    
     var drawImg:UIImage?
     
     var datePicker:UIDatePicker!
@@ -116,14 +118,21 @@ class DefectAddDetailViewController: UIViewController {
         DispatchQueue.main.async {
             self.viewLoading.removeFromSuperview()
         }
-        
     }
     
     func gotoSuccessView() {
         DispatchQueue.main.async {
-            let submitComplete = SubmitSuccessViewController()
-            submitComplete.modalPresentationStyle = .overCurrentContext
-            self.navigationController?.present(submitComplete, animated: true, completion: {
+            UIView.animate(withDuration: 1.0, animations: {
+                self.activityIndicator.alpha = 0.0
+                self.activityIndicator.removeFromSuperview()
+            }, completion: { (complete) in
+                UIView.animate(withDuration: 2.0, animations: {
+                    self.submitSuccessView.alpha = 1.0
+                    self.viewLoading.addSubview(self.submitSuccessView)
+                }, completion: { (complete) in
+                    self.navigationController?.dismiss(animated: true, completion: nil)
+                })
+                
                 
             })
         }
@@ -224,7 +233,7 @@ class DefectAddDetailViewController: UIViewController {
         
         let task = session.dataTask(with: request) { (data, response, error) in
             print(response)
-            self.hideLoading()
+            //self.hideLoading()
             self.gotoSuccessView()
             guard error == nil,let data = data else {
                 return

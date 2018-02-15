@@ -25,8 +25,6 @@
 		17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */; };
 		17B548B12033458900F9938C /* icon_dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B548B02033458900F9938C /* icon_dropdown.png */; };
 		17BE84D11FF7BCE900E5556C /* check-mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 17BE84D01FF7BCE900E5556C /* check-mark.png */; };
-		8F32C90A1FE56EBE0004867B /* SubmitSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */; };
-		8F32C90B1FE56EBE0004867B /* SubmitSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */; };
 		8FD2848F1F0E2AE3007EEBD6 /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */; };
 		8FEB36501FE3F4AD008BA2B8 /* brush.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36351FE3F4AD008BA2B8 /* brush.png */; };
 		8FEB36511FE3F4AD008BA2B8 /* brush@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEB36361FE3F4AD008BA2B8 /* brush@2x.png */; };
@@ -78,8 +76,6 @@
 		17BE84D01FF7BCE900E5556C /* check-mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-mark.png"; sourceTree = "<group>"; };
 		32857AD3B69EE898330CF4BC /* Pods-DefectRecording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DefectRecording.release.xcconfig"; path = "Pods/Target Support Files/Pods-DefectRecording/Pods-DefectRecording.release.xcconfig"; sourceTree = "<group>"; };
 		8E7FEA2D3A237551B255B471 /* Pods_DefectRecording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DefectRecording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitSuccessViewController.swift; sourceTree = "<group>"; };
-		8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitSuccessViewController.xib; sourceTree = "<group>"; };
 		8FD2848C1F0E2AE3007EEBD6 /* DefectRecording-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DefectRecording-Bridging-Header.h"; sourceTree = "<group>"; };
 		8FD2848D1F0E2AE3007EEBD6 /* ASScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScreenRecorder.h; sourceTree = "<group>"; };
 		8FD2848E1F0E2AE3007EEBD6 /* ASScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScreenRecorder.m; sourceTree = "<group>"; };
@@ -164,8 +160,6 @@
 				178670461EF8E549004E7685 /* FloatingButtonController.swift */,
 				178670471EF8E549004E7685 /* FloatingButtonWindow.swift */,
 				8FD2848C1F0E2AE3007EEBD6 /* DefectRecording-Bridging-Header.h */,
-				8F32C9081FE56EBE0004867B /* SubmitSuccessViewController.swift */,
-				8F32C9091FE56EBE0004867B /* SubmitSuccessViewController.xib */,
 			);
 			path = DefectRecording;
 			sourceTree = "<group>";
@@ -293,7 +287,6 @@
 				8FEB365E1FE3F4AD008BA2B8 /* erase_active.png in Resources */,
 				8FEB36621FE3F4AD008BA2B8 /* eraser.png in Resources */,
 				8FEB36591FE3F4AD008BA2B8 /* draw_inactive.png in Resources */,
-				8F32C90B1FE56EBE0004867B /* SubmitSuccessViewController.xib in Resources */,
 				8FEB36571FE3F4AD008BA2B8 /* draw_active.png in Resources */,
 				8FEB365F1FE3F4AD008BA2B8 /* erase_active@2x.png in Resources */,
 				1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */,
@@ -389,7 +382,6 @@
 				176390121EF664F600A86097 /* DrawingViewController.swift in Sources */,
 				1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */,
 				171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */,
-				8F32C90A1FE56EBE0004867B /* SubmitSuccessViewController.swift in Sources */,
 				170DA4A11EE45AE000E4F857 /* DefectReportViewController.swift in Sources */,
 				1765BB6A1EF823D9000B4F42 /* HiddenStatusBarViewController.swift in Sources */,
 				170DA49F1EE45AE000E4F857 /* AppDelegate.swift in Sources */,
