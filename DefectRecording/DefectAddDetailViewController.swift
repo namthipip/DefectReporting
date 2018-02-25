@@ -215,7 +215,7 @@ class DefectAddDetailViewController: UIViewController {
                            "platformID": "1",
                            "projectID": "1"] as [String : Any]
         
-        let url = URL(string: "https://defect-recorder.herokuapp.com/defect/createDefect")!
+        let url = URL(string: "https://defect-recorder.herokuapp.com/defect/")!
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         var request = URLRequest(url: url)
