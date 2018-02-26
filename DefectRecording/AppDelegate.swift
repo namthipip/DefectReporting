@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         DefectRecordShareInstance.sharedInstance.deleteLogFile()
         DefectRecordShareInstance.sharedInstance.redirectLogToDocuments()
-        IQKeyboardManager.sharedManager().enable = true
 
         return true
     }
