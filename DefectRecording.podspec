@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DefectRecording'
-  s.version          = '0.6.6'
+  s.version          = '0.6.7'
   s.summary          = 'Defect reporting in app'
  
   s.description      = <<-DESC
@@ -17,5 +17,6 @@ Defect Reporting in App by screen capture or screen recording!
   s.resource_bundles = {'DefectRecording' => ['DefectRecording/*.{lproj,storyboard,xcassets,png,jpeg,jpg}']}
 
   s.dependency 'IQKeyboardManagerSwift'
+  s.dependency 'ObjectMapper'
  
 end
