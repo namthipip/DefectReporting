@@ -88,7 +88,9 @@ class DefectAddDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let path = Bundle.main.path(forResource: "filterList", ofType: "json") {
+        let podBundle = Bundle(for: DefectRecordShareInstance.self)
+        
+        if let path = podBundle.path(forResource: "filterList", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
