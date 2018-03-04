@@ -5,5 +5,6 @@ target 'DefectRecording' do
   use_frameworks!
 
   pod 'IQKeyboardManagerSwift'
+  pod 'ObjectMapper'
 
 end

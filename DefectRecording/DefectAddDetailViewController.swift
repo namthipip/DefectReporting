@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 import AVKit
+import ObjectMapper
+import IQKeyboardManagerSwift
 
 class DefectAddDetailViewController: UIViewController {
     
@@ -54,14 +56,19 @@ class DefectAddDetailViewController: UIViewController {
     
     var videoURL:URL?
     
-    var severityValue = ["Inconsequencial" , "Minor" , "Major" , "Critical" , "Blocking"]
-    var priorityValue = ["Low" , "Medium" , "High"]
-    var typeValue = ["UI" , "Service" , "Logic" , "Other"]
-    
     var viewLoading:UIView = UIView()
+    
     var activityIndicator = UIActivityIndicatorView()
     
+    var attributeList:DefectAttributeEntity?
+    
     var inputPicker = UIPickerView()
+    
+    var selectedType:String = ""
+    
+    var selectedSeverity:String = ""
+    
+    var selectedPriority:String = ""
     
     public init(image:UIImage){
         super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
@@ -80,6 +87,18 @@ class DefectAddDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let path = Bundle.main.path(forResource: "filterList", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                attributeList = Mapper<DefectAttributeEntity>().map(JSON: jsonResult as! [String : Any])
+            } catch {
+                // handle error
+            }
+        }
+        
+        
         defectImg.image = drawImg
         self.title = "Report Defect"
         setTextFieldInput()
@@ -146,8 +165,8 @@ class DefectAddDetailViewController: UIViewController {
     }
     
     func setInitialValue() {
-        severityTxt.text = severityValue[0]
-        priorityTxt.text = priorityValue[0]
+        //severityTxt.text = severityValue[0]
+        //priorityTxt.text = priorityValue[0]
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "dd/MM/yyyy"
         dueDateTxt.text = dateFormat.string(from: Date())
@@ -208,10 +227,10 @@ class DefectAddDetailViewController: UIViewController {
                            "attachmentType": ((videoURL) != nil) ? "video":"image",
                            "attachmentData": getBase64String(),
                            "dueDate": dueDateTxt.text!,
-                           "typeID": "2",
+                           "typeID": selectedType,
                            "statusID": "1",
-                           "priorityID":"1",
-                           "severityID": "1",
+                           "priorityID":selectedPriority,
+                           "severityID": selectedSeverity,
                            "platformID": "1",
                            "projectID": "1"] as [String : Any]
         
@@ -282,9 +301,17 @@ extension DefectAddDetailViewController : UITextFieldDelegate{
         activeField = nil
         if textField == dueDateTxt {
             didEnterDuedate()
+        }else if textField == typeTxt {
+            typeTxt.text =  attributeList?.type[inputPicker.selectedRow(inComponent: 0)].name
+            selectedType =  (attributeList?.type[inputPicker.selectedRow(inComponent: 0)].id)!
+        }else if textField == severityTxt {
+            severityTxt.text =  attributeList?.severity[inputPicker.selectedRow(inComponent: 0)].name
+            selectedSeverity =  (attributeList?.severity[inputPicker.selectedRow(inComponent: 0)].id)!
+        }else if textField == priorityTxt {
+            priorityTxt.text =  attributeList?.priority[inputPicker.selectedRow(inComponent: 0)].name
+            selectedPriority =  (attributeList?.priority[inputPicker.selectedRow(inComponent: 0)].id)!
         }
     }
-    
 }
 
 extension DefectAddDetailViewController : UIPickerViewDelegate , UIPickerViewDataSource {
@@ -295,34 +322,22 @@ extension DefectAddDetailViewController : UIPickerViewDelegate , UIPickerViewDat
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if activeField == typeTxt {
-            return typeValue.count
+            return (attributeList?.type.count)!
         }else if activeField == severityTxt {
-            return severityValue.count
+            return (attributeList?.severity.count)!
         }else {
-            return priorityValue.count
+            return (attributeList?.priority.count)!
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if activeField == typeTxt {
-            return typeValue[row]
+            return attributeList?.type[row].name
         }else if activeField == severityTxt {
-            return severityValue[row]
+            return attributeList?.severity[row].name
         }else {
-            return priorityValue[row]
+            return attributeList?.priority[row].name
         }
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if activeField == typeTxt {
-            typeTxt.text = typeValue[row]
-        }else if activeField == severityTxt {
-            severityTxt.text = severityValue[row]
-        }else {
-            priorityTxt.text = priorityValue[row]
-        }
-        
-    }
-    
     
 }

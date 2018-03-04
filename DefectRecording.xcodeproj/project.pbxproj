@@ -12,6 +12,10 @@
 		170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A21EE45AE000E4F857 /* DefectRecord.storyboard */; };
 		170DA4A61EE45AE000E4F857 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A51EE45AE000E4F857 /* Assets.xcassets */; };
 		170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A71EE45AE000E4F857 /* LaunchScreen.storyboard */; };
+		171B0D7B204AF9D500E86FA4 /* rec-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 171B0D7A204AF9D500E86FA4 /* rec-button.png */; };
+		171B0D80204AFA2800E86FA4 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171B0D81204AFA2800E86FA4 /* IQKeyboardManagerSwift.framework */; };
+		171B0D83204AFC0800E86FA4 /* filterList.json in Resources */ = {isa = PBXBuildFile; fileRef = 171B0D82204AFC0800E86FA4 /* filterList.json */; };
+		171B0D85204AFC3600E86FA4 /* DefectAttributeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B0D84204AFC3600E86FA4 /* DefectAttributeEntity.swift */; };
 		171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B58DD1EEAD8CE00294A00 /* DefectRecordShareInstance.swift */; };
 		171B58E41EEB01DF00294A00 /* MotionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B58E31EEB01DF00294A00 /* MotionEvent.swift */; };
 		1763900C1EED503700A86097 /* RecordTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763900A1EED503700A86097 /* RecordTypeViewController.swift */; };
@@ -58,6 +62,11 @@
 		170DA4A51EE45AE000E4F857 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		170DA4A81EE45AE000E4F857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		170DA4AA1EE45AE000E4F857 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		171B0D7A204AF9D500E86FA4 /* rec-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rec-button.png"; path = "Assets.xcassets/rec-button.imageset/rec-button.png"; sourceTree = "<group>"; };
+		171B0D7C204AF9F900E86FA4 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		171B0D81204AFA2800E86FA4 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		171B0D82204AFC0800E86FA4 /* filterList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = filterList.json; sourceTree = "<group>"; };
+		171B0D84204AFC3600E86FA4 /* DefectAttributeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectAttributeEntity.swift; sourceTree = "<group>"; };
 		171B58DD1EEAD8CE00294A00 /* DefectRecordShareInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectRecordShareInstance.swift; sourceTree = "<group>"; };
 		171B58E31EEB01DF00294A00 /* MotionEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionEvent.swift; sourceTree = "<group>"; };
 		1763900A1EED503700A86097 /* RecordTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTypeViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				171B0D80204AFA2800E86FA4 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				DBC5C382C079ACE94B4A736B /* Pods_DefectRecording.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +125,7 @@
 		170DA4921EE45AE000E4F857 = {
 			isa = PBXGroup;
 			children = (
+				171B0D7C204AF9F900E86FA4 /* IQKeyboardManagerSwift.framework */,
 				170DA49D1EE45AE000E4F857 /* DefectRecording */,
 				170DA49C1EE45AE000E4F857 /* Products */,
 				58A7BFC2724BCF9299A49E51 /* Pods */,
@@ -133,6 +144,9 @@
 		170DA49D1EE45AE000E4F857 /* DefectRecording */ = {
 			isa = PBXGroup;
 			children = (
+				171B0D84204AFC3600E86FA4 /* DefectAttributeEntity.swift */,
+				171B0D82204AFC0800E86FA4 /* filterList.json */,
+				171B0D7A204AF9D500E86FA4 /* rec-button.png */,
 				8E03FE592043C79200618A0B /* brush.png */,
 				8E03FE502043C79000618A0B /* brush@2x.png */,
 				8E03FE5B2043C79200618A0B /* check-mark.png */,
@@ -192,6 +206,7 @@
 		88F48DB890A307880708CF9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				171B0D81204AFA2800E86FA4 /* IQKeyboardManagerSwift.framework */,
 				8E7FEA2D3A237551B255B471 /* Pods_DefectRecording.framework */,
 			);
 			name = Frameworks;
@@ -270,6 +285,7 @@
 				8E03FE6F2043C79300618A0B /* edit@2x.png in Resources */,
 				176390131EF664F600A86097 /* DrawingViewController.xib in Resources */,
 				8E03FE652043C79300618A0B /* clear-button.png in Resources */,
+				171B0D83204AFC0800E86FA4 /* filterList.json in Resources */,
 				1763900D1EED503700A86097 /* RecordTypeViewController.xib in Resources */,
 				17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */,
 				8E03FE632043C79300618A0B /* icon_dropdown.png in Resources */,
@@ -289,6 +305,7 @@
 				8E03FE6B2043C79300618A0B /* draw_inactive@2x.png in Resources */,
 				170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */,
 				8E03FE602043C79300618A0B /* clear-button@2x.png in Resources */,
+				171B0D7B204AF9D500E86FA4 /* rec-button.png in Resources */,
 				8E03FE722043C79300618A0B /* check-mark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,10 +354,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DefectRecording/Pods-DefectRecording-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -356,6 +375,7 @@
 			files = (
 				17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */,
 				171B58E41EEB01DF00294A00 /* MotionEvent.swift in Sources */,
+				171B0D85204AFC3600E86FA4 /* DefectAttributeEntity.swift in Sources */,
 				178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */,
 				8FD2848F1F0E2AE3007EEBD6 /* ASScreenRecorder.m in Sources */,
 				178670481EF8E549004E7685 /* FloatingButtonController.swift in Sources */,

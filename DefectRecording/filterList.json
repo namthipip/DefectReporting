@@ -1,0 +1,92 @@
+{
+    
+    "type": [
+             {
+             "typeID":"1",
+             "typeName":"Data"
+             },{
+             "typeID":"2",
+             "typeName":"Interface"
+             },{
+             "typeID":"3",
+             "typeName":"Logic"
+             },{
+             "typeID":"4",
+             "typeName":"Other"
+             }
+             ],
+    "severity":[
+                {
+                "severityID":"1",
+                "severityName":"Blocking"
+                },
+                {
+                "severityID":"2",
+                "severityName":"Critical"
+                },
+                {
+                "severityID":"3",
+                "severityName":"Major"
+                },
+                {
+                "severityID":"4",
+                "severityName":"Minor"
+                },
+                {
+                "severityID":"5",
+                "severityName":"Inconsequencial"
+                }
+                ],
+    "priority":[
+                {
+                "priorityID":"1",
+                "priorityName":"High"
+                },
+                {
+                "priorityID":"2",
+                "priorityName":"Medium"
+                },
+                {
+                "priorityID":"3",
+                "priorityName":"Low"
+                }
+                ],
+    "status":[
+              {
+              "statusID":"1",
+              "statusName":"Open"
+              },
+              {
+              "statusID":"5",
+              "statusName":"Assigned"
+              },
+              {
+              "statusID":"6",
+              "statusName":"Fixed"
+              },
+              {
+              "statusID":"7",
+              "statusName":"Tested"
+              },
+              {
+              "statusID":"8",
+              "statusName":"Closed"
+              }
+              ],
+    "project":[
+               {
+               "projectID":"1",
+               "projectName":"ECommerce"
+               },
+               {
+               "projectID":"2",
+               "projectName":"Quickpay Favorite"
+               },
+               {
+               "projectID":"3",
+               "projectName":"Quickpay Favorite2"
+               }
+               
+               ]
+    
+}
