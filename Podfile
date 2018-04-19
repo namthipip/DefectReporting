@@ -6,5 +6,6 @@ target 'DefectRecording' do
 
   pod 'IQKeyboardManagerSwift'
   pod 'ObjectMapper'
+  pod 'SkyFloatingLabelTextField'
 
 end

@@ -11,6 +11,7 @@ import AVFoundation
 import AVKit
 import ObjectMapper
 import IQKeyboardManagerSwift
+import SkyFloatingLabelTextField
 
 class DefectAddDetailViewController: UIViewController {
     
@@ -20,27 +21,21 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBOutlet weak var dueDateTxt: UITextField!
     
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionTextField: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var expectedResultTextView: UITextView!
+    @IBOutlet weak var expectedResultTextField: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var typeTxt: UITextField!
+    @IBOutlet weak var typeTxt: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var priorityTxt: UITextField!
+    @IBOutlet weak var priorityTxt: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var videoPreviewLayer: UIView!
+    @IBOutlet weak var videoPreviewLayer: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var severityTxt: UITextField!
+    @IBOutlet weak var severityTxt: SkyFloatingLabelTextField!
+    
+    @IBOutlet weak var projectTxt: SkyFloatingLabelTextField!
     
     @IBOutlet weak var reportDefectButton: UIButton!
-    
-    @IBOutlet weak var typeView: UIView!
-    
-    @IBOutlet weak var severityView: UIView!
-    
-    @IBOutlet weak var priorityView: UIView!
-    
-    @IBOutlet weak var dueDateView: UIView!
     
     @IBOutlet weak var submitSuccessView: UIView!
     
@@ -96,7 +91,6 @@ class DefectAddDetailViewController: UIViewController {
         self.title = "Report Defect"
         setTextFieldInput()
         reportDefectButton.setBorderRadius(radius: 5)
-        setStyleView(views: [descriptionTextView,expectedResultTextView,typeView,severityView,priorityView,dueDateView])
         setInitialValue()
         initialLoadingView()
         
@@ -150,13 +144,6 @@ class DefectAddDetailViewController: UIViewController {
         }
     }
     
-    func setStyleView(views:[UIView]){
-        for view in views {
-            view.setBorderRadius(radius: 3)
-            view.setBorderColor(color: UIColor(red: 235/255.0, green: 235/255.0, blue: 241/255.0, alpha: 1.0))
-        }
-    }
-    
     func setInitialValue() {
         //severityTxt.text = severityValue[0]
         //priorityTxt.text = priorityValue[0]
@@ -179,6 +166,9 @@ class DefectAddDetailViewController: UIViewController {
         inputPicker.delegate = self
         inputPicker.dataSource = self
         typeTxt.delegate = self
+        projectTxt.delegate = self
+        projectTxt.inputView = inputPicker
+        projectTxt.addRightView()
         typeTxt.inputView = inputPicker
         typeTxt.addRightView()
         severityTxt.inputView = inputPicker
@@ -240,8 +230,8 @@ class DefectAddDetailViewController: UIViewController {
         let systemVersion = UIDevice.current.systemVersion
         
         let parameters = [ "reporter": "namthip.si",
-                           "defectDesc": descriptionTextView.text!,
-                           "expectedResult": expectedResultTextView.text!,
+                           "defectDesc": descriptionTextField.text!,
+                           "expectedResult": expectedResultTextField.text!,
                            "appVersion": appVersion!,
                            "deviceOSVersion": systemVersion,
                            "attachmentType": ((videoURL) != nil) ? "video":"image",
@@ -329,6 +319,9 @@ extension DefectAddDetailViewController : UITextFieldDelegate{
         }else if textField == priorityTxt {
             priorityTxt.text =  attributeList?.priority[inputPicker.selectedRow(inComponent: 0)].name
             selectedPriority =  (attributeList?.priority[inputPicker.selectedRow(inComponent: 0)].id)!
+        }else if textField == projectTxt {
+            priorityTxt.text =  attributeList?.project[inputPicker.selectedRow(inComponent: 0)].name
+            selectedProject =  (attributeList?.project[inputPicker.selectedRow(inComponent: 0)].id)!
         }
     }
 }
@@ -344,6 +337,8 @@ extension DefectAddDetailViewController : UIPickerViewDelegate , UIPickerViewDat
             return (attributeList?.type.count)!
         }else if activeField == severityTxt {
             return (attributeList?.severity.count)!
+        }else if activeField == projectTxt {
+            return (attributeList?.project.count)!
         }else {
             return (attributeList?.priority.count)!
         }
@@ -354,6 +349,8 @@ extension DefectAddDetailViewController : UIPickerViewDelegate , UIPickerViewDat
             return attributeList?.type[row].name
         }else if activeField == severityTxt {
             return attributeList?.severity[row].name
+        }else if activeField == projectTxt {
+            return attributeList?.project[row].name
         }else {
             return attributeList?.priority[row].name
         }
