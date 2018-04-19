@@ -37,6 +37,7 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBOutlet weak var reportDefectButton: UIButton!
     
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var submitSuccessView: UIView!
     
     var drawImg:UIImage?
@@ -91,6 +92,7 @@ class DefectAddDetailViewController: UIViewController {
         self.title = "Report Defect"
         setTextFieldInput()
         reportDefectButton.setBorderRadius(radius: 5)
+        cancelButton.setBorderRadius(radius: 5)
         //setInitialValue()
         initialLoadingView()
         
@@ -111,7 +113,7 @@ class DefectAddDetailViewController: UIViewController {
         activityIndicator.activityIndicatorViewStyle = .whiteLarge
         activityIndicator.color = UIColor.green
         activityIndicator.frame = CGRect(x: (self.navigationController?.view.frame.size.width)!/2 - 25, y: (self.navigationController?.view.frame.size.height)!/2 - 25, width: 50, height: 50)
-        viewLoading.frame = view.frame
+        viewLoading.frame = UIScreen.main.bounds
         viewLoading.addSubview(activityIndicator)
     }
     
@@ -218,9 +220,18 @@ class DefectAddDetailViewController: UIViewController {
         task.resume()
     }
     
+    @IBAction func cancelAction(_ sender: Any) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func saveDefect(_ sender: Any) {
         self.view.endEditing(true)
-        callServiceCreateDefect()
+        let verifyUserView = VerifyUserViewController(nibName: "VerifyUserViewController", bundle: nil)
+        verifyUserView.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.present(verifyUserView, animated: true, completion: {
+            
+        })
+        //callServiceCreateDefect()
     }
     
     func callServiceCreateDefect() {

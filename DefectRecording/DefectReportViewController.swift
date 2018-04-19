@@ -21,6 +21,10 @@ class DefectReportViewController: UIViewController {
         
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     func deviceShake(){
         print("Device Shake")
     }

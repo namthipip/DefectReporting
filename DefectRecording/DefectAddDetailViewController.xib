@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DefectAddDetailViewController" customModule="DefectRecording" customModuleProvider="target">
             <connections>
+                <outlet property="cancelButton" destination="EEW-eO-awY" id="6jS-WQ-27e"/>
                 <outlet property="defectImg" destination="weJ-hs-SKD" id="eRO-Lr-jVB"/>
                 <outlet property="descriptionTextField" destination="Igw-sb-g9I" id="y4e-1g-bwc"/>
                 <outlet property="dueDateTxt" destination="Zvx-HI-NvY" id="BJs-OI-THQ"/>
@@ -62,7 +63,10 @@
                                     <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </textField>
@@ -83,7 +87,10 @@
                                     <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </textField>
@@ -104,7 +111,10 @@
                                     <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </textField>
@@ -125,7 +135,10 @@
                                     <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </textField>
@@ -146,7 +159,10 @@
                                     <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </textField>
@@ -167,7 +183,10 @@
                                     <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </textField>
@@ -188,7 +207,10 @@
                                     <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                    <color key="value" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </textField>
@@ -216,10 +238,10 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT7-67-kPY">
-                            <rect key="frame" x="15" y="854.5" width="345" height="50"/>
+                            <rect key="frame" x="137.5" y="854.5" width="222.5" height="40"/>
                             <color key="backgroundColor" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="CsU-J4-sT7"/>
+                                <constraint firstAttribute="height" constant="40" id="CsU-J4-sT7"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <state key="normal" title="Report Defect">
@@ -227,6 +249,21 @@
                             </state>
                             <connections>
                                 <action selector="saveDefect:" destination="-1" eventType="touchUpInside" id="VJQ-Q1-lKz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEW-eO-awY">
+                            <rect key="frame" x="15" y="854.5" width="112.5" height="40"/>
+                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="UTi-JP-bpF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="DIn-n9-ht4"/>
+                                <action selector="saveDefect:" destination="-1" eventType="touchUpInside" id="WtE-ht-n0A"/>
                             </connections>
                         </button>
                         <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Go6-RG-jfl">
@@ -279,6 +316,7 @@
                         <constraint firstItem="8gK-yi-eV2" firstAttribute="leading" secondItem="Dqr-m7-dNt" secondAttribute="leading" id="R1r-nS-KYx"/>
                         <constraint firstItem="3Fa-kS-CD2" firstAttribute="leading" secondItem="8gK-yi-eV2" secondAttribute="leading" id="Tx9-5S-kiq"/>
                         <constraint firstItem="Dqr-m7-dNt" firstAttribute="leading" secondItem="5d8-Qq-9gp" secondAttribute="leading" id="U7o-J7-krm"/>
+                        <constraint firstItem="EEW-eO-awY" firstAttribute="leading" secondItem="Zvx-HI-NvY" secondAttribute="leading" id="UJ1-Po-Xjc"/>
                         <constraint firstItem="Go6-RG-jfl" firstAttribute="centerY" secondItem="al7-34-orJ" secondAttribute="centerY" id="Vq1-Py-4Fz"/>
                         <constraint firstItem="EeB-86-o7z" firstAttribute="leading" secondItem="al7-34-orJ" secondAttribute="leading" constant="15" id="VtI-Im-gDT"/>
                         <constraint firstItem="Dqr-m7-dNt" firstAttribute="height" secondItem="5d8-Qq-9gp" secondAttribute="height" id="WJ4-bB-6lq"/>
@@ -296,13 +334,15 @@
                         <constraint firstItem="Igw-sb-g9I" firstAttribute="top" secondItem="EeB-86-o7z" secondAttribute="bottom" constant="20" id="hf4-Nz-6ut"/>
                         <constraint firstItem="Dqr-m7-dNt" firstAttribute="top" secondItem="5d8-Qq-9gp" secondAttribute="bottom" constant="20" id="l82-oG-YuC"/>
                         <constraint firstItem="5d8-Qq-9gp" firstAttribute="height" secondItem="Igw-sb-g9I" secondAttribute="height" id="lrc-wY-myt"/>
+                        <constraint firstItem="EEW-eO-awY" firstAttribute="width" secondItem="al7-34-orJ" secondAttribute="width" multiplier="0.3" id="nU6-C1-xZu"/>
                         <constraint firstItem="5d8-Qq-9gp" firstAttribute="trailing" secondItem="Igw-sb-g9I" secondAttribute="trailing" id="soo-0m-cy9"/>
                         <constraint firstItem="qT7-67-kPY" firstAttribute="top" secondItem="wqK-XI-5J2" secondAttribute="bottom" constant="20" id="tGc-0J-q0a"/>
                         <constraint firstItem="wqK-XI-5J2" firstAttribute="top" secondItem="g3f-Mf-tMg" secondAttribute="bottom" constant="20" id="tnn-GP-NyW"/>
+                        <constraint firstItem="EEW-eO-awY" firstAttribute="top" secondItem="qT7-67-kPY" secondAttribute="top" id="ukr-wN-nb1"/>
                         <constraint firstItem="8gK-yi-eV2" firstAttribute="trailing" secondItem="Dqr-m7-dNt" secondAttribute="trailing" id="wgA-d4-H2y"/>
                         <constraint firstItem="Go6-RG-jfl" firstAttribute="width" secondItem="al7-34-orJ" secondAttribute="width" multiplier="0.5" id="xDW-wV-LSX"/>
-                        <constraint firstItem="qT7-67-kPY" firstAttribute="leading" secondItem="Zvx-HI-NvY" secondAttribute="leading" id="xF9-lK-0ZB"/>
                         <constraint firstItem="5d8-Qq-9gp" firstAttribute="top" secondItem="Igw-sb-g9I" secondAttribute="bottom" constant="20" id="yeU-nq-bt9"/>
+                        <constraint firstItem="qT7-67-kPY" firstAttribute="leading" secondItem="EEW-eO-awY" secondAttribute="trailing" constant="10" id="zgW-Lm-qmT"/>
                     </constraints>
                 </scrollView>
             </subviews>

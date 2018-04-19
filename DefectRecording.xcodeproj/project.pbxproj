@@ -26,6 +26,10 @@
 		178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670471EF8E549004E7685 /* FloatingButtonWindow.swift */; };
 		17897E042088917700623727 /* DefectAttributeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17897E032088917600623727 /* DefectAttributeEntity.swift */; };
 		17897E0720889F7800623727 /* AllService.png in Resources */ = {isa = PBXBuildFile; fileRef = 17897E0620889F7800623727 /* AllService.png */; };
+		17897E0A2088A5A800623727 /* VerifyUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17897E082088A5A800623727 /* VerifyUserViewController.swift */; };
+		17897E0B2088A5A800623727 /* VerifyUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17897E092088A5A800623727 /* VerifyUserViewController.xib */; };
+		17897E0F2088AE6A00623727 /* close_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 17897E0E2088AE6A00623727 /* close_button.png */; };
+		17897E112088AE9F00623727 /* PaddingTextfiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17897E102088AE9F00623727 /* PaddingTextfiled.swift */; };
 		17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */; };
 		17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */; };
 		8E03FE602043C79300618A0B /* clear-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E03FE492043C78F00618A0B /* clear-button@2x.png */; };
@@ -78,6 +82,10 @@
 		178670471EF8E549004E7685 /* FloatingButtonWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButtonWindow.swift; sourceTree = "<group>"; };
 		17897E032088917600623727 /* DefectAttributeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectAttributeEntity.swift; sourceTree = "<group>"; };
 		17897E0620889F7800623727 /* AllService.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AllService.png; sourceTree = "<group>"; };
+		17897E082088A5A800623727 /* VerifyUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyUserViewController.swift; sourceTree = "<group>"; };
+		17897E092088A5A800623727 /* VerifyUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyUserViewController.xib; sourceTree = "<group>"; };
+		17897E0E2088AE6A00623727 /* close_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_button.png; sourceTree = "<group>"; };
+		17897E102088AE9F00623727 /* PaddingTextfiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingTextfiled.swift; sourceTree = "<group>"; };
 		17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectAddDetailViewController.swift; sourceTree = "<group>"; };
 		17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefectAddDetailViewController.xib; sourceTree = "<group>"; };
 		32857AD3B69EE898330CF4BC /* Pods-DefectRecording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DefectRecording.release.xcconfig"; path = "Pods/Target Support Files/Pods-DefectRecording/Pods-DefectRecording.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,8 +154,10 @@
 		170DA49D1EE45AE000E4F857 /* DefectRecording */ = {
 			isa = PBXGroup;
 			children = (
+				17897E102088AE9F00623727 /* PaddingTextfiled.swift */,
 				17897E032088917600623727 /* DefectAttributeEntity.swift */,
 				171B0D82204AFC0800E86FA4 /* filterList.json */,
+				17897E0E2088AE6A00623727 /* close_button.png */,
 				171B0D8E204BBB9400E86FA4 /* rec-button.png */,
 				8E03FE592043C79200618A0B /* brush.png */,
 				8E03FE502043C79000618A0B /* brush@2x.png */,
@@ -193,6 +203,8 @@
 				178670461EF8E549004E7685 /* FloatingButtonController.swift */,
 				178670471EF8E549004E7685 /* FloatingButtonWindow.swift */,
 				8FD2848C1F0E2AE3007EEBD6 /* DefectRecording-Bridging-Header.h */,
+				17897E082088A5A800623727 /* VerifyUserViewController.swift */,
+				17897E092088A5A800623727 /* VerifyUserViewController.xib */,
 			);
 			path = DefectRecording;
 			sourceTree = "<group>";
@@ -282,6 +294,7 @@
 				170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */,
 				8E03FE732043C79300618A0B /* MagCover59.jpg in Resources */,
 				8E03FE712043C79300618A0B /* done-button.png in Resources */,
+				17897E0B2088A5A800623727 /* VerifyUserViewController.xib in Resources */,
 				8E03FE6C2043C79300618A0B /* refresh.png in Resources */,
 				8E03FE612043C79300618A0B /* edit.png in Resources */,
 				8E03FE6E2043C79300618A0B /* erase_inactive@2x.png in Resources */,
@@ -310,6 +323,7 @@
 				170DA4A41EE45AE000E4F857 /* DefectRecord.storyboard in Resources */,
 				8E03FE602043C79300618A0B /* clear-button@2x.png in Resources */,
 				171B0D8F204BBB9400E86FA4 /* rec-button.png in Resources */,
+				17897E0F2088AE6A00623727 /* close_button.png in Resources */,
 				8E03FE722043C79300618A0B /* check-mark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +404,9 @@
 				171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */,
 				170DA4A11EE45AE000E4F857 /* DefectReportViewController.swift in Sources */,
 				1765BB6A1EF823D9000B4F42 /* HiddenStatusBarViewController.swift in Sources */,
+				17897E0A2088A5A800623727 /* VerifyUserViewController.swift in Sources */,
 				170DA49F1EE45AE000E4F857 /* AppDelegate.swift in Sources */,
+				17897E112088AE9F00623727 /* PaddingTextfiled.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

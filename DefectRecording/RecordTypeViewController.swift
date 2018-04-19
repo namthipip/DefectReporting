@@ -37,6 +37,8 @@ class RecordTypeViewController: UIViewController {
             let window: UIWindow! = UIApplication.shared.keyWindow
             let drawingView = DrawingViewController(image: window.capture())
             let navigation = UINavigationController(rootViewController: drawingView)
+            navigation.navigationBar.backgroundColor = UIColor.lightGray
+            navigation.navigationBar.isTranslucent = true
             let currentView:UIViewController = UIApplication.topViewController()!
             currentView.present(navigation, animated: true, completion: nil)
         }

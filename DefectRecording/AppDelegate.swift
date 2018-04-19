@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DefectRecordShareInstance.sharedInstance.deleteLogFile()
         DefectRecordShareInstance.sharedInstance.redirectLogToDocuments()
         IQKeyboardManager.sharedManager().enable = true
+        application.isStatusBarHidden = true
 
         return true
     }
