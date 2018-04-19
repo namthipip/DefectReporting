@@ -30,7 +30,7 @@ class DefectAttributeEntity: Mappable {
 }
 
 class DefectCommonAttribute: Mappable {
-    var id:String = ""
+    var id:Int = 0
     var name:String = ""
     var selected:Bool = false
     

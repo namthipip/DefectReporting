@@ -64,11 +64,13 @@ class DefectAddDetailViewController: UIViewController {
     
     var inputPicker = UIPickerView()
     
-    var selectedType:String = ""
+    var selectedType:Int = 1
     
-    var selectedSeverity:String = ""
+    var selectedSeverity:Int = 1
     
-    var selectedPriority:String = ""
+    var selectedPriority:Int = 1
+    
+    var selectedProject:Int = 1
     
     public init(image:UIImage){
         super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
@@ -88,18 +90,7 @@ class DefectAddDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let podBundle = Bundle(for: DefectRecordShareInstance.self)
-        
-        if let path = podBundle.path(forResource: "filterList", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                attributeList = Mapper<DefectAttributeEntity>().map(JSON: jsonResult as! [String : Any])
-            } catch {
-                // handle error
-            }
-        }
-        
+        getDefectAttribute()
         
         defectImg.image = drawImg
         self.title = "Report Defect"
@@ -210,6 +201,33 @@ class DefectAddDetailViewController: UIViewController {
         dueDateTxt.resignFirstResponder()
     }
     
+    func getDefectAttribute(){
+        showLoadingView()
+        let url = URL(string: "https://defect-recorder.herokuapp.com/filter/")!
+        let sessionConfig = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            self.hideLoading()
+            guard error == nil,let data = data else {
+                return
+            }
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    self.attributeList = Mapper<DefectAttributeEntity>().map(JSON: json["filters"] as! [String : Any])
+                    print(json)
+                    
+                }
+            }catch let (error) {
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
+    }
+    
     @IBAction func saveDefect(_ sender: Any) {
         self.view.endEditing(true)
         callServiceCreateDefect()
@@ -253,7 +271,6 @@ class DefectAddDetailViewController: UIViewController {
         }
         
         let task = session.dataTask(with: request) { (data, response, error) in
-            print(response)
             //self.hideLoading()
             self.gotoSuccessView()
             guard error == nil,let data = data else {

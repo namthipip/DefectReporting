@@ -14,7 +14,6 @@
 		170DA4A91EE45AE000E4F857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170DA4A71EE45AE000E4F857 /* LaunchScreen.storyboard */; };
 		171B0D80204AFA2800E86FA4 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171B0D81204AFA2800E86FA4 /* IQKeyboardManagerSwift.framework */; };
 		171B0D83204AFC0800E86FA4 /* filterList.json in Resources */ = {isa = PBXBuildFile; fileRef = 171B0D82204AFC0800E86FA4 /* filterList.json */; };
-		171B0D85204AFC3600E86FA4 /* DefectAttributeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B0D84204AFC3600E86FA4 /* DefectAttributeEntity.swift */; };
 		171B0D8F204BBB9400E86FA4 /* rec-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 171B0D8E204BBB9400E86FA4 /* rec-button.png */; };
 		171B58DE1EEAD8CE00294A00 /* DefectRecordShareInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B58DD1EEAD8CE00294A00 /* DefectRecordShareInstance.swift */; };
 		171B58E41EEB01DF00294A00 /* MotionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B58E31EEB01DF00294A00 /* MotionEvent.swift */; };
@@ -25,6 +24,7 @@
 		1765BB6A1EF823D9000B4F42 /* HiddenStatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */; };
 		178670481EF8E549004E7685 /* FloatingButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670461EF8E549004E7685 /* FloatingButtonController.swift */; };
 		178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178670471EF8E549004E7685 /* FloatingButtonWindow.swift */; };
+		17897E042088917700623727 /* DefectAttributeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17897E032088917600623727 /* DefectAttributeEntity.swift */; };
 		17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */; };
 		17910FD51EF682F6008F1C72 /* DefectAddDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */; };
 		8E03FE602043C79300618A0B /* clear-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E03FE492043C78F00618A0B /* clear-button@2x.png */; };
@@ -65,7 +65,6 @@
 		171B0D7C204AF9F900E86FA4 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		171B0D81204AFA2800E86FA4 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		171B0D82204AFC0800E86FA4 /* filterList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = filterList.json; sourceTree = "<group>"; };
-		171B0D84204AFC3600E86FA4 /* DefectAttributeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectAttributeEntity.swift; sourceTree = "<group>"; };
 		171B0D8E204BBB9400E86FA4 /* rec-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rec-button.png"; sourceTree = "<group>"; };
 		171B58DD1EEAD8CE00294A00 /* DefectRecordShareInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectRecordShareInstance.swift; sourceTree = "<group>"; };
 		171B58E31EEB01DF00294A00 /* MotionEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionEvent.swift; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		1765BB691EF823D9000B4F42 /* HiddenStatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenStatusBarViewController.swift; sourceTree = "<group>"; };
 		178670461EF8E549004E7685 /* FloatingButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButtonController.swift; sourceTree = "<group>"; };
 		178670471EF8E549004E7685 /* FloatingButtonWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButtonWindow.swift; sourceTree = "<group>"; };
+		17897E032088917600623727 /* DefectAttributeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectAttributeEntity.swift; sourceTree = "<group>"; };
 		17910FD21EF682F6008F1C72 /* DefectAddDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefectAddDetailViewController.swift; sourceTree = "<group>"; };
 		17910FD31EF682F6008F1C72 /* DefectAddDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefectAddDetailViewController.xib; sourceTree = "<group>"; };
 		32857AD3B69EE898330CF4BC /* Pods-DefectRecording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DefectRecording.release.xcconfig"; path = "Pods/Target Support Files/Pods-DefectRecording/Pods-DefectRecording.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		170DA49D1EE45AE000E4F857 /* DefectRecording */ = {
 			isa = PBXGroup;
 			children = (
-				171B0D84204AFC3600E86FA4 /* DefectAttributeEntity.swift */,
+				17897E032088917600623727 /* DefectAttributeEntity.swift */,
 				171B0D82204AFC0800E86FA4 /* filterList.json */,
 				171B0D8E204BBB9400E86FA4 /* rec-button.png */,
 				8E03FE592043C79200618A0B /* brush.png */,
@@ -375,7 +375,7 @@
 			files = (
 				17910FD41EF682F6008F1C72 /* DefectAddDetailViewController.swift in Sources */,
 				171B58E41EEB01DF00294A00 /* MotionEvent.swift in Sources */,
-				171B0D85204AFC3600E86FA4 /* DefectAttributeEntity.swift in Sources */,
+				17897E042088917700623727 /* DefectAttributeEntity.swift in Sources */,
 				178670491EF8E549004E7685 /* FloatingButtonWindow.swift in Sources */,
 				8FD2848F1F0E2AE3007EEBD6 /* ASScreenRecorder.m in Sources */,
 				178670481EF8E549004E7685 /* FloatingButtonController.swift in Sources */,
