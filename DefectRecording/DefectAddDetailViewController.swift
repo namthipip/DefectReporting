@@ -91,7 +91,7 @@ class DefectAddDetailViewController: UIViewController {
         self.title = "Report Defect"
         setTextFieldInput()
         reportDefectButton.setBorderRadius(radius: 5)
-        setInitialValue()
+        //setInitialValue()
         initialLoadingView()
         
         if let url = videoURL{
@@ -320,7 +320,7 @@ extension DefectAddDetailViewController : UITextFieldDelegate{
             priorityTxt.text =  attributeList?.priority[inputPicker.selectedRow(inComponent: 0)].name
             selectedPriority =  (attributeList?.priority[inputPicker.selectedRow(inComponent: 0)].id)!
         }else if textField == projectTxt {
-            priorityTxt.text =  attributeList?.project[inputPicker.selectedRow(inComponent: 0)].name
+            projectTxt.text =  attributeList?.project[inputPicker.selectedRow(inComponent: 0)].name
             selectedProject =  (attributeList?.project[inputPicker.selectedRow(inComponent: 0)].id)!
         }
     }
