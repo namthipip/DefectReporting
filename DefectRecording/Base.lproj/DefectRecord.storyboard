@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,15 +21,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xW-7h-EQw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="qLm-3a-XQx"/>
+                                </constraints>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AllService.png" translatesAutoresizingMaskIntoConstraints="NO" id="oTb-jT-Pgf">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aak-md-KnV">
-                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="20" width="100" height="627"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="5A0-Q9-GJg"/>
-                                    <constraint firstAttribute="height" constant="100" id="jfj-QT-c7i"/>
                                 </constraints>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,11 +50,16 @@
                             <constraint firstItem="oTb-jT-Pgf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="HU2-aj-KXa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oTb-jT-Pgf" secondAttribute="bottom" id="Oec-gX-XwZ"/>
                             <constraint firstItem="aak-md-KnV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a3p-In-UiY"/>
+                            <constraint firstItem="5xW-7h-EQw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ckJ-jt-1L4"/>
+                            <constraint firstItem="5xW-7h-EQw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nHk-9W-GyF"/>
+                            <constraint firstAttribute="trailing" secondItem="5xW-7h-EQw" secondAttribute="trailing" id="rbF-Wi-sUP"/>
                             <constraint firstAttribute="trailing" secondItem="oTb-jT-Pgf" secondAttribute="trailing" id="rgJ-h8-afD"/>
                             <constraint firstItem="aak-md-KnV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tE8-xY-j63"/>
                             <constraint firstItem="oTb-jT-Pgf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="x2W-9T-zXE"/>
+                            <constraint firstItem="aak-md-KnV" firstAttribute="top" secondItem="5xW-7h-EQw" secondAttribute="bottom" id="zTx-wt-Hmh"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -225,13 +225,13 @@ class DefectAddDetailViewController: UIViewController {
     }
     
     @IBAction func saveDefect(_ sender: Any) {
-        self.view.endEditing(true)
-        let verifyUserView = VerifyUserViewController(nibName: "VerifyUserViewController", bundle: nil)
-        verifyUserView.modalPresentationStyle = .overCurrentContext
-        self.navigationController?.present(verifyUserView, animated: true, completion: {
-            
-        })
-        //callServiceCreateDefect()
+//        self.view.endEditing(true)
+//        let verifyUserView = VerifyUserViewController(nibName: "VerifyUserViewController", bundle: nil)
+//        verifyUserView.modalPresentationStyle = .overCurrentContext
+//        self.navigationController?.present(verifyUserView, animated: true, completion: {
+//
+//        })
+        callServiceCreateDefect()
     }
     
     func callServiceCreateDefect() {
