@@ -240,7 +240,7 @@ class DefectAddDetailViewController: UIViewController {
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         let systemVersion = UIDevice.current.systemVersion
         
-        let parameters = [ "reporter": "namthip.si",
+        let parameters = [ "reporterID": "12",
                            "defectDesc": descriptionTextField.text!,
                            "expectedResult": expectedResultTextField.text!,
                            "appVersion": appVersion!,
@@ -253,7 +253,7 @@ class DefectAddDetailViewController: UIViewController {
                            "priorityID":selectedPriority,
                            "severityID": selectedSeverity,
                            "platformID": "1",
-                           "projectID": "1"] as [String : Any]
+                           "projectID": selectedProject] as [String : Any]
         
         let url = URL(string: "https://defect-recorder.herokuapp.com/defect/")!
         let sessionConfig = URLSessionConfiguration.default
@@ -273,6 +273,7 @@ class DefectAddDetailViewController: UIViewController {
         
         let task = session.dataTask(with: request) { (data, response, error) in
             //self.hideLoading()
+            print(response)
             self.gotoSuccessView()
             guard error == nil,let data = data else {
                 return
