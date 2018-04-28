@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DefectRecording'
-  s.version          = '0.6.9'
+  s.version          = '0.7.1'
   s.summary          = 'Defect reporting in app'
  
   s.description      = <<-DESC
@@ -18,5 +18,6 @@ Defect Reporting in App by screen capture or screen recording!
 
   s.dependency 'IQKeyboardManagerSwift'
   s.dependency 'ObjectMapper'
+  s.dependency 'SkyFloatingLabelTextField'
  
 end
