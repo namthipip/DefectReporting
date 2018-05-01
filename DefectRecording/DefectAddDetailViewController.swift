@@ -239,8 +239,8 @@ class DefectAddDetailViewController: UIViewController {
         showLoadingView()
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         let systemVersion = UIDevice.current.systemVersion
-        
-        let parameters = [ "reporterID": "12",
+    
+        var parameters = [ "reporterID": "12",
                            "defectDesc": descriptionTextField.text!,
                            "expectedResult": expectedResultTextField.text!,
                            "appVersion": appVersion!,
@@ -254,6 +254,10 @@ class DefectAddDetailViewController: UIViewController {
                            "severityID": selectedSeverity,
                            "platformID": "1",
                            "projectID": selectedProject] as [String : Any]
+        
+        if let debugLogData = FileManager.default.contents(atPath: DefectRecordShareInstance.sharedInstance.getLogFilePath()) {
+            parameters["debugLogData"] = debugLogData.base64EncodedString(options: .lineLength64Characters)
+        }
         
         let url = URL(string: "https://defect-recorder.herokuapp.com/defect/")!
         let sessionConfig = URLSessionConfiguration.default
