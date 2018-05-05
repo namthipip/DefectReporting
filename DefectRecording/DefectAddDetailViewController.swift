@@ -68,6 +68,8 @@ class DefectAddDetailViewController: UIViewController {
     
     var selectedProject:Int = 1
     
+    var selectedDueDate:String = ""
+    
     public init(image:UIImage){
         super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
         drawImg = image
@@ -146,12 +148,20 @@ class DefectAddDetailViewController: UIViewController {
         }
     }
     
+    func showError() {
+        let alertController = UIAlertController(title: "Error", message: "Cannot create new defect, Please try again later", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     func setInitialValue() {
-        //severityTxt.text = severityValue[0]
-        //priorityTxt.text = priorityValue[0]
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "dd/MM/yyyy"
         dueDateTxt.text = dateFormat.string(from: Date())
+        let dateConvertFormat = DateFormatter()
+        dateConvertFormat.dateFormat = "yyyy-MM-dd"
+        selectedDueDate = dateConvertFormat.string(from: datePicker.date)
     }
     
     override func viewDidLayoutSubviews() {
@@ -276,13 +286,19 @@ class DefectAddDetailViewController: UIViewController {
         }
         
         let task = session.dataTask(with: request) { (data, response, error) in
-            //self.hideLoading()
             print(response)
-            self.gotoSuccessView()
             guard error == nil,let data = data else {
                 return
             }
-            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    self.gotoSuccessView()
+                }else {
+                    self.hideLoading()
+                    self.showError()
+                }
+            }
+    
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     print(json)
