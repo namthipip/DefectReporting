@@ -13,6 +13,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DefectAddDetailViewController" customModule="DefectRecording" customModuleProvider="target">
             <connections>
+                <outlet property="attachmentLabel" destination="g3f-Mf-tMg" id="HTK-EA-e17"/>
+                <outlet property="attachmentViewHeight" destination="EPQ-b1-wDQ" id="Fyt-Kv-kEM"/>
                 <outlet property="cancelButton" destination="EEW-eO-awY" id="6jS-WQ-27e"/>
                 <outlet property="defectImg" destination="weJ-hs-SKD" id="eRO-Lr-jVB"/>
                 <outlet property="descriptionTextField" destination="Igw-sb-g9I" id="y4e-1g-bwc"/>
@@ -22,10 +24,11 @@
                 <outlet property="projectTxt" destination="Dqr-m7-dNt" id="22n-HT-5bR"/>
                 <outlet property="reportDefectButton" destination="qT7-67-kPY" id="lhE-iT-Lcz"/>
                 <outlet property="scrollView" destination="al7-34-orJ" id="CGb-lg-UuX"/>
+                <outlet property="sendAttachmentButton" destination="GVS-7E-zvi" id="1H0-cU-3kh"/>
                 <outlet property="severityTxt" destination="3Fa-kS-CD2" id="d3l-Mq-a8b"/>
                 <outlet property="submitSuccessView" destination="Go6-RG-jfl" id="7GB-px-hZi"/>
                 <outlet property="typeTxt" destination="8gK-yi-eV2" id="0kw-9Y-7LD"/>
-                <outlet property="videoPreviewLayer" destination="wqK-XI-5J2" id="TOo-lF-dS6"/>
+                <outlet property="videoPreviewLayer" destination="wqK-XI-5J2" id="a4n-2J-MQA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -221,38 +224,41 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqK-XI-5J2">
-                            <rect key="frame" x="94" y="522" width="187.5" height="312.5"/>
+                            <rect key="frame" x="98" y="522" width="180" height="320"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="weJ-hs-SKD">
-                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="312.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="320"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="weJ-hs-SKD" firstAttribute="leading" secondItem="wqK-XI-5J2" secondAttribute="leading" id="Ahv-4K-OiY"/>
+                                <constraint firstAttribute="height" constant="320" id="EPQ-b1-wDQ"/>
+                                <constraint firstAttribute="width" constant="180" id="Eme-mo-luk"/>
                                 <constraint firstItem="weJ-hs-SKD" firstAttribute="top" secondItem="wqK-XI-5J2" secondAttribute="top" id="TT9-2L-9dH"/>
                                 <constraint firstAttribute="bottom" secondItem="weJ-hs-SKD" secondAttribute="bottom" id="eqb-gH-z10"/>
-                                <constraint firstAttribute="width" secondItem="wqK-XI-5J2" secondAttribute="height" multiplier="3:5" id="iyr-0z-XkJ"/>
                                 <constraint firstAttribute="trailing" secondItem="weJ-hs-SKD" secondAttribute="trailing" id="vbi-ES-qLD"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVS-7E-zvi">
-                            <rect key="frame" x="15" y="854.5" width="20" height="20"/>
+                            <rect key="frame" x="15" y="862" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="N50-Pf-ORy"/>
                                 <constraint firstAttribute="width" constant="20" id="jjU-31-UGO"/>
                             </constraints>
-                            <state key="normal" backgroundImage="check-mark"/>
+                            <connections>
+                                <action selector="sendAttachmentTapped:" destination="-1" eventType="touchUpInside" id="0aK-3v-ww3"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="send application log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeG-7R-1gQ">
-                            <rect key="frame" x="50" y="856.5" width="122" height="16"/>
+                            <rect key="frame" x="50" y="864" width="122" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT7-67-kPY">
-                            <rect key="frame" x="137.5" y="892.5" width="222.5" height="40"/>
+                            <rect key="frame" x="137.5" y="900" width="222.5" height="40"/>
                             <color key="backgroundColor" red="0.20784313730000001" green="0.71764705880000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="CsU-J4-sT7"/>
@@ -266,7 +272,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEW-eO-awY">
-                            <rect key="frame" x="15" y="892.5" width="112.5" height="40"/>
+                            <rect key="frame" x="15" y="900" width="112.5" height="40"/>
                             <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="UTi-JP-bpF"/>
@@ -277,7 +283,6 @@
                             </state>
                             <connections>
                                 <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="DIn-n9-ht4"/>
-                                <action selector="saveDefect:" destination="-1" eventType="touchUpInside" id="WtE-ht-n0A"/>
                             </connections>
                         </button>
                         <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Go6-RG-jfl">
@@ -339,7 +344,6 @@
                         <constraint firstItem="3Fa-kS-CD2" firstAttribute="trailing" secondItem="8gK-yi-eV2" secondAttribute="trailing" id="Wn5-kJ-gEV"/>
                         <constraint firstAttribute="trailing" secondItem="EeB-86-o7z" secondAttribute="trailing" constant="10" id="YNm-fO-IiO"/>
                         <constraint firstItem="3Fa-kS-CD2" firstAttribute="height" secondItem="8gK-yi-eV2" secondAttribute="height" id="ZED-tc-UXn"/>
-                        <constraint firstItem="wqK-XI-5J2" firstAttribute="width" secondItem="al7-34-orJ" secondAttribute="width" multiplier="0.5" id="aWK-jz-P5o"/>
                         <constraint firstItem="nSn-5W-n4j" firstAttribute="top" secondItem="3Fa-kS-CD2" secondAttribute="bottom" constant="20" id="axG-PE-R3G"/>
                         <constraint firstItem="nSn-5W-n4j" firstAttribute="height" secondItem="3Fa-kS-CD2" secondAttribute="height" id="bfB-LK-RnO"/>
                         <constraint firstItem="5d8-Qq-9gp" firstAttribute="leading" secondItem="Igw-sb-g9I" secondAttribute="leading" id="dsb-26-hcP"/>
@@ -376,7 +380,6 @@
         </view>
     </objects>
     <resources>
-        <image name="check-mark" width="128" height="128"/>
         <image name="check-mark.png" width="64" height="64"/>
     </resources>
 </document>

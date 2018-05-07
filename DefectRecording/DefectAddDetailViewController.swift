@@ -29,7 +29,11 @@ class DefectAddDetailViewController: UIViewController {
     
     @IBOutlet weak var priorityTxt: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var videoPreviewLayer: SkyFloatingLabelTextField!
+    @IBOutlet weak var attachmentLabel: UILabel!
+    
+    @IBOutlet weak var videoPreviewLayer: UIView!
+    
+    @IBOutlet weak var attachmentViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var severityTxt: SkyFloatingLabelTextField!
     
@@ -38,8 +42,10 @@ class DefectAddDetailViewController: UIViewController {
     @IBOutlet weak var reportDefectButton: UIButton!
     
     @IBOutlet weak var cancelButton: UIButton!
+    
     @IBOutlet weak var submitSuccessView: UIView!
     
+    @IBOutlet weak var sendAttachmentButton: UIButton!
     var drawImg:UIImage?
     
     var datePicker:UIDatePicker!
@@ -69,6 +75,23 @@ class DefectAddDetailViewController: UIViewController {
     var selectedProject:Int = 1
     
     var selectedDueDate:String = ""
+    
+    var needAttactment: Bool = true
+    
+    var sendAttachmentFlag: Bool = false {
+        didSet {
+            if sendAttachmentFlag {
+                sendAttachmentButton.setBackgroundImage(UIImage(named: "check-mark"), for: .normal)
+            }else {
+                sendAttachmentButton.setBackgroundImage(nil, for: .normal)
+            }
+        }
+    }
+    
+    public init() {
+        super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
+        needAttactment = false
+    }
     
     public init(image:UIImage){
         super.init(nibName: "DefectAddDetailViewController", bundle: Bundle(for: RecordTypeViewController.self))
@@ -107,8 +130,22 @@ class DefectAddDetailViewController: UIViewController {
             self.videoPreviewLayer.addSubview(avpController.view)
         }
         
+        sendAttachmentButton.setBorderRadius(radius: 10)
+        sendAttachmentButton.setBorderColor(color: UIColor.lightGray)
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
+        if !needAttactment {
+            attachmentLabel.isHidden = true
+            attachmentViewHeight.constant = 0
+            videoPreviewLayer.needsUpdateConstraints()
+        }
+    }
+  
     func initialLoadingView() {
         viewLoading.backgroundColor = UIColor.black
         viewLoading.alpha = 0.7
@@ -166,12 +203,6 @@ class DefectAddDetailViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
-        self.navigationController?.navigationBar.tintColor = DefectRecordShareInstance.sharedInstance.themeColor
     }
     
     func setTextFieldInput() {
@@ -234,6 +265,10 @@ class DefectAddDetailViewController: UIViewController {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func sendAttachmentTapped(_ sender: Any) {
+        sendAttachmentFlag = !sendAttachmentFlag
+    }
+    
     @IBAction func saveDefect(_ sender: Any) {
 //        self.view.endEditing(true)
 //        let verifyUserView = VerifyUserViewController(nibName: "VerifyUserViewController", bundle: nil)
@@ -255,8 +290,6 @@ class DefectAddDetailViewController: UIViewController {
                            "expectedResult": expectedResultTextField.text!,
                            "appVersion": appVersion!,
                            "deviceOSVersion": systemVersion,
-                           "attachmentType": ((videoURL) != nil) ? "video":"image",
-                           "attachmentData": getBase64String(),
                            "dueDate": dueDateTxt.text!,
                            "typeID": selectedType,
                            "statusID": "1",
@@ -266,7 +299,14 @@ class DefectAddDetailViewController: UIViewController {
                            "projectID": selectedProject] as [String : Any]
         
         if let debugLogData = FileManager.default.contents(atPath: DefectRecordShareInstance.sharedInstance.getLogFilePath()) {
-            parameters["debugLogData"] = debugLogData.base64EncodedString(options: .lineLength64Characters)
+            if sendAttachmentFlag {
+                parameters["debugLogData"] = debugLogData.base64EncodedString(options: .lineLength64Characters)
+            }
+        }
+        
+        if needAttactment {
+            parameters["attachmentType"] = ((videoURL) != nil) ? "video":"image"
+            parameters["attachmentData"] = getBase64String()
         }
         
         let url = URL(string: "https://defect-recorder.herokuapp.com/defect/")!

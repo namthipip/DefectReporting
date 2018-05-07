@@ -29,7 +29,13 @@ class RecordTypeViewController: UIViewController {
     
     
     @IBAction func commentTap(_ sender: Any) {
-        
+        self.dismiss(animated: true) {
+            let currentView:UIViewController = UIApplication.topViewController()!
+            let defectDetailView = DefectAddDetailViewController()
+            defectDetailView.navigationItem.hidesBackButton = true
+            let navigation = UINavigationController(rootViewController: defectDetailView)
+            currentView.present(navigation, animated: true, completion: nil)
+        }
     }
     
     @IBAction func screenRecordTap(_ sender: Any) {
