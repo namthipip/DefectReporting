@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifyUserViewController" customModule="DefectRecording" customModuleProvider="target">
             <connections>
                 <outlet property="passwordTextField" destination="etd-kT-col" id="bme-Lp-Fn4"/>
+                <outlet property="saveReporterButton" destination="RQj-dJ-Vw1" id="jjj-1Z-aek"/>
                 <outlet property="usernamePasswordView" destination="aDB-Un-xqp" id="Wda-xR-l5k"/>
                 <outlet property="usernameTextField" destination="hb0-7I-uIa" id="2h7-cT-OAA"/>
                 <outlet property="verifyUserButton" destination="NZb-xy-7Hj" id="hgB-4K-aoA"/>
@@ -96,6 +97,9 @@
                             <state key="normal" title="Verify User">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="verifyUserTapped:" destination="-1" eventType="touchUpInside" id="iaV-Qc-LRM"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="sJR-Lx-lsM">
                             <rect key="frame" x="275" y="-0.5" width="40" height="40"/>
@@ -121,6 +125,9 @@
                                 <constraint firstAttribute="width" constant="20" id="uBe-Vy-6th"/>
                             </constraints>
                             <state key="normal" backgroundImage="check-mark"/>
+                            <connections>
+                                <action selector="saveReporterUserButton:" destination="-1" eventType="touchUpInside" id="bYz-EU-cc7"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqe-kL-QSp">
                             <rect key="frame" x="55" y="248" width="88" height="16"/>

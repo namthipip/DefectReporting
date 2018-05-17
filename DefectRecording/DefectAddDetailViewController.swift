@@ -46,6 +46,11 @@ class DefectAddDetailViewController: UIViewController {
     @IBOutlet weak var submitSuccessView: UIView!
     
     @IBOutlet weak var sendAttachmentButton: UIButton!
+    
+    @IBOutlet weak var reportedLabel: UILabel!
+    @IBOutlet weak var reporterButton: UIButton!
+    var reporterID: String = ""
+    
     var drawImg:UIImage?
     
     var datePicker:UIDatePicker!
@@ -131,6 +136,14 @@ class DefectAddDetailViewController: UIViewController {
         
         sendAttachmentButton.setBorderRadius(radius: 10)
         sendAttachmentButton.setBorderColor(color: UIColor.lightGray)
+        
+        
+        if (UserDefaults.standard.object(forKey: "reporterName") != nil) {
+            guard let username = UserDefaults.standard.object(forKey: "reporterName") as? String else {
+                return
+            }
+            reportedLabel.text = "Reporter: " + username
+        }
         
     }
     
@@ -263,13 +276,23 @@ class DefectAddDetailViewController: UIViewController {
     }
     
     @IBAction func saveDefect(_ sender: Any) {
-//        self.view.endEditing(true)
-//        let verifyUserView = VerifyUserViewController(nibName: "VerifyUserViewController", bundle: nil)
-//        verifyUserView.modalPresentationStyle = .overCurrentContext
-//        self.navigationController?.present(verifyUserView, animated: true, completion: {
-//
-//        })
-        callServiceCreateDefect()
+        self.view.endEditing(true)
+        if (UserDefaults.standard.object(forKey: "reporterID") != nil) {
+            guard let userID = UserDefaults.standard.object(forKey: "reporterID") as? Int else {
+                return
+            }
+            reporterID = String(userID)
+            callServiceCreateDefect()
+        }else {
+            let verifyUserView = VerifyUserViewController(nibName: "VerifyUserViewController", bundle: nil)
+            verifyUserView.modalPresentationStyle = .overCurrentContext
+            verifyUserView.delegate = self
+            self.navigationController?.present(verifyUserView, animated: true, completion: {
+                
+            })
+
+        }
+        
     }
     
     func callServiceCreateDefect() {
@@ -277,8 +300,7 @@ class DefectAddDetailViewController: UIViewController {
         showLoadingView()
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         let systemVersion = UIDevice.current.systemVersion
-    
-        var parameters = [ "reporterID": "12",
+        var parameters = [ "reporterID": reporterID,
                            "defectDesc": descriptionTextField.text!,
                            "expectedResult": expectedResultTextField.text!,
                            "appVersion": appVersion!,
@@ -358,6 +380,15 @@ class DefectAddDetailViewController: UIViewController {
         
     }
     
+    @IBAction func changeReporterTapped(_ sender: Any) {
+        let verifyUserView = VerifyUserViewController(nibName: "VerifyUserViewController", bundle: nil)
+        verifyUserView.modalPresentationStyle = .overCurrentContext
+        verifyUserView.delegate = self
+        self.navigationController?.present(verifyUserView, animated: true, completion: {
+            
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -421,4 +452,13 @@ extension DefectAddDetailViewController : UIPickerViewDelegate , UIPickerViewDat
         }
     }
     
+}
+
+extension DefectAddDetailViewController: VerfifyUserDelegate {
+    func verifyUserSuccess(userID: String, username: String) {
+        DispatchQueue.main.async {
+            self.reporterID = userID
+            self.reportedLabel.text = "Reporter: " + username
+        }
+    }
 }
