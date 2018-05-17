@@ -284,7 +284,7 @@ class DefectAddDetailViewController: UIViewController {
             reporterID = String(userID)
             callServiceCreateDefect()
         }else {
-            let verifyUserView = VerifyUserViewController(nibName: "VerifyUserViewController", bundle: nil)
+            let verifyUserView = VerifyUserViewController()
             verifyUserView.modalPresentationStyle = .overCurrentContext
             verifyUserView.delegate = self
             self.navigationController?.present(verifyUserView, animated: true, completion: {
@@ -381,7 +381,7 @@ class DefectAddDetailViewController: UIViewController {
     }
     
     @IBAction func changeReporterTapped(_ sender: Any) {
-        let verifyUserView = VerifyUserViewController(nibName: "VerifyUserViewController", bundle: nil)
+        let verifyUserView = VerifyUserViewController()
         verifyUserView.modalPresentationStyle = .overCurrentContext
         verifyUserView.delegate = self
         self.navigationController?.present(verifyUserView, animated: true, completion: {
