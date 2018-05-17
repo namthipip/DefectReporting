@@ -118,7 +118,6 @@ class DefectAddDetailViewController: UIViewController {
         setTextFieldInput()
         reportDefectButton.setBorderRadius(radius: 5)
         cancelButton.setBorderRadius(radius: 5)
-        //setInitialValue()
         initialLoadingView()
         
         if let url = videoURL{
@@ -192,15 +191,6 @@ class DefectAddDetailViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func setInitialValue() {
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "dd/MM/yyyy"
-        dueDateTxt.text = dateFormat.string(from: Date())
-        let dateConvertFormat = DateFormatter()
-        dateConvertFormat.dateFormat = "yyyy-MM-dd"
-        selectedDueDate = dateConvertFormat.string(from: datePicker.date)
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
@@ -232,6 +222,9 @@ class DefectAddDetailViewController: UIViewController {
         dateFormat.dateFormat = "dd/MM/yyyy"
         dueDateTxt.text = dateFormat.string(from: datePicker.date)
         dueDateTxt.resignFirstResponder()
+        let dateConvertFormat = DateFormatter()
+        dateConvertFormat.dateFormat = "yyyy-MM-dd"
+        selectedDueDate = dateConvertFormat.string(from: datePicker.date)
     }
     
     func getDefectAttribute(){
@@ -290,7 +283,7 @@ class DefectAddDetailViewController: UIViewController {
                            "expectedResult": expectedResultTextField.text!,
                            "appVersion": appVersion!,
                            "deviceOSVersion": systemVersion,
-                           "dueDate": dueDateTxt.text!,
+                           "dueDate": selectedDueDate,
                            "typeID": selectedType,
                            "statusID": "1",
                            "priorityID":selectedPriority,

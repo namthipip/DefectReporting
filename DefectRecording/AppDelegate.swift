@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         DefectRecordShareInstance.sharedInstance.deleteLogFile()
         DefectRecordShareInstance.sharedInstance.redirectLogToDocuments()
-//        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.shared.enable = true
         application.isStatusBarHidden = true
 
         return true
