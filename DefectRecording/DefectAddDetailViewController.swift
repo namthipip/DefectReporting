@@ -48,7 +48,9 @@ class DefectAddDetailViewController: UIViewController {
     @IBOutlet weak var sendAttachmentButton: UIButton!
     
     @IBOutlet weak var reportedLabel: UILabel!
+    
     @IBOutlet weak var reporterButton: UIButton!
+    
     var reporterID: String = ""
     
     var drawImg:UIImage?
@@ -86,7 +88,8 @@ class DefectAddDetailViewController: UIViewController {
     var sendAttachmentFlag: Bool = false {
         didSet {
             if sendAttachmentFlag {
-                sendAttachmentButton.setBackgroundImage(UIImage(named: "check-mark"), for: .normal)
+                let checkmark = DefectRecordShareInstance.sharedInstance.getImageFromBundle(name:"check-mark")
+                sendAttachmentButton.setBackgroundImage(checkmark, for: .normal)
             }else {
                 sendAttachmentButton.setBackgroundImage(nil, for: .normal)
             }
